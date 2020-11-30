@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Xn7-G1-yNf">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="gilroy-bold.ttf">
+            <string>Gilroy-Bold</string>
+        </array>
+        <array key="gilroy-regular.ttf">
+            <string>Gilroy-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="DNX-Lw-uTz">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" id="0F2-fd-WPc" customClass="ViewController" customModule="Reboot" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vOy-Oy-9YU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 6544" translatesAutoresizingMaskIntoConstraints="NO" id="m3r-oC-uKs">
+                                <rect key="frame" x="55.5" y="124" width="209" height="63"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="209" id="LuZ-zP-3jv"/>
+                                    <constraint firstAttribute="height" constant="63" id="beB-WN-ec5"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Войти" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Tl-fU-3E6">
+                                <rect key="frame" x="131.5" y="237.5" width="57.5" height="23.5"/>
+                                <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SEq-p4-pDw" customClass="TextField" customModule="Reboot" customModuleProvider="target">
+                                <rect key="frame" x="21" y="291" width="278" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="uNe-IN-aV1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="username"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2f7-Ha-gCY" customClass="TextField" customModule="Reboot" customModuleProvider="target">
+                                <rect key="frame" x="21" y="344" width="278" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="OSm-kk-DCX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
+                            </textField>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LUR-jV-UHQ">
+                                <rect key="frame" x="21" y="398" width="130" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="19" id="bhf-F3-Bua"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Gilroy-Regular" family="Gilroy" pointSize="16"/>
+                                <state key="normal" title="Забыли пароль ?">
+                                    <color key="titleColor" name="ForgotPassColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="registerAction:" destination="0F2-fd-WPc" eventType="touchUpInside" id="kaW-zb-6Ki"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Dwn-wo-f4W">
+                                <rect key="frame" x="56" y="499" width="208.5" height="48"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Еще не зарегистрированы?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1f-q0-Asn">
+                                        <rect key="frame" x="0.0" y="0.0" width="208.5" height="19"/>
+                                        <fontDescription key="fontDescription" name="Gilroy-Regular" family="Gilroy" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Hau-Al-sWr">
+                                        <rect key="frame" x="10" y="21" width="188" height="27"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3BG-io-RVt">
+                                                <rect key="frame" x="0.0" y="0.0" width="188" height="23"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="23" id="ech-6S-CU1"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy" pointSize="18"/>
+                                                <state key="normal" title="Зарегистрироваться">
+                                                    <color key="titleColor" name="RegisterBtnColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="registerAction:" destination="0F2-fd-WPc" eventType="touchUpInside" id="qTL-rc-ZcH"/>
+                                                </connections>
+                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ivf-Hh-c4U">
+                                                <rect key="frame" x="0.0" y="26" width="188" height="1"/>
+                                                <color key="backgroundColor" name="RegisterBtnColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="HfY-nz-hOi"/>
+                                                    <constraint firstAttribute="width" constant="188" id="LOX-Dj-00B"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9XF-ph-CwY">
+                                <rect key="frame" x="21" y="443" width="278" height="44"/>
+                                <color key="backgroundColor" name="loginBtn"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="2xx-dl-PVn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy" pointSize="16"/>
+                                <state key="normal" title="ВОЙТИ">
+                                    <color key="titleColor" name="loginBtnTitle"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="signInAction:" destination="0F2-fd-WPc" eventType="touchUpInside" id="LQ7-AN-YDx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BeZ-TY-l6A">
+                                <rect key="frame" x="259" y="356" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="Nw9-8k-5WV"/>
+                                    <constraint firstAttribute="height" constant="20" id="Wxl-z2-eNl"/>
+                                </constraints>
+                                <state key="normal" image="Eye 02"/>
+                                <connections>
+                                    <action selector="showPasswordAction:" destination="0F2-fd-WPc" eventType="touchUpInside" id="81f-Pd-FVi"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fqb-XY-YPM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9Tl-fU-3E6" firstAttribute="centerX" secondItem="m3r-oC-uKs" secondAttribute="centerX" id="03a-h7-D8s"/>
+                            <constraint firstItem="BeZ-TY-l6A" firstAttribute="centerY" secondItem="2f7-Ha-gCY" secondAttribute="centerY" id="5qb-3d-hMS"/>
+                            <constraint firstItem="2f7-Ha-gCY" firstAttribute="trailing" secondItem="SEq-p4-pDw" secondAttribute="trailing" id="8RO-ad-5II"/>
+                            <constraint firstItem="2f7-Ha-gCY" firstAttribute="leading" secondItem="SEq-p4-pDw" secondAttribute="leading" id="DOp-YD-RRJ"/>
+                            <constraint firstItem="9XF-ph-CwY" firstAttribute="leading" secondItem="SEq-p4-pDw" secondAttribute="leading" id="EVU-pV-4j2"/>
+                            <constraint firstItem="9XF-ph-CwY" firstAttribute="trailing" secondItem="SEq-p4-pDw" secondAttribute="trailing" id="Emz-lc-lwF"/>
+                            <constraint firstItem="LUR-jV-UHQ" firstAttribute="top" secondItem="2f7-Ha-gCY" secondAttribute="bottom" constant="10" id="GPk-Li-iSE"/>
+                            <constraint firstItem="SEq-p4-pDw" firstAttribute="leading" secondItem="fqb-XY-YPM" secondAttribute="leading" constant="21" id="Mqm-VS-pbV"/>
+                            <constraint firstItem="Dwn-wo-f4W" firstAttribute="centerX" secondItem="9XF-ph-CwY" secondAttribute="centerX" id="P7e-cL-ZQv"/>
+                            <constraint firstItem="BeZ-TY-l6A" firstAttribute="trailing" secondItem="2f7-Ha-gCY" secondAttribute="trailing" constant="-20" id="Q6I-Ga-kBl"/>
+                            <constraint firstItem="2f7-Ha-gCY" firstAttribute="top" secondItem="SEq-p4-pDw" secondAttribute="bottom" constant="9" id="SfX-vy-vKn"/>
+                            <constraint firstItem="9XF-ph-CwY" firstAttribute="top" secondItem="LUR-jV-UHQ" secondAttribute="bottom" constant="26" id="Sog-mn-VDk"/>
+                            <constraint firstItem="9Tl-fU-3E6" firstAttribute="top" secondItem="m3r-oC-uKs" secondAttribute="bottom" priority="1" constant="80" id="cNz-Ox-pZh"/>
+                            <constraint firstItem="m3r-oC-uKs" firstAttribute="centerX" secondItem="vOy-Oy-9YU" secondAttribute="centerX" id="f4l-jO-rgv"/>
+                            <constraint firstItem="SEq-p4-pDw" firstAttribute="top" secondItem="9Tl-fU-3E6" secondAttribute="bottom" constant="30" id="ggh-Q4-JYR"/>
+                            <constraint firstItem="m3r-oC-uKs" firstAttribute="top" secondItem="fqb-XY-YPM" secondAttribute="top" constant="80" id="gsY-92-2Ek"/>
+                            <constraint firstItem="fqb-XY-YPM" firstAttribute="bottom" secondItem="Dwn-wo-f4W" secondAttribute="bottom" constant="21" id="kpz-i3-T9k"/>
+                            <constraint firstItem="Dwn-wo-f4W" firstAttribute="top" relation="greaterThanOrEqual" secondItem="9XF-ph-CwY" secondAttribute="bottom" constant="12" id="kt1-dj-ddh"/>
+                            <constraint firstItem="LUR-jV-UHQ" firstAttribute="leading" secondItem="2f7-Ha-gCY" secondAttribute="leading" id="xKw-MJ-EBQ"/>
+                            <constraint firstItem="fqb-XY-YPM" firstAttribute="trailing" secondItem="SEq-p4-pDw" secondAttribute="trailing" constant="21" id="ymS-89-Ius"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="r5V-E7-Izw"/>
+                    <connections>
+                        <outlet property="emailTf" destination="SEq-p4-pDw" id="uBR-0d-eyQ"/>
+                        <outlet property="loginBtn" destination="9XF-ph-CwY" id="c5G-gD-pHr"/>
+                        <outlet property="passwordShowBtn" destination="BeZ-TY-l6A" id="ckr-H9-zkf"/>
+                        <outlet property="passwordTF" destination="2f7-Ha-gCY" id="8eq-nZ-Mh1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PNM-Db-NlJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2507" y="75"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Nkz-YO-XH4">
+            <objects>
+                <navigationController storyboardIdentifier="Navigation" automaticallyAdjustsScrollViewInsets="NO" id="Xn7-G1-yNf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7Fs-Kl-dom">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="0F2-fd-WPc" kind="relationship" relationship="rootViewController" id="DVr-3l-FYU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JCo-bX-eIF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1428.75" y="75"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Eye 02" width="25" height="25"/>
+        <image name="Group 6544" width="210" height="64"/>
+        <namedColor name="ForgotPassColor">
+            <color red="0.039215686274509803" green="0.039215686274509803" blue="0.039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="RegisterBtnColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="loginBtn">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="loginBtnTitle">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

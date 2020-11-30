@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ki1-a9-AXK">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Splash Controller-->
+        <scene sceneID="8KW-np-lpL">
+            <objects>
+                <viewController storyboardIdentifier="SplashController" id="Ki1-a9-AXK" customClass="SplashController" customModule="Reboot" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9Rw-o9-ylB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="White logo" translatesAutoresizingMaskIntoConstraints="NO" id="Hbj-Lm-4u0">
+                                <rect key="frame" x="102" y="416" width="210" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="210" id="Ina-Ia-UQ8"/>
+                                    <constraint firstAttribute="height" constant="64" id="lZO-4i-V7f"/>
+                                </constraints>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="4xA-kQ-Zil">
+                                <rect key="frame" x="188.5" y="495" width="37" height="37"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8rW-vu-pAt"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Hbj-Lm-4u0" firstAttribute="centerY" secondItem="9Rw-o9-ylB" secondAttribute="centerY" id="3x3-nP-pCy"/>
+                            <constraint firstItem="Hbj-Lm-4u0" firstAttribute="centerX" secondItem="9Rw-o9-ylB" secondAttribute="centerX" id="Lps-QC-frt"/>
+                            <constraint firstItem="4xA-kQ-Zil" firstAttribute="centerX" secondItem="Hbj-Lm-4u0" secondAttribute="centerX" id="SRt-tm-ygC"/>
+                            <constraint firstItem="4xA-kQ-Zil" firstAttribute="top" secondItem="Hbj-Lm-4u0" secondAttribute="bottom" constant="15" id="eWI-gv-cB8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="4AE-Xj-oJd"/>
+                    <connections>
+                        <outlet property="indicator" destination="4xA-kQ-Zil" id="62e-oL-yVt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VKH-xt-H8K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="860.86956521739137" y="124.55357142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="White logo" width="210" height="64"/>
+    </resources>
+</document>
