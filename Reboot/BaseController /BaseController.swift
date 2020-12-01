@@ -12,6 +12,7 @@ import Alamofire
 class BaseViewController: UIViewController {
     private let endPoint = "my/account/"
     
+    @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var logo: UIImageView!
     @IBOutlet weak var barView: UIView!
     @IBOutlet weak var infoBtn: UIButton!
@@ -22,6 +23,11 @@ class BaseViewController: UIViewController {
         logOutBtn.setImage(UIImage(named:  "user"), for: .normal)
         logo.image = UIImage(named: "Group 6544")
         logOutBtn.setImageColor(color: UIColor(named: "borderColor")!, for: .normal)
+        
+    }
+    
+    func setupBackBtnColor() {
+        backBtn.setImageColor(color: UIColor(named: "borderColor")!, for: .normal)
         
     }
     
@@ -41,6 +47,7 @@ class BaseViewController: UIViewController {
                 print(error)
             }
         }
+    
     }
 
     
@@ -56,13 +63,14 @@ class BaseViewController: UIViewController {
     }
 
     @objc private func tapped() {
+        
         guard let popVC = storyboard?.instantiateViewController(withIdentifier: "PopUpController") else {return}
         popVC.modalPresentationStyle = .popover
         
         let popoverVC = popVC.popoverPresentationController
         popoverVC?.delegate = self
         popoverVC?.sourceView = self.logOutBtn
-        popoverVC?.sourceRect = CGRect(x: self.logOutBtn.bounds.height/2, y: self.logOutBtn.bounds.maxY, width: 0, height: 0)
+        popoverVC?.sourceRect = CGRect(x: self.logOutBtn.bounds.width/2 , y: self.logOutBtn.bounds.maxY, width: 0, height: 0)
         popVC.preferredContentSize = CGSize(width: 189, height: 223)
         
         self.present(popVC, animated: true, completion: nil)
@@ -82,7 +90,6 @@ class BaseViewController: UIViewController {
         self.present(popVC, animated: true, completion: nil)
         
     }
-    
     
     func setbarView() {
         barView.layer.shadowColor =  UIColor.black.withAlphaComponent(0.16).cgColor

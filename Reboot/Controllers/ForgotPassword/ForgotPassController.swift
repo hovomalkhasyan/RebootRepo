@@ -7,11 +7,12 @@
 
 import UIKit
 
-class ForgotPassController: UIViewController {
+class ForgotPassController: BaseViewController {
 
     @IBOutlet weak var emailTf: TextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        super.setupBackBtnColor()
         setupEmailTf()
         tapGesture()
         
@@ -89,4 +90,8 @@ class ForgotPassController: UIViewController {
    
     }
     
+    @IBAction func backBtnAction(_ sender: UIButton) {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }

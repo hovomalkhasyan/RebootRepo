@@ -8,7 +8,7 @@
 import UIKit
 import Alamofire
 
-class RegisterController: UIViewController {
+class RegisterController: BaseViewController {
     
     private let registerEndPoint = "auth/register/"
     
@@ -176,6 +176,12 @@ class RegisterController: UIViewController {
     
     
     @IBAction func toSignIn(_ sender: UIButton) {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
+    @IBAction func backBtnAction(_ sender: UIButton) {
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as! ViewController
         navigationController?.pushViewController(vc, animated: true)
     }

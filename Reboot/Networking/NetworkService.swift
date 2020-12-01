@@ -18,8 +18,10 @@ class BaseError: Codable {
 class Detail: Codable {
     let errors: [Message]
 }
+
 class Message: Codable {
     let message: String
+    
 }
 
 typealias RequestCompletion<T: Codable> = ((RequestResult<T>) -> Void)
@@ -112,5 +114,6 @@ class NetWorkService {
 
 struct RefreshToken: Codable {
     let token : String?
+    
 }
    

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina3_5" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -23,37 +23,37 @@
             <objects>
                 <viewController storyboardIdentifier="RegisterController" id="eyV-gb-987" customClass="RegisterController" customModule="Reboot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="n3v-Az-dA5">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sr9-sv-yz7">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dyg-Pp-ZNj">
-                                        <rect key="frame" x="10" y="15" width="300" height="1"/>
+                                        <rect key="frame" x="10" y="0.0" width="355" height="1"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="aWY-qD-hF8"/>
                                         </constraints>
                                     </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 6544" translatesAutoresizingMaskIntoConstraints="NO" id="Sci-gg-noV">
-                                        <rect key="frame" x="55.5" y="36" width="209" height="63"/>
+                                        <rect key="frame" x="83" y="36" width="209" height="63"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="209" id="7KM-o4-Qii"/>
                                             <constraint firstAttribute="height" constant="63" id="SNk-1o-tfV"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Регистрция" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xbh-oJ-LsG">
-                                        <rect key="frame" x="100" y="129" width="120" height="26"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="РЕГИСТРАЦИЯ" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xbh-oJ-LsG">
+                                        <rect key="frame" x="107.5" y="129" width="160" height="26"/>
                                         <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="avK-FW-fgZ">
-                                        <rect key="frame" x="20" y="185" width="280" height="304"/>
+                                        <rect key="frame" x="20" y="185" width="335" height="304"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Фамилия и Имя *" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Acq-TF-H3q" customClass="TextField" customModule="Reboot" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="280" height="44"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="c3c-Sx-nIP"/>
                                                 </constraints>
@@ -61,7 +61,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Телефон *" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sXj-Qw-xBG" customClass="TextField" customModule="Reboot" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="52" width="280" height="44"/>
+                                                <rect key="frame" x="0.0" y="52" width="335" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="0Zb-gY-DbZ"/>
                                                 </constraints>
@@ -69,7 +69,7 @@
                                                 <textInputTraits key="textInputTraits" textContentType="tel"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Твой Email *" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O2V-as-zD7" customClass="TextField" customModule="Reboot" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="104" width="280" height="44"/>
+                                                <rect key="frame" x="0.0" y="104" width="335" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="H1e-Hb-rDN"/>
                                                 </constraints>
@@ -77,7 +77,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Дата рождения" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="miV-xd-pRM" customClass="TextField" customModule="Reboot" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="156" width="280" height="44"/>
+                                                <rect key="frame" x="0.0" y="156" width="335" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="csO-vi-xOc"/>
                                                 </constraints>
@@ -85,7 +85,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Место работы" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u4m-7t-Ot1" customClass="TextField" customModule="Reboot" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="208" width="280" height="44"/>
+                                                <rect key="frame" x="0.0" y="208" width="335" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="9TY-J3-CU7"/>
                                                 </constraints>
@@ -93,7 +93,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Пароль *" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BCv-l3-z9w" customClass="TextField" customModule="Reboot" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="260" width="280" height="44"/>
+                                                <rect key="frame" x="0.0" y="260" width="335" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="9e3-6q-GaN"/>
                                                 </constraints>
@@ -103,19 +103,19 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Нажимая кнопку “Зарегистрироваться”, я принимаю договор оферты и соглашаюсь на обработку персональных данных." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQF-kF-A5a">
-                                        <rect key="frame" x="20" y="585" width="280" height="49"/>
+                                        <rect key="frame" x="20" y="585" width="335" height="49"/>
                                         <fontDescription key="fontDescription" name="Gilroy-Regular" family="Gilroy" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kBi-T9-2zm">
-                                        <rect key="frame" x="20" y="513" width="280" height="44"/>
+                                        <rect key="frame" x="20" y="513" width="335" height="44"/>
                                         <color key="backgroundColor" name="loginBtn"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="kbX-C2-qbE"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy" pointSize="16"/>
-                                        <state key="normal" title="Зарегистрироваться">
+                                        <state key="normal" title="ЗАРЕГИСТРИРОВАТЬСЯ">
                                             <color key="titleColor" name="loginBtnTitle"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -128,7 +128,7 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Hjs-m6-oAN">
-                                        <rect key="frame" x="67" y="733" width="186" height="48"/>
+                                        <rect key="frame" x="94.5" y="733" width="186" height="48"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Уже зарегистрированы?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o0h-OQ-ONF">
                                                 <rect key="frame" x="0.0" y="0.0" width="186" height="19"/>
@@ -164,27 +164,44 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xsn-0Q-qvA">
+                                        <rect key="frame" x="10" y="20" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="4iC-Wo-pfs"/>
+                                            <constraint firstAttribute="width" secondItem="Xsn-0Q-qvA" secondAttribute="height" multiplier="1:1" id="7hb-bc-Vfc"/>
+                                        </constraints>
+                                        <state key="normal" image="back-arrow-1"/>
+                                        <connections>
+                                            <action selector="backBtnAction:" destination="eyV-gb-987" eventType="touchUpInside" id="thX-Fi-mm8"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="kBi-T9-2zm" firstAttribute="leading" secondItem="avK-FW-fgZ" secondAttribute="leading" id="7ex-Zb-Rdj"/>
                                     <constraint firstItem="xbh-oJ-LsG" firstAttribute="top" secondItem="Sci-gg-noV" secondAttribute="bottom" constant="30" id="DIG-1y-Dfe"/>
                                     <constraint firstAttribute="trailing" secondItem="Dyg-Pp-ZNj" secondAttribute="trailing" constant="10" id="DTd-hT-DC5"/>
                                     <constraint firstItem="kBi-T9-2zm" firstAttribute="trailing" secondItem="avK-FW-fgZ" secondAttribute="trailing" id="E9q-UA-cKs"/>
-                                    <constraint firstItem="Dyg-Pp-ZNj" firstAttribute="top" secondItem="sr9-sv-yz7" secondAttribute="top" constant="15" id="F7D-d6-ZTs"/>
+                                    <constraint firstItem="Dyg-Pp-ZNj" firstAttribute="top" secondItem="sr9-sv-yz7" secondAttribute="top" id="F7D-d6-ZTs"/>
                                     <constraint firstItem="Dyg-Pp-ZNj" firstAttribute="centerX" secondItem="sr9-sv-yz7" secondAttribute="centerX" id="Kcx-VT-2Cs"/>
                                     <constraint firstItem="xbh-oJ-LsG" firstAttribute="centerX" secondItem="Sci-gg-noV" secondAttribute="centerX" id="NcE-Fv-U8v"/>
                                     <constraint firstItem="Sci-gg-noV" firstAttribute="centerX" secondItem="sr9-sv-yz7" secondAttribute="centerX" id="OGO-Uy-WrN"/>
                                     <constraint firstItem="Hjs-m6-oAN" firstAttribute="centerX" secondItem="AQF-kF-A5a" secondAttribute="centerX" id="QjL-et-1Dn"/>
                                     <constraint firstItem="Hjs-m6-oAN" firstAttribute="top" secondItem="AQF-kF-A5a" secondAttribute="bottom" constant="99" id="Ul6-7i-vqd"/>
-                                    <constraint firstItem="avK-FW-fgZ" firstAttribute="leading" secondItem="sr9-sv-yz7" secondAttribute="leading" constant="20" id="cLF-yl-fBE"/>
+                                    <constraint firstItem="avK-FW-fgZ" firstAttribute="leading" secondItem="sr9-sv-yz7" secondAttribute="leading" constant="20" id="cLF-yl-fBE">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                    </constraint>
                                     <constraint firstItem="avK-FW-fgZ" firstAttribute="top" secondItem="xbh-oJ-LsG" secondAttribute="bottom" constant="30" id="dPl-jS-Qiv"/>
-                                    <constraint firstAttribute="trailing" secondItem="avK-FW-fgZ" secondAttribute="trailing" constant="20" id="ibU-BB-qlA"/>
+                                    <constraint firstItem="Xsn-0Q-qvA" firstAttribute="top" secondItem="Dyg-Pp-ZNj" secondAttribute="bottom" constant="19" id="e5o-dW-nwo"/>
+                                    <constraint firstItem="Xsn-0Q-qvA" firstAttribute="leading" secondItem="sr9-sv-yz7" secondAttribute="leading" constant="10" id="eOY-ey-hXb"/>
+                                    <constraint firstAttribute="trailing" secondItem="avK-FW-fgZ" secondAttribute="trailing" constant="20" id="ibU-BB-qlA">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                    </constraint>
                                     <constraint firstItem="Dyg-Pp-ZNj" firstAttribute="leading" secondItem="sr9-sv-yz7" secondAttribute="leading" constant="10" id="nxj-WQ-0wU"/>
                                     <constraint firstItem="AQF-kF-A5a" firstAttribute="leading" secondItem="avK-FW-fgZ" secondAttribute="leading" id="ory-jf-LfY"/>
                                     <constraint firstAttribute="bottom" secondItem="Hjs-m6-oAN" secondAttribute="bottom" constant="21" id="pu2-ip-YiT"/>
                                     <constraint firstItem="kBi-T9-2zm" firstAttribute="top" secondItem="avK-FW-fgZ" secondAttribute="bottom" constant="24" id="seG-ta-TOe"/>
                                     <constraint firstItem="AQF-kF-A5a" firstAttribute="trailing" secondItem="avK-FW-fgZ" secondAttribute="trailing" id="sv7-SB-zI2"/>
-                                    <constraint firstItem="Sci-gg-noV" firstAttribute="top" secondItem="Dyg-Pp-ZNj" secondAttribute="bottom" constant="20" id="vqS-uR-XaX"/>
+                                    <constraint firstItem="Sci-gg-noV" firstAttribute="top" secondItem="Dyg-Pp-ZNj" secondAttribute="bottom" constant="35" id="vqS-uR-XaX"/>
                                     <constraint firstItem="AQF-kF-A5a" firstAttribute="top" secondItem="kBi-T9-2zm" secondAttribute="bottom" constant="28" id="xzq-qd-7jw"/>
                                 </constraints>
                             </scrollView>
@@ -199,6 +216,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backBtn" destination="Xsn-0Q-qvA" id="kK4-n2-Bnb"/>
                         <outlet property="birthDay" destination="miV-xd-pRM" id="KmW-Gw-SHb"/>
                         <outlet property="email" destination="O2V-as-zD7" id="KMz-72-QGn"/>
                         <outlet property="fullName" destination="Acq-TF-H3q" id="djI-dk-e04"/>
@@ -211,11 +229,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fdu-KZ-ieX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="211.59420289855075" y="62.276785714285708"/>
+            <point key="canvasLocation" x="210.9375" y="62.109374999999993"/>
         </scene>
     </scenes>
     <resources>
         <image name="Group 6544" width="210" height="64"/>
+        <image name="back-arrow-1" width="19" height="19"/>
         <namedColor name="RegisterBtnColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

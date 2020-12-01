@@ -7,14 +7,15 @@
 
 import UIKit
 
-class SavePasswordController: UIViewController {
+class SavePasswordController: BaseViewController {
     
     @IBOutlet weak var passwordTF: TextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        super.setupBackBtnColor()
         setupTextTF()
         tapGesture()
-    
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,4 +68,8 @@ class SavePasswordController: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    @IBAction func backBtnAction(_ sender: Any) {
+        let vc = UIStoryboard(name: "Code", bundle: nil).instantiateViewController(withIdentifier: "CodeController")
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }

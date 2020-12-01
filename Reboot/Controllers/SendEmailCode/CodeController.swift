@@ -7,13 +7,14 @@
 
 import UIKit
 
-class CodeController: UIViewController {
+class CodeController: BaseViewController {
     
     @IBOutlet weak var codeTF: TextField!
     @IBOutlet weak var messageLbl: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        super.setupBackBtnColor()
         setupTextTF()
         tapGesture()
         setupMessageLbl()
@@ -79,4 +80,8 @@ class CodeController: UIViewController {
         
     }
     
+    @IBAction func backBtn(_ sender: UIButton) {
+        let vc = UIStoryboard(name: "ForgotPassword", bundle: nil).instantiateViewController(withIdentifier: "ForgotPassController") as! ForgotPassController
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
