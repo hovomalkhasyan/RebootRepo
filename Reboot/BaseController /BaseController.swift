@@ -29,17 +29,18 @@ class BaseViewController: UIViewController {
         NetWorkService.request(url: endPoint, method: .get, param: nil, encoding: JSONEncoding.prettyPrinted) { (resp: RequestResult<AccountResponse?>) in
             switch resp {
             case .success(let data):
-                guard let data = data, let package = data?.packages else {return}
+                guard let data = data else {return}
                 if data?.packages?.count == 0 {
                     self.infoBtn.setTitle("0", for: .normal)
                 }else {
+                    guard let package = data?.packages else {return}
                     self.infoBtn.setTitle(String(package[0].plan.workoutsCount), for: .normal)
                 }
+                
             case .failure(let error):
                 print(error)
             }
         }
-    
     }
 
     

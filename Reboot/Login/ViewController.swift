@@ -35,8 +35,7 @@ class ViewController: UIViewController {
     
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-//        if #available(iOS 13.0, *) {
-//            if (traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection)) {
+        
                 passwordTF.layer.borderColor = UIColor(named: "borderColor")?.cgColor
                 emailTf.layer.borderColor = UIColor(named: "borderColor")?.cgColor
             }

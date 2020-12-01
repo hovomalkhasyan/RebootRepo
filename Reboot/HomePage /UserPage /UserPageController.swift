@@ -69,9 +69,9 @@ class UserPageController: BaseViewController {
             switch resp {
             case .success(let model):
                 guard let m = model, let finalModel = m else { return }
-                if let image = finalModel.avatar {
-                    self.userAvatar.setImage(urlString: image, placeholder: nil, completed: nil)
-                }
+//                if let image = finalModel.avatar {
+//                    self.userAvatar.setImage(urlString: image, placeholder: nil, completed: nil)
+//                }
                 self.bonus.text = String(finalModel.bonusesBalance)
                 self.loyality = finalModel.loyaltyLevel
                 if finalModel.firstName != ""{
@@ -89,15 +89,15 @@ class UserPageController: BaseViewController {
     }
     
     private func reserveResponse() {
-//        indicator.startAnimating()
+        indicator.startAnimating()
         NetWorkService.request(url: reverseResponse, method: .get, param: nil, encoding: JSONEncoding.prettyPrinted) { (resp: RequestResult<ReserveResp?>) in
             switch resp {
             case .success(let data):
                 guard let data = data, let obj = data?.objects else {return}
                 self.object = obj
                 self.tableView.reloadData()
-//                self.userView.isHidden = true
-//                self.indicator.stopAnimating()
+                self.userView.isHidden = true
+                self.indicator.stopAnimating()
             case .failure(let error):
                 print(error)
             }
@@ -160,10 +160,11 @@ extension UserPageController: UITableViewDelegate, UITableViewDataSource {
             }
            
         case .achievement:
+            
             let cell = tableView.dequeueReusableCell(withIdentifier: "AchievementsCell", for: indexPath) as! AchievementsCell
             cell.level.text = loyality?.title
             cell.cashBack.text = loyality?.description
-            cell.levelImage.setImage(urlString: loyality?.iconInactive, placeholder: nil, completed: nil)
+//            cell.levelImage.setImage(urlString: loyality?.iconInactive, placeholder: nil, completed: nil)
             cell.backgroundColor = UIColor(named: "Cellcolors")
             return cell
         case .info:

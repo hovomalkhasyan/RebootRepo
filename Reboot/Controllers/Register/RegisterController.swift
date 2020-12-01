@@ -24,7 +24,7 @@ class RegisterController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tfDelegates()
+        setupTeftFields()
         tapGesture()
         setupBirthDayTf()
         setupStackView()
@@ -102,8 +102,7 @@ class RegisterController: UIViewController {
         
     }
     
-    private func tfDelegates() {
-        
+    private func setupTeftFields() {
         password.delegate = self
         work.delegate = self
         birthDay.delegate = self
@@ -112,6 +111,7 @@ class RegisterController: UIViewController {
         fullName.delegate = self
         password.isSecureTextEntry = true
         password.textContentType = UITextContentType(rawValue: "")
+        
     }
     
     private func isValidEmail(_ email: String) -> Bool {

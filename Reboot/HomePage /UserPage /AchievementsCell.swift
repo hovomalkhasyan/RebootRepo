@@ -14,6 +14,7 @@ class AchievementsCell: UITableViewCell {
     @IBOutlet weak var cashBack: UILabel!
     @IBOutlet weak var level: UILabel!
     @IBOutlet weak var levelImage: UIImageView!
+    @IBOutlet weak var achievementsImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

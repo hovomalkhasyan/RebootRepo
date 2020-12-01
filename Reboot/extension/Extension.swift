@@ -44,7 +44,14 @@ extension String {
         
         return dateFormatter.string(from: dt ?? Date())
     }
-    
+
+//    func isValidPhone() -> Bool {
+//
+////        let phoneRegex = "((8|\7)-?)?\(?\d{3}\)?-?\d{1}-?\d{1}-?\d{1}-?\d{1}-?\d{1}-?\d{1}-?\d{1}"
+//        let valid = NSPredicate(format: "SELF MATCHES %@", phoneRegex).evaluate(with: phoneRegex)
+//        return valid
+//    }
+//
 }
 
 extension UIScrollView {
@@ -93,5 +100,3 @@ extension Encodable {
         }
     }
 }
-
-
