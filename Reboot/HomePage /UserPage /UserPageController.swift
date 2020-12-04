@@ -98,6 +98,7 @@ class UserPageController: BaseViewController {
                 self.tableView.reloadData()
                 self.userView.isHidden = true
                 self.indicator.stopAnimating()
+                self.indicator.hidesWhenStopped = true
             case .failure(let error):
                 print(error)
             }
