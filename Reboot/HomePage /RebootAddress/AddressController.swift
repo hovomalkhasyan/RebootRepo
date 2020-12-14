@@ -23,9 +23,6 @@ class AddressController: BaseViewController {
     @IBOutlet weak var scheduleBtnLast: UIButton!
     @IBOutlet weak var scheduleBtn: UIButton!
     
-    let phoneNumber = "+74951288988"
-    let secondNumber = "+74951288937"
-    
     var hide = true
     var isSecondHide = true
     
@@ -147,10 +144,10 @@ class AddressController: BaseViewController {
     @IBAction func callAction(_ sender: UIButton) {
         switch sender.tag {
         case 0:
-            guard let number = URL(string: "tel://" + phoneNumber) else { return }
+            guard let number = URL(string: "tel://" + Constants.REBOOT_PHONE_NUMBER) else { return }
             UIApplication.shared.open(number)
         case 1:
-            guard let number = URL(string: "tel://" + secondNumber) else { return }
+            guard let number = URL(string: "tel://" + Constants.REBOOT_SECOND_PHONE_NUMBER) else { return }
             UIApplication.shared.open(number)
         default:
             break
@@ -159,7 +156,7 @@ class AddressController: BaseViewController {
     }
     
     @IBAction func wpCall(_ sender: UIButton) {
-        guard let number = URL(string: "https://api.whatsapp.com/send?phone=\(phoneNumber)") else { return }
+        guard let number = URL(string: "https://api.whatsapp.com/send?phone=\(Constants.REBOOT_PHONE_NUMBER)") else { return }
         UIApplication.shared.open(number)
         
     }

@@ -10,8 +10,6 @@ import Alamofire
 
 class RegisterController: BaseViewController {
     
-    private let registerEndPoint = "auth/register/"
-    
     @IBOutlet weak var registerStack: UIStackView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var password: UITextField!
@@ -20,7 +18,9 @@ class RegisterController: BaseViewController {
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var phoneNumber: UITextField!
     @IBOutlet weak var fullName: UITextField!
+    
     private let datePicker = UIDatePicker()
+    private let toolbar = UIToolbar()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,7 +64,6 @@ class RegisterController: BaseViewController {
         
         birthDay.inputView = datePicker
         datePicker.datePickerMode = .date
-        let toolbar = UIToolbar()
         toolbar.sizeToFit()
         let tulbarBtn = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneAction))
         let flaxSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil )
@@ -114,14 +113,6 @@ class RegisterController: BaseViewController {
         
     }
     
-    private func isValidEmail(_ email: String) -> Bool {
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        
-        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        return emailPred.evaluate(with: email)
-        
-    }
-    
     private func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okBtn = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -133,7 +124,7 @@ class RegisterController: BaseViewController {
     private func registerRequest(_ completion: @escaping () -> Void) {
         
         let model = RegisterParams(birth_date: birthDay.text, email: email.text, first_name: fullName.text, occupation: work.text, password: password.text, phone: phoneNumber.text)
-        NetWorkService.request(url: registerEndPoint, method: .post, param: model, encoding: JSONEncoding.default) { (resp: RequestResult<LoginResponse?>) in
+        NetWorkService.request(url: Constants.AUTH_REGISTER_ENDPOINT, method: .post, param: model, encoding: JSONEncoding.default) { (resp: RequestResult<LoginResponse?>) in
             completion()
             switch resp {
             case .success(let data):

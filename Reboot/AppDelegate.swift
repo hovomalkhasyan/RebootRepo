@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var restrictRotation:UIInterfaceOrientationMask = .portrait
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        YMKMapKit.setApiKey("104532f6-e615-407f-a2b1-1c13e5a64a9d")
+        YMKMapKit.setApiKey(Constants.YANDEX_API_KEY)
         
         self.window = UIWindow()
         let vc = UIStoryboard(name: "Splash", bundle: nil).instantiateViewController(withIdentifier: "SplashController")

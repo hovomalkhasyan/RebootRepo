@@ -12,6 +12,7 @@ import AVKit
 class SplashController: UIViewController {
     
     @IBOutlet weak var indicator: UIActivityIndicatorView!
+    
     let player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: "Reboot", ofType: "mov")!))
     
     override func viewDidLoad() {

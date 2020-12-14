@@ -35,10 +35,9 @@ class UserPageController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var bonus: UILabel!
     @IBOutlet weak var userName: UILabel!
-    private let reverseResponse = "my/reserves/"
-    private let endPoint = "my/account/"
-    var loyality : LoyaltyLevels?
-    var object = [Object]()
+    
+    private var loyality : LoyaltyLevels?
+    private var object = [Object]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,7 +64,7 @@ class UserPageController: BaseViewController {
     }
     
     private func accountRequest() {
-        NetWorkService.request(url: self.endPoint, method: .get, param: nil, encoding: JSONEncoding.prettyPrinted) { (resp: RequestResult<AccountResponse?>) in
+        NetWorkService.request(url: Constants.MY_ACCOUNT_ENDPOINT, method: .get, param: nil, encoding: JSONEncoding.prettyPrinted) { (resp: RequestResult<AccountResponse?>) in
             switch resp {
             case .success(let model):
                 guard let m = model, let finalModel = m else { return }
@@ -90,7 +89,7 @@ class UserPageController: BaseViewController {
     
     private func reserveResponse() {
         indicator.startAnimating()
-        NetWorkService.request(url: reverseResponse, method: .get, param: nil, encoding: JSONEncoding.prettyPrinted) { (resp: RequestResult<ReserveResp?>) in
+        NetWorkService.request(url: Constants.MY_RESERVES_ENDPOINT, method: .get, param: nil, encoding: JSONEncoding.prettyPrinted) { (resp: RequestResult<ReserveResp?>) in
             switch resp {
             case .success(let data):
                 guard let data = data, let obj = data?.objects else {return}

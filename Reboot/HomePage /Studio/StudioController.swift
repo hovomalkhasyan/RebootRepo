@@ -9,9 +9,8 @@ import UIKit
 import SafariServices
 
 class StudioController: BaseViewController {
-    private let urlArray = ["https://reboot.ru/registration?studio=reboot_east&day",
-                             "https://reboot.ru/registration?studio=reboot-sw&day"]
-    private let studioArray = ["REBOOT EAST на Павелецкой", "REBOOT SW на Хамовниках"]
+    
+    private let cells: [RebootStudioRowEnum] = RebootStudioRowEnum.allCases
     
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
@@ -19,9 +18,10 @@ class StudioController: BaseViewController {
         super.setbarView()
         super.setupGesture()
         super.setupDarkMode()
+        super.workoutsCount()
         setbarView()
         setupTableView()
-        super.workoutsCount()
+        
     }
     
     override func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
@@ -50,20 +50,20 @@ class StudioController: BaseViewController {
 
 extension StudioController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return studioArray.count
+        return cells.count
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StudioCell", for: indexPath) as! StudioCell
+        cell.setStudioCellType(cells[indexPath.row])
         
-        cell.studioName.text = studioArray[indexPath.row]
         return cell
     
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let url = URL(string: urlArray[indexPath.row])
+        let url = URL(string: cells[indexPath.row].rebootAddressUrl)
         let safariController = SFSafariViewController(url: url!)
         present(safariController, animated: true, completion: nil)
         
@@ -71,3 +71,25 @@ extension StudioController: UITableViewDelegate, UITableViewDataSource {
     
 }
 
+enum RebootStudioRowEnum: String, CaseIterable {
+    case rebootEast
+    case rebootSW
+    
+    var title: String {
+        switch self {
+        case .rebootEast:
+            return ConstantStrings.REBOOT_EAST
+        case .rebootSW:
+            return ConstantStrings.REBOOT_SW
+        }
+    }
+    
+    var rebootAddressUrl: String {
+        switch self {
+        case .rebootEast:
+            return ConstantStrings.REBOOT_ADDRESS_EAST
+        case .rebootSW:
+            return ConstantStrings.REBOOT_ADDRESS_SW
+        }
+    }
+}

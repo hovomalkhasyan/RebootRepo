@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		754FDCE37C528C2B72162BA9 /* Pods_Reboot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89583B5DF1909556D9940ECA /* Pods_Reboot.framework */; };
+		D4375094257E0475005D3273 /* ConstantStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4375093257E0475005D3273 /* ConstantStrings.swift */; };
+		D437509B257E12FE005D3273 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D437509A257E12FE005D3273 /* Constants.swift */; };
+		D437509F257E1975005D3273 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = D437509E257E1975005D3273 /* Storyboards.swift */; };
 		DA10B529256254BF0010A819 /* gilroy-ultralightitalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DA10B528256254BF0010A819 /* gilroy-ultralightitalic.ttf */; };
 		DA10B52C2562559F0010A819 /* gilroy-medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DA10B52B2562559F0010A819 /* gilroy-medium.ttf */; };
 		DA10B52F256260D30010A819 /* AchievementsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA10B52E256260D30010A819 /* AchievementsCell.swift */; };
@@ -59,6 +62,9 @@
 /* Begin PBXFileReference section */
 		4DDA028EAE8BB8F6FB54126E /* Pods-Reboot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reboot.release.xcconfig"; path = "Target Support Files/Pods-Reboot/Pods-Reboot.release.xcconfig"; sourceTree = "<group>"; };
 		89583B5DF1909556D9940ECA /* Pods_Reboot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reboot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4375093257E0475005D3273 /* ConstantStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantStrings.swift; sourceTree = "<group>"; };
+		D437509A257E12FE005D3273 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D437509E257E1975005D3273 /* Storyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		DA10B528256254BF0010A819 /* gilroy-ultralightitalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gilroy-ultralightitalic.ttf"; sourceTree = "<group>"; };
 		DA10B52B2562559F0010A819 /* gilroy-medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gilroy-medium.ttf"; sourceTree = "<group>"; };
 		DA10B52E256260D30010A819 /* AchievementsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsCell.swift; sourceTree = "<group>"; };
@@ -129,6 +135,16 @@
 				4DDA028EAE8BB8F6FB54126E /* Pods-Reboot.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		D4375098257E129D005D3273 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				D4375093257E0475005D3273 /* ConstantStrings.swift */,
+				D437509A257E12FE005D3273 /* Constants.swift */,
+				D437509E257E1975005D3273 /* Storyboards.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		DA22C791255D544900865E23 /* RebootAddress */ = {
@@ -306,6 +322,7 @@
 				DAF67502255A6CC10033D861 /* LaunchScreen.storyboard */,
 				DAF67505255A6CC10033D861 /* Info.plist */,
 				DA8CAB6B255BFBF40064A198 /* Model.swift */,
+				D4375098257E129D005D3273 /* Constants */,
 				DACE56472570EC7D00F6683F /* Splash  */,
 				DA9ED919256D17100004471E /* TextField */,
 				DA9ED916256D16BC0004471E /* Login */,
@@ -531,13 +548,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA8CAB6C255BFBF40064A198 /* Model.swift in Sources */,
+				D437509B257E12FE005D3273 /* Constants.swift in Sources */,
 				DAF6751F255A86AD0033D861 /* RegisterController.swift in Sources */,
 				DA606761255E66D80074497D /* ReserveCell.swift in Sources */,
 				DA8CAB4E255BC0E40064A198 /* StudioController.swift in Sources */,
 				DAF67548255AC8470033D861 /* AboutUsController.swift in Sources */,
+				D437509F257E1975005D3273 /* Storyboards.swift in Sources */,
 				DA10B53E25626B6C0010A819 /* TrainingCell.swift in Sources */,
 				DA10B541256270950010A819 /* Footer.swift in Sources */,
 				DA6A66AD256BCFA1008C076C /* Extension.swift in Sources */,
+				D4375094257E0475005D3273 /* ConstantStrings.swift in Sources */,
 				DAF674FC255A6CBF0033D861 /* ViewController.swift in Sources */,
 				DA9DCC5A255DA19D00E3E8AB /* UserPageController.swift in Sources */,
 				DAF674F8255A6CBF0033D861 /* AppDelegate.swift in Sources */,

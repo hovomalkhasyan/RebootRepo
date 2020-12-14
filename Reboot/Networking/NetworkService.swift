@@ -32,9 +32,6 @@ public enum RequestResult<Value> {
 }
 
 class NetWorkService {
-    
-    private static let refreshTokenEndPoint = "auth/tokens/refresh/"
-    private static let baseUrl = "https://api.reboot.ru/api/ru/"
     private static let alamofireSessionMeneger = Alamofire.Session.default
     
     class func getHeaders() -> HTTPHeaders? {
@@ -46,7 +43,7 @@ class NetWorkService {
     }
     
     class func request<T: Codable>(url: String, method: HTTPMethod, param: Encodable?, encoding: JSONEncoding, complition: @escaping (RequestCompletion<T?>)) {
-        alamofireSessionMeneger.request(baseUrl + url, method: method, parameters: param?.asDictionary(), encoding: encoding, headers: getHeaders()).responseJSON { (resp) in
+        alamofireSessionMeneger.request(Constants.BASE_URl + url, method: method, parameters: param?.asDictionary(), encoding: encoding, headers: getHeaders()).responseJSON { (resp) in
             if resp.response?.statusCode == 401 {
                 refreshToken {
                     request(url: url, method: method, param: param, encoding: encoding, complition: complition)
@@ -98,7 +95,7 @@ class NetWorkService {
     private class func refreshToken(complition: @escaping () -> Void) {
         
         let model = RefreshToken(token:UserDefaults.standard.value(forKey: "token") as? String)
-        NetWorkService.request(url: refreshTokenEndPoint, method: .post, param: model, encoding: JSONEncoding.prettyPrinted) { (resp: RequestResult<LoginResponse?>) in
+        NetWorkService.request(url: Constants.REFRESH_TOKEN_ENDPOINT, method: .post, param: model, encoding: JSONEncoding.prettyPrinted) { (resp: RequestResult<LoginResponse?>) in
             switch resp {
             case .success(let data):
                 guard let data = data else {return}

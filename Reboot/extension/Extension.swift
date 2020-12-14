@@ -45,13 +45,6 @@ extension String {
         return dateFormatter.string(from: dt ?? Date())
     }
 
-//    func isValidPhone() -> Bool {
-//
-////        let phoneRegex = "((8|\7)-?)?\(?\d{3}\)?-?\d{1}-?\d{1}-?\d{1}-?\d{1}-?\d{1}-?\d{1}-?\d{1}"
-//        let valid = NSPredicate(format: "SELF MATCHES %@", phoneRegex).evaluate(with: phoneRegex)
-//        return valid
-//    }
-//
 }
 
 extension UIScrollView {
@@ -90,6 +83,7 @@ extension Encodable {
             return nil
         }
     }
+    
     func asJSON() -> String? {
         do {
             let jsonData = try JSONEncoder().encode(self)
@@ -99,4 +93,17 @@ extension Encodable {
             return nil
         }
     }
+    
+}
+
+extension UIViewController {
+    
+        func isValidEmail(_ email: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailPred.evaluate(with: email)
+        
+    }
+    
 }

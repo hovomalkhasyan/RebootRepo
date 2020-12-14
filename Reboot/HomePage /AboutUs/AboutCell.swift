@@ -50,3 +50,9 @@ class AboutCell: UITableViewCell {
     }
 
 }
+
+extension AboutCell {
+    public func setType(_ type: RebootAddressRowEnum){
+        textLb.text = type.title
+    }
+}

@@ -36,3 +36,9 @@ class StudioCell: UITableViewCell {
     }
 
 }
+
+extension StudioCell {
+    public func setStudioCellType(_ type: RebootStudioRowEnum) {
+        studioName.text = type.title
+    }
+}

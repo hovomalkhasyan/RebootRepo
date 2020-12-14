@@ -10,7 +10,6 @@ import UIKit
 import Alamofire
 
 class BaseViewController: UIViewController {
-    private let endPoint = "my/account/"
     
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var logo: UIImageView!
@@ -32,7 +31,7 @@ class BaseViewController: UIViewController {
     }
     
    func workoutsCount() {
-        NetWorkService.request(url: endPoint, method: .get, param: nil, encoding: JSONEncoding.prettyPrinted) { (resp: RequestResult<AccountResponse?>) in
+    NetWorkService.request(url: Constants.MY_ACCOUNT_ENDPOINT, method: .get, param: nil, encoding: JSONEncoding.prettyPrinted) { (resp: RequestResult<AccountResponse?>) in
             switch resp {
             case .success(let data):
                 guard let data = data else {return}

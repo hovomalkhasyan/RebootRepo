@@ -10,7 +10,6 @@ import Alamofire
 class ViewController: UIViewController {
     
     private var iconClick = true
-    private let endPoint = "auth/login/"
     
     @IBOutlet weak var emailTf: TextField!
     @IBOutlet weak var passwordTF: TextField!
@@ -92,20 +91,10 @@ class ViewController: UIViewController {
         
     }
     
-    private func isValidEmail(_ email: String) -> Bool {
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        
-        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        return emailPred.evaluate(with: email)
-        
-    }
-    
-   
-    
     private func loginRequest(_ completion: @escaping () -> Void) {
         
         let model =  LoginParameters(username: emailTf.text, password: passwordTF.text)
-        NetWorkService.request(url: endPoint, method: .post, param: model, encoding: JSONEncoding.prettyPrinted) { (resp: RequestResult<LoginResponse?>) in
+        NetWorkService.request(url: Constants.AUTH_LOGIN_ENDPOINT, method: .post, param: model, encoding: JSONEncoding.prettyPrinted) { (resp: RequestResult<LoginResponse?>) in
             completion()
             switch resp {
             case .success(let data):
