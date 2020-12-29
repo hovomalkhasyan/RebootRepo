@@ -9,6 +9,7 @@ import UIKit
 import Alamofire
 import Kingfisher
 
+//MARK: - SectionType
 enum SectionType: Int,CaseIterable {
     case reserve
     case achievement
@@ -28,6 +29,7 @@ enum SectionType: Int,CaseIterable {
 }
 
 class UserPageController: BaseViewController {
+    //MARK: - IBOutlets
     
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var userView: UIView!
@@ -39,6 +41,7 @@ class UserPageController: BaseViewController {
     private var loyality : LoyaltyLevels?
     private var object = [Object]()
     
+    //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         super.setbarView()
@@ -56,6 +59,9 @@ class UserPageController: BaseViewController {
         
     }
     
+}
+
+extension UserPageController {
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
@@ -68,9 +74,9 @@ class UserPageController: BaseViewController {
             switch resp {
             case .success(let model):
                 guard let m = model, let finalModel = m else { return }
-//                if let image = finalModel.avatar {
-//                    self.userAvatar.setImage(urlString: image, placeholder: nil, completed: nil)
-//                }
+                //                if let image = finalModel.avatar {
+                //                    self.userAvatar.setImage(urlString: image, placeholder: nil, completed: nil)
+                //                }
                 self.bonus.text = String(finalModel.bonusesBalance)
                 self.loyality = finalModel.loyaltyLevel
                 if finalModel.firstName != ""{
@@ -102,7 +108,7 @@ class UserPageController: BaseViewController {
                 print(error)
             }
         }
-       
+        
     }
     
     @objc func selectedItem() {
@@ -138,7 +144,7 @@ extension UserPageController: UITableViewDelegate, UITableViewDataSource {
         return SectionType.allCases.count
         
     }
-   
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let sectionType = SectionType(rawValue: indexPath.section)
         switch sectionType {
@@ -158,13 +164,13 @@ extension UserPageController: UITableViewDelegate, UITableViewDataSource {
                 return cell
                 
             }
-           
+            
         case .achievement:
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "AchievementsCell", for: indexPath) as! AchievementsCell
             cell.level.text = loyality?.title
             cell.cashBack.text = loyality?.description
-//            cell.levelImage.setImage(urlString: loyality?.iconInactive, placeholder: nil, completed: nil)
+            //            cell.levelImage.setImage(urlString: loyality?.iconInactive, placeholder: nil, completed: nil)
             cell.backgroundColor = UIColor(named: "Cellcolors")
             return cell
         case .info:
@@ -191,7 +197,7 @@ extension UserPageController: UITableViewDelegate, UITableViewDataSource {
             header.title.textColor = .clear
             return header
         }
-    
+        
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {

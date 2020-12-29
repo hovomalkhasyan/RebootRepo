@@ -13,7 +13,10 @@ class InfoController: BaseViewController {
     private let endPoint = "my/account/"
     var packages = [Packages]()
     
+    //MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
+    
+    //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
@@ -45,6 +48,7 @@ class InfoController: BaseViewController {
     
 }
 
+//MARK: - tableViewDelegate
 extension InfoController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if packages.count != 0 {

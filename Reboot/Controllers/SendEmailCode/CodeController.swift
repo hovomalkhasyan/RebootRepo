@@ -8,10 +8,17 @@
 import UIKit
 
 class CodeController: BaseViewController {
+    //MARK: - InitializeStoryboard
+    static func initializeStoryboard() -> CodeController {
+        return UIStoryboard(name: "Code", bundle: nil).instantiateViewController(withIdentifier: "CodeController") as! CodeController
+        
+    }
     
+    //MARK:- IBOutlets
     @IBOutlet weak var codeTF: TextField!
     @IBOutlet weak var messageLbl: UILabel!
     
+    //MARK:- LifeSycle
     override func viewDidLoad() {
         super.viewDidLoad()
         super.setupBackBtnColor()
@@ -33,10 +40,32 @@ class CodeController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setupNavigationBar()
+        super.hideNavBar()
         
     }
     
+    //MARK:- IBActions
+    @IBAction func confirmeAction(_ sender: UIButton) {
+        UserDefaults.standard.removeObject(forKey: "email")
+        navigationController?.pushViewController(SavePasswordController.initializeStoryboard(), animated: true)
+        
+    }
+    
+    @IBAction func toSignIn(_ sender: UIButton) {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
+    @IBAction func backBtn(_ sender: UIButton) {
+        let vc = UIStoryboard(name: "ForgotPassword", bundle: nil).instantiateViewController(withIdentifier: "ForgotPassController") as! ForgotPassController
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+}
+
+//MARK:- Extension
+extension CodeController {
     private func setupMessageLbl() {
         guard let email = UserDefaults.standard.string(forKey: "email") else {return}
         messageLbl.text = "Введите код, который мы отправили по адресу \(email)"
@@ -54,11 +83,6 @@ class CodeController: BaseViewController {
         
     }
     
-    private func setupNavigationBar() {
-        self.navigationController?.isNavigationBarHidden = true
-        
-    }
-    
     private func setupTextTF() {
         codeTF.layer.cornerRadius = 10
         codeTF.layer.borderWidth = 1
@@ -66,22 +90,4 @@ class CodeController: BaseViewController {
         
     }
     
-    
-    @IBAction func confirmeAction(_ sender: UIButton) {
-        UserDefaults.standard.removeObject(forKey: "email")
-        let vc = UIStoryboard(name: "SavePassword", bundle: nil).instantiateViewController(withIdentifier: "SavePasswordController") as! SavePasswordController
-        navigationController?.pushViewController(vc, animated: true)
-        
-    }
-    
-    @IBAction func toSignIn(_ sender: UIButton) {
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as! ViewController
-        navigationController?.pushViewController(vc, animated: true)
-        
-    }
-    
-    @IBAction func backBtn(_ sender: UIButton) {
-        let vc = UIStoryboard(name: "ForgotPassword", bundle: nil).instantiateViewController(withIdentifier: "ForgotPassController") as! ForgotPassController
-        navigationController?.pushViewController(vc, animated: true)
-    }
 }

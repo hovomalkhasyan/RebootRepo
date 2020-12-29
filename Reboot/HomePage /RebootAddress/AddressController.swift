@@ -10,7 +10,8 @@ import YandexMapKit
 import SafariServices
 
 class AddressController: BaseViewController {
-    
+     
+    //MARK: - IBOutlets
     @IBOutlet weak var scroll: UIScrollView!
     @IBOutlet weak var swMapImage: UIImageView!
     @IBOutlet weak var mapImage: UIImageView!
@@ -48,6 +49,7 @@ class AddressController: BaseViewController {
   ]
 """
     
+    //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         super.setupGesture()
@@ -61,66 +63,7 @@ class AddressController: BaseViewController {
         
     }
     
-    private func setupYKMap() {
-        map.mapWindow.map.move(
-            with: YMKCameraPosition.init(target: YMKPoint(latitude: 55.731846, longitude: 37.644379), zoom: zoom, azimuth: 0, tilt: 0),
-            animationType: YMKAnimation(type: YMKAnimationType.smooth, duration: 5),
-            cameraCallback: nil)
-        map.addSubview(btnView)
-        map.mapWindow.map.setMapStyleWithStyle(style)
-        map.isHidden = true
-        map.alpha = 0
-        secondMap.mapWindow.map.move(with: YMKCameraPosition.init(target: YMKPoint(latitude: 55.736160, longitude: 37.585415), zoom: zoom, azimuth: 0, tilt: 0),
-                                     animationType: YMKAnimation(type: YMKAnimationType.smooth, duration: 5),
-                                     cameraCallback: nil)
-        secondMap.mapWindow.map.setMapStyleWithStyle(style)
-        secondMap.addSubview(btnView2)
-        secondMap.isHidden = true
-        map.alpha = 0
-    }
-    
-    private func addMapObjects() {
-        if let image = UIImage(named: "MAp") {
-            let imageView = UIImageView(image: image)
-            imageView.bounds.size = CGSize(width: 50, height: 50)
-            imageView.backgroundColor = .clear
-            
-            YKmap.mapObjects.addPlacemark(with: YMKPoint(latitude: 55.731846, longitude: 37.644379), view: .init(uiView: imageView))
-            secondYKMap.mapObjects.addPlacemark(with: YMKPoint(latitude: 55.736160, longitude: 37.585415), view: .init(uiView: imageView))
-        }
-        
-    }
-    
-    override func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
-        return .none
-        
-    }
-    
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        if #available(iOS 13.0, *) {
-            if (traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection)) {
-                scheduleBtn.layer.borderColor = UIColor(named: "borderColor")?.cgColor
-                scheduleBtnLast.layer.borderColor = UIColor(named: "borderColor")?.cgColor
-            }
-        }
-        
-    }
-    
-    private func setupBtn() {
-        scheduleBtnLast.layer.borderWidth = 1
-        scheduleBtn.layer.borderWidth = 1
-        scheduleBtn.layer.borderColor = UIColor(named: "borderColor")?.cgColor
-        scheduleBtnLast.layer.borderColor = UIColor(named: "borderColor")?.cgColor
-        scheduleBtn.layer.cornerRadius = 2
-        scheduleBtnLast.layer.cornerRadius = 2
-        
-    }
-    
-    private func setupWpCallBtn() {
-        wpCall.setImageColor(color: UIColor(named: "Cellcolors")!, for: .normal)
-        wpcallBtn.setImageColor(color: UIColor(named: "Cellcolors")!, for: .normal)
-    }
-    
+    //MARK: - IBActions
     @IBAction func zoomBtn(_ sender: UIButton) {
         switch sender.tag {
         case 0:
@@ -216,4 +159,67 @@ class AddressController: BaseViewController {
     
 }
 
+//MARK: - Extension
+extension AddressController {
+    private func setupYKMap() {
+        map.mapWindow.map.move(
+            with: YMKCameraPosition.init(target: YMKPoint(latitude: 55.731846, longitude: 37.644379), zoom: zoom, azimuth: 0, tilt: 0),
+            animationType: YMKAnimation(type: YMKAnimationType.smooth, duration: 5),
+            cameraCallback: nil)
+        map.addSubview(btnView)
+        map.mapWindow.map.setMapStyleWithStyle(style)
+        map.isHidden = true
+        map.alpha = 0
+        secondMap.mapWindow.map.move(with: YMKCameraPosition.init(target: YMKPoint(latitude: 55.736160, longitude: 37.585415), zoom: zoom, azimuth: 0, tilt: 0),
+                                     animationType: YMKAnimation(type: YMKAnimationType.smooth, duration: 5),
+                                     cameraCallback: nil)
+        secondMap.mapWindow.map.setMapStyleWithStyle(style)
+        secondMap.addSubview(btnView2)
+        secondMap.isHidden = true
+        map.alpha = 0
+    }
+    
+    private func addMapObjects() {
+        if let image = UIImage(named: "MAp") {
+            let imageView = UIImageView(image: image)
+            imageView.bounds.size = CGSize(width: 50, height: 50)
+            imageView.backgroundColor = .clear
+            
+            YKmap.mapObjects.addPlacemark(with: YMKPoint(latitude: 55.731846, longitude: 37.644379), view: .init(uiView: imageView))
+            secondYKMap.mapObjects.addPlacemark(with: YMKPoint(latitude: 55.736160, longitude: 37.585415), view: .init(uiView: imageView))
+        }
+        
+    }
+    
+    override func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .none
+        
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        if #available(iOS 13.0, *) {
+            if (traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection)) {
+                scheduleBtn.layer.borderColor = UIColor(named: "borderColor")?.cgColor
+                scheduleBtnLast.layer.borderColor = UIColor(named: "borderColor")?.cgColor
+            }
+        }
+        
+    }
+    
+    private func setupBtn() {
+        scheduleBtnLast.layer.borderWidth = 1
+        scheduleBtn.layer.borderWidth = 1
+        scheduleBtn.layer.borderColor = UIColor(named: "borderColor")?.cgColor
+        scheduleBtnLast.layer.borderColor = UIColor(named: "borderColor")?.cgColor
+        scheduleBtn.layer.cornerRadius = 2
+        scheduleBtnLast.layer.cornerRadius = 2
+        
+    }
+    
+    private func setupWpCallBtn() {
+        wpCall.setImageColor(color: UIColor(named: "Cellcolors")!, for: .normal)
+        wpcallBtn.setImageColor(color: UIColor(named: "Cellcolors")!, for: .normal)
+    }
+    
+}
 

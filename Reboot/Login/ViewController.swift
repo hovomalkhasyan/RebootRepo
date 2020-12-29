@@ -7,16 +7,17 @@
 
 import UIKit
 import Alamofire
-class ViewController: UIViewController {
+class ViewController: BaseViewController {
     
     private var iconClick = true
     
+    //MARK: - IBOutlets
     @IBOutlet weak var emailTf: TextField!
     @IBOutlet weak var passwordTF: TextField!
     @IBOutlet weak var loginBtn: UIButton!
- 
     @IBOutlet weak var passwordShowBtn: UIButton!
-
+    
+    //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTextFields()
@@ -24,32 +25,79 @@ class ViewController: UIViewController {
         
     }
     
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setupNavigationController()
-      
+        super.hideNavBar()
+        
     }
-    
-    
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        
-                passwordTF.layer.borderColor = UIColor(named: "borderColor")?.cgColor
-                emailTf.layer.borderColor = UIColor(named: "borderColor")?.cgColor
-            }
- 
-    
-    private func setupNavigationController() {
-        navigationController?.isNavigationBarHidden = true
+        passwordTF.layer.borderColor = UIColor(named: "borderColor")?.cgColor
+        emailTf.layer.borderColor = UIColor(named: "borderColor")?.cgColor
         
     }
+    
+    //MARK: - IBActions
+    @IBAction func showPasswordAction(_ sender: UIButton) {
+        if iconClick  {
+            passwordTF.isSecureTextEntry = false
+            passwordShowBtn.setImage(UIImage(named: "eye"), for: .normal)
+            passwordShowBtn.setImageColor(color: UIColor(named: "borderColor")!, for: .normal)
+            
+        } else {
+            passwordTF.isSecureTextEntry = true
+            passwordShowBtn.setImage(UIImage(named: "Eye 02"), for: .normal)
+            passwordShowBtn.setImageColor(color: UIColor(named: "borderColor")!, for: .normal)
+            
+        }
+        
+        iconClick = !iconClick
+        
+    }
+    
+    @IBAction func signInAction(_ sender: UIButton) {
+        if CheckInternet.Connection() {
+            self.view.endEditing(true)
+            if passwordTF.text == "" ||  emailTf.text == "" {
+                showAlert(title: "Заполните все поля", message: "")
+            }else {
+                guard let emails = emailTf.text else {return}
+                if isValidEmail(emails) == false {
+                    showAlert(title: "Електронная почта не подтверждена", message: "")
+                } else {
+                    sender.isUserInteractionEnabled = false
+                    loginRequest {
+                        sender.isUserInteractionEnabled = true
+                    }
+                }
+            }
+        }
+        
+    }
+    
+    @IBAction func registerAction(_ sender: UIButton) {
+        switch sender.tag {
+        case 0:
+            navigationController?.pushViewController(RegisterController.initializeStoryboard(), animated: true)
+        case 1:
+            navigationController?.pushViewController(ForgotPassController.initializeStoryboard(), animated: true)
+        default:
+            break
+            
+        }
+    }
+    
+}
+
+//MARK: - Extension
+
+extension ViewController {
     
     private func setupTextFields() {
         emailTf.delegate = self
         passwordTF.delegate = self
         passwordTF.isSecureTextEntry = true
-
+        
     }
     
     private func setupTf() {
@@ -69,25 +117,11 @@ class ViewController: UIViewController {
         
     }
     
-    @objc private func dismissKeyboard() {
-        view.endEditing(true)
-        
-    }
-    
-    @IBAction func showPasswordAction(_ sender: UIButton) {
-        if iconClick  {
-            passwordTF.isSecureTextEntry = false
-            passwordShowBtn.setImage(UIImage(named: "eye"), for: .normal)
-            passwordShowBtn.setImageColor(color: UIColor(named: "borderColor")!, for: .normal)
-           
-        } else {
-            passwordTF.isSecureTextEntry = true
-            passwordShowBtn.setImage(UIImage(named: "Eye 02"), for: .normal)
-            passwordShowBtn.setImageColor(color: UIColor(named: "borderColor")!, for: .normal)
-            
-        }
-        
-        iconClick = !iconClick
+    private func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okBtn = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(okBtn)
+        present(alert, animated: true, completion: nil)
         
     }
     
@@ -106,72 +140,34 @@ class ViewController: UIViewController {
                 print(error)
             }
         }
+        
+    }
+    
+    @objc private func dismissKeyboard() {
+        view.endEditing(true)
+        
+    }
 
-    }
-    
-    @IBAction func signInAction(_ sender: UIButton) {
-        if CheckInternet.Connection() {
-            self.view.endEditing(true)
-            if passwordTF.text == "" ||  emailTf.text == "" {
-                showAlert(title: "Заполните все поля", message: "")
-            }else {
-                guard let emails = emailTf.text else {return}
-                if isValidEmail(emails) == false {
-                    showAlert(title: "Електронная почта не подтверждена", message: "")
-                } else {
-                    sender.isUserInteractionEnabled = false
-                    loginRequest {
-                        sender.isUserInteractionEnabled = true
-                    }
-                    
-                }
-            }
-        }
-        
-    }
-    
-    private func showAlert(title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okBtn = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        alert.addAction(okBtn)
-        present(alert, animated: true, completion: nil)
-        
-    }
-    
-    @IBAction func registerAction(_ sender: UIButton) {
-        switch sender.tag {
-        case 0:
-            let vc = UIStoryboard(name: "Register", bundle: nil).instantiateViewController(withIdentifier: "RegisterController") as! RegisterController
-            navigationController?.pushViewController(vc, animated: true)
-        case 1:
-            let vc = UIStoryboard(name: "ForgotPassword", bundle: nil).instantiateViewController(withIdentifier: "ForgotPassController") as! ForgotPassController
-            navigationController?.pushViewController(vc, animated: true)
-        default:
-            break
-        }
-    }
-    
 }
 
-
-
+//MARK: - TextFieldDelegate
 extension ViewController: UITextFieldDelegate {
-
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
-
+        
         case emailTf:
             passwordTF.becomeFirstResponder()
-
+            
         case passwordTF:
             UIView.animate(withDuration: 1) {
                 self.view.endEditing(true)
             }
-
+            
         default:
             break
         }
-
+        
         return true
     }
     
@@ -182,10 +178,6 @@ extension ViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         return true
     }
-
+    
 }
 
-
-struct LoginParameters: Codable {
-    let username, password: String?
-}

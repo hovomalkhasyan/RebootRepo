@@ -9,7 +9,13 @@ import UIKit
 import Alamofire
 
 class RegisterController: BaseViewController {
+    //MARK: - InitializeStoryboard
+    static func initializeStoryboard() -> RegisterController {
+        return UIStoryboard(name: "Register", bundle: nil).instantiateViewController(withIdentifier: "RegisterController") as! RegisterController
+        
+    }
     
+    //MARK: - IBOutlets
     @IBOutlet weak var registerStack: UIStackView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var password: UITextField!
@@ -22,6 +28,7 @@ class RegisterController: BaseViewController {
     private let datePicker = UIDatePicker()
     private let toolbar = UIToolbar()
     
+    //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTeftFields()
@@ -33,23 +40,62 @@ class RegisterController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setupNavigationController()
+        super.hideNavBar()
         
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-       if #available(iOS 13.0, *) {
-           if (traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection)) {
+        if #available(iOS 13.0, *) {
+            if (traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection)) {
                 setupStackView()
-           }
-       }
+            }
+        }
         
     }
     
+    //MARK: - IBActions
+    @IBAction func register(_ sender: UIButton) {
+        self.view.endEditing(true)
+        if CheckInternet.Connection() {
+            if email.text == "" || password.text == "" || phoneNumber.text == "" {
+                showAlert(title: "Заполните обязательные поля", message: "")
+            } else {
+                guard let emails = email.text else {return}
+                if isValidEmail(emails) == false {
+                    showAlert(title: "Електронная почта не подтверждена", message: "")
+                } else  {
+                    guard let password = password.text?.count else {return}
+                    if password < 8 {
+                        showAlert(title: "Пороль менее 8", message: "")
+                    } else {
+                        sender.isUserInteractionEnabled = false
+                        registerRequest {
+                            sender.isUserInteractionEnabled = true
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
     
+    @IBAction func toSignIn(_ sender: UIButton) {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        navigationController?.pushViewController(vc, animated: true)
+        
+    }
     
+    @IBAction func backBtnAction(_ sender: UIButton) {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+}
+
+//MARK: - Extension
+extension RegisterController {
     func setupStackView() {
-            let color = UIColor(named: "borderColor")
+        let color = UIColor(named: "borderColor")
         for v in registerStack.subviews {
             v.layer.cornerRadius = 10
             v.layer.borderWidth = 1
@@ -58,7 +104,6 @@ class RegisterController: BaseViewController {
         }
         
     }
-    
     
     private func setupBirthDayTf() {
         
@@ -82,11 +127,6 @@ class RegisterController: BaseViewController {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-dd-MM"
         birthDay.text = formatter.string(from: datePicker.date)
-        
-    }
-    
-    private func setupNavigationController() {
-        navigationController?.isNavigationBarHidden = true
         
     }
     
@@ -139,46 +179,9 @@ class RegisterController: BaseViewController {
         
     }
     
-    
-    @IBAction func register(_ sender: UIButton) {
-        self.view.endEditing(true)
-        if CheckInternet.Connection() {
-            if email.text == "" || password.text == "" || phoneNumber.text == "" {
-                showAlert(title: "Заполните обязательные поля", message: "")
-            } else {
-                guard let emails = email.text else {return}
-                if isValidEmail(emails) == false {
-                    showAlert(title: "Електронная почта не подтверждена", message: "")
-                } else  {
-                    guard let password = password.text?.count else {return}
-                    if password < 8 {
-                        showAlert(title: "Пороль менее 8", message: "")
-                    } else {
-                        sender.isUserInteractionEnabled = false
-                        registerRequest {
-                            sender.isUserInteractionEnabled = true
-                        }
-                    }
-                }
-            }
-        }
-    
-    }
-    
-    
-    @IBAction func toSignIn(_ sender: UIButton) {
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as! ViewController
-        navigationController?.pushViewController(vc, animated: true)
-        
-    }
-    
-    @IBAction func backBtnAction(_ sender: UIButton) {
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as! ViewController
-        navigationController?.pushViewController(vc, animated: true)
-    }
-    
 }
 
+//MARK: TextFieldDelegate
 extension RegisterController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -219,9 +222,4 @@ extension RegisterController: UITextFieldDelegate {
         return true
     }
     
-}
-
-
-struct RegisterParams: Codable {
-    let birth_date, email, first_name, occupation, password, phone : String?
 }

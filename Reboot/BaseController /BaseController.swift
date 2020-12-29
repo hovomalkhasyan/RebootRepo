@@ -10,13 +10,16 @@ import UIKit
 import Alamofire
 
 class BaseViewController: UIViewController {
-    
+    //MARK: - IBoutlets
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var logo: UIImageView!
     @IBOutlet weak var barView: UIView!
     @IBOutlet weak var infoBtn: UIButton!
     @IBOutlet weak var logOutBtn: UIButton!
     
+    func hideNavBar() {
+        navigationController?.isNavigationBarHidden = true
+    }
     
     func setupDarkMode() {
         logOutBtn.setImage(UIImage(named:  "user"), for: .normal)
@@ -48,7 +51,6 @@ class BaseViewController: UIViewController {
         }
     
     }
-
     
     func setupGesture() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapped))

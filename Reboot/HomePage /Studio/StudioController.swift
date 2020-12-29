@@ -11,8 +11,11 @@ import SafariServices
 class StudioController: BaseViewController {
     
     private let cells: [RebootStudioRowEnum] = RebootStudioRowEnum.allCases
-    
+  
+    //MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
+ 
+    //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         super.setbarView()
@@ -31,23 +34,24 @@ class StudioController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setupNavigation()
+        super.hideNavBar()
         
     }
+    
+}
+
+//MARK: - Extension 
+extension StudioController {
     
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         
     }
-
-    private func setupNavigation() {
-        navigationController?.isNavigationBarHidden = true
-        
-    }
     
 }
-
+    
+//MARK: - TAbleViewDataSource
 extension StudioController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cells.count
@@ -71,6 +75,7 @@ extension StudioController: UITableViewDelegate, UITableViewDataSource {
     
 }
 
+//MARK: - RebootStudioEnum
 enum RebootStudioRowEnum: String, CaseIterable {
     case rebootEast
     case rebootSW

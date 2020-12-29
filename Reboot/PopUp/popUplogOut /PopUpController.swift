@@ -9,6 +9,7 @@ import UIKit
 import SafariServices
 
 class PopUpController: UIViewController {
+    private let cells: [RebootAddressRowEnum] = RebootAddressRowEnum.allCases
     
     private let infoArray = ["Бронирования", "Покупки", "Личные Данные", "Пригласи Друга", "План Тренировок", "Выйти"]
     
@@ -83,4 +84,5 @@ extension PopUpController: UITableViewDelegate, UITableViewDataSource {
     }
 
 }
+
 

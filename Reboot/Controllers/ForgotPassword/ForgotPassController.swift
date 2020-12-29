@@ -8,8 +8,16 @@
 import UIKit
 
 class ForgotPassController: BaseViewController {
-
+    //MARK: - InitializeStoryboard
+    static func initializeStoryboard() -> ForgotPassController {
+        return UIStoryboard(name: "ForgotPassword", bundle: nil).instantiateViewController(withIdentifier: "ForgotPassController") as! ForgotPassController
+        
+    }
+    
+    //MARK:- IBOutlets
     @IBOutlet weak var emailTf: TextField!
+    
+    //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         super.setupBackBtnColor()
@@ -20,19 +28,47 @@ class ForgotPassController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setupNavigation()
+        super.hideNavBar()
         
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-       if #available(iOS 13.0, *) {
-           if (traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection)) {
-            emailTf.layer.borderColor = UIColor(named: "borderColor")?.cgColor
-            
-           }
+        if #available(iOS 13.0, *) {
+            if (traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection)) {
+                emailTf.layer.borderColor = UIColor(named: "borderColor")?.cgColor
+                
+            }
         }
-
+        
     }
+    
+    //MARK: - IBAtions
+    @IBAction func nextAction(_ sender: UIButton) {
+        guard let email = emailTf.text else {return}
+        if isValidEmail(email) == false {
+            showAlert(title: "Електронная почта не подтверждена", message: "")
+        } else {
+            UserDefaults.standard.setValue(email, forKey: "email")
+            navigationController?.pushViewController(CodeController.initializeStoryboard(), animated: true)
+        }
+        
+    }
+    
+    @IBAction func toSignIn(_ sender: UIButton) {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
+    @IBAction func backBtnAction(_ sender: UIButton) {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+}
+
+//MARK: - Extension
+extension ForgotPassController {
     
     private func tapGesture() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
@@ -44,35 +80,11 @@ class ForgotPassController: BaseViewController {
         view.endEditing(true)
         
     }
-//
-//   private func isValidEmail(_ email: String) -> Bool {
-//        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-//
-//        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-//        return emailPred.evaluate(with: email)
-//    }
     
     private func setupEmailTf() {
         emailTf.layer.cornerRadius = 10
         emailTf.layer.borderWidth = 1
         emailTf.layer.borderColor = UIColor(named: "borderColor")?.cgColor
-        
-    }
-    
-    private func setupNavigation() {
-        self.navigationController?.isNavigationBarHidden = true
-        
-    }
-    
-    @IBAction func nextAction(_ sender: UIButton) {
-        guard let email = emailTf.text else {return}
-        if isValidEmail(email) == false {
-            showAlert(title: "Електронная почта не подтверждена", message: "")
-        } else {
-            UserDefaults.standard.setValue(email, forKey: "email")
-            let vc = UIStoryboard(name: "Code", bundle: nil).instantiateViewController(withIdentifier: "CodeController") as! CodeController
-            navigationController?.pushViewController(vc, animated: true)
-        }
         
     }
     
@@ -84,14 +96,4 @@ class ForgotPassController: BaseViewController {
         
     }
     
-    @IBAction func toSignIn(_ sender: UIButton) {
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as! ViewController
-        navigationController?.pushViewController(vc, animated: true)
-   
-    }
-    
-    @IBAction func backBtnAction(_ sender: UIButton) {
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as! ViewController
-        navigationController?.pushViewController(vc, animated: true)
-    }
 }

@@ -10,7 +10,6 @@
 		754FDCE37C528C2B72162BA9 /* Pods_Reboot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89583B5DF1909556D9940ECA /* Pods_Reboot.framework */; };
 		D4375094257E0475005D3273 /* ConstantStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4375093257E0475005D3273 /* ConstantStrings.swift */; };
 		D437509B257E12FE005D3273 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D437509A257E12FE005D3273 /* Constants.swift */; };
-		D437509F257E1975005D3273 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = D437509E257E1975005D3273 /* Storyboards.swift */; };
 		DA10B529256254BF0010A819 /* gilroy-ultralightitalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DA10B528256254BF0010A819 /* gilroy-ultralightitalic.ttf */; };
 		DA10B52C2562559F0010A819 /* gilroy-medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DA10B52B2562559F0010A819 /* gilroy-medium.ttf */; };
 		DA10B52F256260D30010A819 /* AchievementsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA10B52E256260D30010A819 /* AchievementsCell.swift */; };
@@ -57,6 +56,8 @@
 		DAF6753F255AC4620033D861 /* SavePassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAF6753E255AC4620033D861 /* SavePassword.storyboard */; };
 		DAF67548255AC8470033D861 /* AboutUsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF67547255AC8470033D861 /* AboutUsController.swift */; };
 		DAF6754C255AC87C0033D861 /* AboutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF6754B255AC87C0033D861 /* AboutCell.swift */; };
+		FAC3D3BF259B4EC600C00270 /* LoginRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3D3BE259B4EC600C00270 /* LoginRequestModel.swift */; };
+		FAC3D3E4259B535500C00270 /* RegisterRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3D3E3259B535500C00270 /* RegisterRequestModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,7 +65,6 @@
 		89583B5DF1909556D9940ECA /* Pods_Reboot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reboot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4375093257E0475005D3273 /* ConstantStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantStrings.swift; sourceTree = "<group>"; };
 		D437509A257E12FE005D3273 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		D437509E257E1975005D3273 /* Storyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		DA10B528256254BF0010A819 /* gilroy-ultralightitalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gilroy-ultralightitalic.ttf"; sourceTree = "<group>"; };
 		DA10B52B2562559F0010A819 /* gilroy-medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gilroy-medium.ttf"; sourceTree = "<group>"; };
 		DA10B52E256260D30010A819 /* AchievementsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsCell.swift; sourceTree = "<group>"; };
@@ -114,6 +114,8 @@
 		DAF67547255AC8470033D861 /* AboutUsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsController.swift; sourceTree = "<group>"; };
 		DAF6754B255AC87C0033D861 /* AboutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCell.swift; sourceTree = "<group>"; };
 		DEF704F3B785D1EC47CB3B42 /* Pods-Reboot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reboot.debug.xcconfig"; path = "Target Support Files/Pods-Reboot/Pods-Reboot.debug.xcconfig"; sourceTree = "<group>"; };
+		FAC3D3BE259B4EC600C00270 /* LoginRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequestModel.swift; sourceTree = "<group>"; };
+		FAC3D3E3259B535500C00270 /* RegisterRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequestModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,7 +144,6 @@
 			children = (
 				D4375093257E0475005D3273 /* ConstantStrings.swift */,
 				D437509A257E12FE005D3273 /* Constants.swift */,
-				D437509E257E1975005D3273 /* Storyboards.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -254,6 +255,7 @@
 			children = (
 				DAF674FD255A6CBF0033D861 /* Main.storyboard */,
 				DAF674FB255A6CBF0033D861 /* ViewController.swift */,
+				FAC3D3BE259B4EC600C00270 /* LoginRequestModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -343,6 +345,7 @@
 			children = (
 				DAF6751B255A86830033D861 /* Register.storyboard */,
 				DAF6751E255A86AD0033D861 /* RegisterController.swift */,
+				FAC3D3E3259B535500C00270 /* RegisterRequestModel.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -553,7 +556,7 @@
 				DA606761255E66D80074497D /* ReserveCell.swift in Sources */,
 				DA8CAB4E255BC0E40064A198 /* StudioController.swift in Sources */,
 				DAF67548255AC8470033D861 /* AboutUsController.swift in Sources */,
-				D437509F257E1975005D3273 /* Storyboards.swift in Sources */,
+				FAC3D3BF259B4EC600C00270 /* LoginRequestModel.swift in Sources */,
 				DA10B53E25626B6C0010A819 /* TrainingCell.swift in Sources */,
 				DA10B541256270950010A819 /* Footer.swift in Sources */,
 				DA6A66AD256BCFA1008C076C /* Extension.swift in Sources */,
@@ -567,6 +570,7 @@
 				DA10B54A2562A5EA0010A819 /* ReservePageCell.swift in Sources */,
 				DA10B535256267CA0010A819 /* CollectionCell.swift in Sources */,
 				DA606765255E744A0074497D /* BaseController.swift in Sources */,
+				FAC3D3E4259B535500C00270 /* RegisterRequestModel.swift in Sources */,
 				DACE564C2570ECAB00F6683F /* SplashController.swift in Sources */,
 				DA22C794255D549000865E23 /* AddressController.swift in Sources */,
 				DA10B52F256260D30010A819 /* AchievementsCell.swift in Sources */,

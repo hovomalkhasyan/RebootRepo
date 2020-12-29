@@ -6,7 +6,8 @@ target 'Reboot' do
   use_frameworks!
 	pod 'Alamofire', '~> 5.2'
 	pod ‘Kingfisher’, ‘~> 5.0’
-	 pod ‘YandexMapKit’, ’3.4’
+	pod ‘YandexMapKit’, ’3.4’
+	
   # Pods for Reboot
 
 end
