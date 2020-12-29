@@ -56,5 +56,38 @@ enum ConstantStrings {
     static var REBOOT_ADDRESS_SW: String {
         return "https://reboot.ru/registration?studio=reboot-sw&day"
     }
+    static var REBOOT_BOOKINGS: String {
+        return "Бронирования"
+    }
+    static var REBOOT_PURCHASES: String {
+        return "Покупки"
+    }
+    static var PERSONAL_INFORMATION: String {
+        return "Личные Данные"
+    }
+    static var INVITE_A_FRIEND: String {
+        return "Пригласи Друга"
+    }
+    static var TRAINING_PLAN: String {
+        return "План Тренировок"
+    }
+    static var LOG_OUT:String {
+        return "Выйти"
+    }
+    static var REBOOT_BOOKINGS_URL: String {
+        return "https://reboot.ru/account/reservations"
+    }
+    static var REBOOT_PURCHASES_URL: String {
+        return  "https://reboot.ru/account/packages"
+    }
+    static var PERSONAL_INFORMATION_URL:String {
+        return   "https://reboot.ru/account"
+    }
+    static var INVITE_A_FRIEND_URL: String {
+        return "https://reboot.ru/account/referrals"
+    }
+    static var TRAINING_PLAN_URL: String {
+        "https://reboot.ru/account/training-plan"
+    }
 }
 

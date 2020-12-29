@@ -23,3 +23,8 @@ class PopCell: UITableViewCell {
 
 }
 
+extension PopCell {
+    public func setPopUpType(_ type: RebootPopUp){
+        popLb.text = type.title
+    }
+}
