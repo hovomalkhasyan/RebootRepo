@@ -8,7 +8,7 @@
 import UIKit
 import Alamofire
 
-class RegisterController: BaseViewController {
+class RegisterController: NavBarViewController {
     //MARK: - InitializeStoryboard
     static func initializeStoryboard() -> RegisterController {
         return UIStoryboard(name: "Register", bundle: nil).instantiateViewController(withIdentifier: "RegisterController") as! RegisterController
@@ -31,11 +31,13 @@ class RegisterController: BaseViewController {
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        super.rootBtnSetup()
+        super.zeroShadowOpacityNavBar()
         setupTeftFields()
         tapGesture()
         setupBirthDayTf()
         setupStackView()
-        
+       
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -79,34 +81,22 @@ class RegisterController: BaseViewController {
         
     }
     
-    @IBAction func toSignIn(_ sender: UIButton) {
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as! ViewController
-        navigationController?.pushViewController(vc, animated: true)
-        
-    }
-    
-    @IBAction func backBtnAction(_ sender: UIButton) {
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as! ViewController
-        navigationController?.pushViewController(vc, animated: true)
-    }
-    
 }
 
 //MARK: - Extension
 extension RegisterController {
     func setupStackView() {
         let color = UIColor(named: "borderColor")
-        for v in registerStack.subviews {
-            v.layer.cornerRadius = 10
-            v.layer.borderWidth = 1
+        for sub in registerStack.subviews {
+            sub.layer.cornerRadius = 10
+            sub.layer.borderWidth = 1
             guard let borderColor = color else {return}
-            v.layer.borderColor = borderColor.cgColor
+            sub.layer.borderColor = borderColor.cgColor
         }
         
     }
     
     private func setupBirthDayTf() {
-        
         birthDay.inputView = datePicker
         datePicker.datePickerMode = .date
         toolbar.sizeToFit()
@@ -176,7 +166,6 @@ extension RegisterController {
                 print(error)
             }
         }
-        
     }
     
 }

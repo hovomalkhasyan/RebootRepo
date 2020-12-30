@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ForgotPassController: BaseViewController {
+class ForgotPassController: NavBarViewController {
     //MARK: - InitializeStoryboard
     static func initializeStoryboard() -> ForgotPassController {
         return UIStoryboard(name: "ForgotPassword", bundle: nil).instantiateViewController(withIdentifier: "ForgotPassController") as! ForgotPassController
@@ -20,10 +20,11 @@ class ForgotPassController: BaseViewController {
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        super.setupBackBtnColor()
+        super.zeroShadowOpacityNavBar()
+        super.rootBtnSetup()
         setupEmailTf()
         tapGesture()
-        
+       
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,17 +53,6 @@ class ForgotPassController: BaseViewController {
             navigationController?.pushViewController(CodeController.initializeStoryboard(), animated: true)
         }
         
-    }
-    
-    @IBAction func toSignIn(_ sender: UIButton) {
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as! ViewController
-        navigationController?.pushViewController(vc, animated: true)
-        
-    }
-    
-    @IBAction func backBtnAction(_ sender: UIButton) {
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as! ViewController
-        navigationController?.pushViewController(vc, animated: true)
     }
     
 }

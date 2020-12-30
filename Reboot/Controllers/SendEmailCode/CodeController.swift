@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CodeController: BaseViewController {
+class CodeController: NavBarViewController {
     //MARK: - InitializeStoryboard
     static func initializeStoryboard() -> CodeController {
         return UIStoryboard(name: "Code", bundle: nil).instantiateViewController(withIdentifier: "CodeController") as! CodeController
@@ -21,11 +21,12 @@ class CodeController: BaseViewController {
     //MARK:- LifeSycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        super.setupBackBtnColor()
+        super.rootBtnSetup()
+        super.zeroShadowOpacityNavBar()
         setupTextTF()
         tapGesture()
         setupMessageLbl()
-        
+       
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -49,17 +50,6 @@ class CodeController: BaseViewController {
         UserDefaults.standard.removeObject(forKey: "email")
         navigationController?.pushViewController(SavePasswordController.initializeStoryboard(), animated: true)
         
-    }
-    
-    @IBAction func toSignIn(_ sender: UIButton) {
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as! ViewController
-        navigationController?.pushViewController(vc, animated: true)
-        
-    }
-    
-    @IBAction func backBtn(_ sender: UIButton) {
-        let vc = UIStoryboard(name: "ForgotPassword", bundle: nil).instantiateViewController(withIdentifier: "ForgotPassController") as! ForgotPassController
-        navigationController?.pushViewController(vc, animated: true)
     }
     
 }

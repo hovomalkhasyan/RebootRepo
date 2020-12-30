@@ -56,6 +56,7 @@
 		DAF6753F255AC4620033D861 /* SavePassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAF6753E255AC4620033D861 /* SavePassword.storyboard */; };
 		DAF67548255AC8470033D861 /* AboutUsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF67547255AC8470033D861 /* AboutUsController.swift */; };
 		DAF6754C255AC87C0033D861 /* AboutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF6754B255AC87C0033D861 /* AboutCell.swift */; };
+		FA02F603259C58A90056865E /* CustonNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02F602259C58A90056865E /* CustonNavBar.swift */; };
 		FAC3D3BF259B4EC600C00270 /* LoginRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3D3BE259B4EC600C00270 /* LoginRequestModel.swift */; };
 		FAC3D3E4259B535500C00270 /* RegisterRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3D3E3259B535500C00270 /* RegisterRequestModel.swift */; };
 /* End PBXBuildFile section */
@@ -114,6 +115,7 @@
 		DAF67547255AC8470033D861 /* AboutUsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsController.swift; sourceTree = "<group>"; };
 		DAF6754B255AC87C0033D861 /* AboutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCell.swift; sourceTree = "<group>"; };
 		DEF704F3B785D1EC47CB3B42 /* Pods-Reboot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reboot.debug.xcconfig"; path = "Target Support Files/Pods-Reboot/Pods-Reboot.debug.xcconfig"; sourceTree = "<group>"; };
+		FA02F602259C58A90056865E /* CustonNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustonNavBar.swift; sourceTree = "<group>"; };
 		FAC3D3BE259B4EC600C00270 /* LoginRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequestModel.swift; sourceTree = "<group>"; };
 		FAC3D3E3259B535500C00270 /* RegisterRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequestModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -336,6 +338,7 @@
 				DA8CAB60255BEDF00064A198 /* PopUp */,
 				DA8CAB56255BCDD20064A198 /* Fonts */,
 				DAF67541255AC7490033D861 /* HomePage  */,
+				FA02F602259C58A90056865E /* CustonNavBar.swift */,
 			);
 			path = Reboot;
 			sourceTree = "<group>";
@@ -579,6 +582,7 @@
 				DA8CAB75255BFD420064A198 /* NetworkService.swift in Sources */,
 				DAEBE605255EC76D00AF7B8A /* PricingController.swift in Sources */,
 				DA8CAB7A255C1B460064A198 /* Connection.swift in Sources */,
+				FA02F603259C58A90056865E /* CustonNavBar.swift in Sources */,
 				DAF6754C255AC87C0033D861 /* AboutCell.swift in Sources */,
 				DAF67517255A7BBE0033D861 /* TextField.swift in Sources */,
 				DAF674FA255A6CBF0033D861 /* SceneDelegate.swift in Sources */,

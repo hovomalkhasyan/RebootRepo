@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SavePasswordController: BaseViewController {
+class SavePasswordController: NavBarViewController {
     //MARK: - InitializeStoryboard
     static func initializeStoryboard() -> SavePasswordController {
         return UIStoryboard(name: "SavePassword", bundle: nil).instantiateViewController(withIdentifier: "SavePasswordController") as! SavePasswordController
@@ -20,7 +20,8 @@ class SavePasswordController: BaseViewController {
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        super.setupBackBtnColor()
+        super.zeroShadowOpacityNavBar()
+        super.rootBtnSetup()
         setupTextTF()
         tapGesture()
         
@@ -45,16 +46,6 @@ class SavePasswordController: BaseViewController {
     //MARK: - IBActions
     @IBAction func savePassword(_ sender: UIButton) {
         
-    }
-    
-    @IBAction func yoSignIn(_ sender: UIButton) {
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as! ViewController
-        navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    @IBAction func backBtnAction(_ sender: Any) {
-        let vc = UIStoryboard(name: "Code", bundle: nil).instantiateViewController(withIdentifier: "CodeController")
-        navigationController?.pushViewController(vc, animated: true)
     }
     
 }

@@ -9,6 +9,11 @@ import UIKit
 import Alamofire
 class ViewController: BaseViewController {
     
+    static func initializeStoryboard() -> ViewController {
+        return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        
+    }
+    
     private var iconClick = true
     
     //MARK: - IBOutlets

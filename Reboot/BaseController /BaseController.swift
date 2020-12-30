@@ -11,11 +11,13 @@ import Alamofire
 
 class BaseViewController: UIViewController {
     //MARK: - IBoutlets
-    @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var logo: UIImageView!
     @IBOutlet weak var barView: UIView!
     @IBOutlet weak var infoBtn: UIButton!
     @IBOutlet weak var logOutBtn: UIButton!
+    @IBOutlet weak var rootBtn: UIButton!
+    
+
     
     func hideNavBar() {
         navigationController?.isNavigationBarHidden = true
@@ -28,9 +30,12 @@ class BaseViewController: UIViewController {
         
     }
     
-    func setupBackBtnColor() {
-        backBtn.setImageColor(color: UIColor(named: "borderColor")!, for: .normal)
-        
+    func rootBtnSetup() {
+        rootBtn.addTarget(self, action: #selector(rottBtnAction), for: .touchDragInside)
+    }
+    
+    @objc func rottBtnAction() {
+        navigationController?.pushViewController(ViewController.initializeStoryboard(), animated: true)
     }
     
    func workoutsCount() {
