@@ -11,7 +11,7 @@ import AVKit
 
 class SplashController: UIViewController {
     
-    @IBOutlet weak var indicator: UIActivityIndicatorView!
+    @IBOutlet weak private var indicator: UIActivityIndicatorView!
     
     let player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: "Reboot", ofType: "mov")!))
     

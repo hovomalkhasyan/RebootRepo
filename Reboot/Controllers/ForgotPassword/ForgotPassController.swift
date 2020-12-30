@@ -15,7 +15,7 @@ class ForgotPassController: NavBarViewController {
     }
     
     //MARK:- IBOutlets
-    @IBOutlet weak var emailTf: TextField!
+    @IBOutlet weak private var emailTf: TextField!
     
     //MARK: - LifeCycle
     override func viewDidLoad() {

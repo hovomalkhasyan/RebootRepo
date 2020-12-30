@@ -320,6 +320,7 @@
 		DAF674F6255A6CBF0033D861 /* Reboot */ = {
 			isa = PBXGroup;
 			children = (
+				FA02F602259C58A90056865E /* CustonNavBar.swift */,
 				DAF674F9255A6CBF0033D861 /* SceneDelegate.swift */,
 				DAF674F7255A6CBF0033D861 /* AppDelegate.swift */,
 				DAF67500255A6CC10033D861 /* Assets.xcassets */,
@@ -327,18 +328,17 @@
 				DAF67505255A6CC10033D861 /* Info.plist */,
 				DA8CAB6B255BFBF40064A198 /* Model.swift */,
 				D4375098257E129D005D3273 /* Constants */,
-				DACE56472570EC7D00F6683F /* Splash  */,
 				DA9ED919256D17100004471E /* TextField */,
-				DA9ED916256D16BC0004471E /* Login */,
 				DA6A66AB256BCF8F008C076C /* extension */,
+				DA8CAB78255C1B2F0064A198 /* NetworkConnection */,
+				DA8CAB56255BCDD20064A198 /* Fonts */,
+				DACE56472570EC7D00F6683F /* Splash  */,
+				DA9ED916256D16BC0004471E /* Login */,
 				DACD93EB2561741600EAD268 /* Controllers */,
 				DA606763255E74340074497D /* BaseController  */,
-				DA8CAB78255C1B2F0064A198 /* NetworkConnection */,
 				DA8CAB72255BFD2D0064A198 /* Networking */,
 				DA8CAB60255BEDF00064A198 /* PopUp */,
-				DA8CAB56255BCDD20064A198 /* Fonts */,
 				DAF67541255AC7490033D861 /* HomePage  */,
-				FA02F602259C58A90056865E /* CustonNavBar.swift */,
 			);
 			path = Reboot;
 			sourceTree = "<group>";

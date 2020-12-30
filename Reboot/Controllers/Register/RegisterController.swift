@@ -16,14 +16,14 @@ class RegisterController: NavBarViewController {
     }
     
     //MARK: - IBOutlets
-    @IBOutlet weak var registerStack: UIStackView!
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var password: UITextField!
-    @IBOutlet weak var work: UITextField!
-    @IBOutlet weak var birthDay: UITextField!
-    @IBOutlet weak var email: UITextField!
-    @IBOutlet weak var phoneNumber: UITextField!
-    @IBOutlet weak var fullName: UITextField!
+    @IBOutlet weak private var registerStack: UIStackView!
+    @IBOutlet weak private var scrollView: UIScrollView!
+    @IBOutlet weak private var password: UITextField!
+    @IBOutlet weak private var work: UITextField!
+    @IBOutlet weak private var birthDay: UITextField!
+    @IBOutlet weak private var email: UITextField!
+    @IBOutlet weak private var phoneNumber: UITextField!
+    @IBOutlet weak private var fullName: UITextField!
     
     private let datePicker = UIDatePicker()
     private let toolbar = UIToolbar()
@@ -97,14 +97,13 @@ extension RegisterController {
     }
     
     private func setupBirthDayTf() {
-        birthDay.inputView = datePicker
-        datePicker.datePickerMode = .date
-        toolbar.sizeToFit()
         let tulbarBtn = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneAction))
         let flaxSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil )
         toolbar.setItems([flaxSpace,tulbarBtn], animated: true)
         birthDay.inputAccessoryView = toolbar
-        
+        birthDay.inputView = datePicker
+        datePicker.datePickerMode = .date
+        toolbar.sizeToFit()
     }
     
     @objc func doneAction() {

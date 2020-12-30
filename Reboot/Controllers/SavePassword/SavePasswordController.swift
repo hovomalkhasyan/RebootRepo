@@ -15,7 +15,7 @@ class SavePasswordController: NavBarViewController {
     }
     
     //MARK: - IBOutlets
-    @IBOutlet weak var passwordTF: TextField!
+    @IBOutlet weak private var passwordTF: TextField!
     
     //MARK: - LifeCycle
     override func viewDidLoad() {

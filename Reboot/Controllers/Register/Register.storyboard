@@ -44,13 +44,13 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="РЕГИСТРАЦИЯ" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xbh-oJ-LsG">
-                                        <rect key="frame" x="114" y="129" width="147.5" height="27"/>
+                                        <rect key="frame" x="107.5" y="129" width="160" height="26"/>
                                         <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="avK-FW-fgZ">
-                                        <rect key="frame" x="20" y="186" width="335" height="304"/>
+                                        <rect key="frame" x="20" y="185" width="335" height="304"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Фамилия и Имя *" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Acq-TF-H3q" customClass="TextField" customModule="Reboot" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="44"/>
@@ -103,13 +103,13 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Нажимая кнопку “Зарегистрироваться”, я принимаю договор оферты и соглашаюсь на обработку персональных данных." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQF-kF-A5a">
-                                        <rect key="frame" x="20" y="586" width="335" height="49"/>
+                                        <rect key="frame" x="20" y="585" width="335" height="49"/>
                                         <fontDescription key="fontDescription" name="Gilroy-Regular" family="Gilroy" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kBi-T9-2zm">
-                                        <rect key="frame" x="20" y="514" width="335" height="44"/>
+                                        <rect key="frame" x="20" y="513" width="335" height="44"/>
                                         <color key="backgroundColor" name="loginBtn"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="kbX-C2-qbE"/>
@@ -128,16 +128,16 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Hjs-m6-oAN">
-                                        <rect key="frame" x="95" y="695" width="185.5" height="48"/>
+                                        <rect key="frame" x="94.5" y="694" width="186" height="48"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Уже зарегистрированы?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o0h-OQ-ONF">
-                                                <rect key="frame" x="0.0" y="0.0" width="185.5" height="19"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="186" height="19"/>
                                                 <fontDescription key="fontDescription" name="Gilroy-Regular" family="Gilroy" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="QPc-Sq-HSK">
-                                                <rect key="frame" x="23.5" y="21" width="138" height="27"/>
+                                                <rect key="frame" x="24" y="21" width="138" height="27"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s3Y-Ex-HPU">
                                                         <rect key="frame" x="0.0" y="0.0" width="138" height="23"/>

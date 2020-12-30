@@ -15,8 +15,8 @@ class CodeController: NavBarViewController {
     }
     
     //MARK:- IBOutlets
-    @IBOutlet weak var codeTF: TextField!
-    @IBOutlet weak var messageLbl: UILabel!
+    @IBOutlet weak private var codeTF: TextField!
+    @IBOutlet weak private var messageLbl: UILabel!
     
     //MARK:- LifeSycle
     override func viewDidLoad() {
