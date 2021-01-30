@@ -20,7 +20,6 @@ class PopCell: UITableViewCell {
     private func separatorIsHide() {
         separator.isHidden = true
     }
-
 }
 
 extension PopCell {

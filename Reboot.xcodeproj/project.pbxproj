@@ -57,6 +57,8 @@
 		DAF67548255AC8470033D861 /* AboutUsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF67547255AC8470033D861 /* AboutUsController.swift */; };
 		DAF6754C255AC87C0033D861 /* AboutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF6754B255AC87C0033D861 /* AboutCell.swift */; };
 		FA02F603259C58A90056865E /* CustonNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02F602259C58A90056865E /* CustonNavBar.swift */; };
+		FA98DCC925C5961C00CAA052 /* UserAchivemntsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98DCC725C5961C00CAA052 /* UserAchivemntsCell.swift */; };
+		FA98DCCA25C5961C00CAA052 /* UserAchivemntsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA98DCC825C5961C00CAA052 /* UserAchivemntsCell.xib */; };
 		FAC3D3BF259B4EC600C00270 /* LoginRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3D3BE259B4EC600C00270 /* LoginRequestModel.swift */; };
 		FAC3D3E4259B535500C00270 /* RegisterRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3D3E3259B535500C00270 /* RegisterRequestModel.swift */; };
 /* End PBXBuildFile section */
@@ -116,6 +118,8 @@
 		DAF6754B255AC87C0033D861 /* AboutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCell.swift; sourceTree = "<group>"; };
 		DEF704F3B785D1EC47CB3B42 /* Pods-Reboot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reboot.debug.xcconfig"; path = "Target Support Files/Pods-Reboot/Pods-Reboot.debug.xcconfig"; sourceTree = "<group>"; };
 		FA02F602259C58A90056865E /* CustonNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustonNavBar.swift; sourceTree = "<group>"; };
+		FA98DCC725C5961C00CAA052 /* UserAchivemntsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAchivemntsCell.swift; sourceTree = "<group>"; };
+		FA98DCC825C5961C00CAA052 /* UserAchivemntsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserAchivemntsCell.xib; sourceTree = "<group>"; };
 		FAC3D3BE259B4EC600C00270 /* LoginRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequestModel.swift; sourceTree = "<group>"; };
 		FAC3D3E3259B535500C00270 /* RegisterRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequestModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -222,6 +226,7 @@
 		DA9DCC58255DA17E00E3E8AB /* UserPage  */ = {
 			isa = PBXGroup;
 			children = (
+				FA98DCC525C595B600CAA052 /* Achivements */,
 				DA9DCC59255DA19D00E3E8AB /* UserPageController.swift */,
 				DA10B52E256260D30010A819 /* AchievementsCell.swift */,
 				DA10B540256270950010A819 /* Footer.swift */,
@@ -410,6 +415,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FA98DCC525C595B600CAA052 /* Achivements */ = {
+			isa = PBXGroup;
+			children = (
+				FA98DCC725C5961C00CAA052 /* UserAchivemntsCell.swift */,
+				FA98DCC825C5961C00CAA052 /* UserAchivemntsCell.xib */,
+			);
+			path = Achivements;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -471,6 +485,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA10B529256254BF0010A819 /* gilroy-ultralightitalic.ttf in Resources */,
+				FA98DCCA25C5961C00CAA052 /* UserAchivemntsCell.xib in Resources */,
 				DA8CAB51255BCB1D0064A198 /* gilroy-bold.ttf in Resources */,
 				DAF67504255A6CC10033D861 /* LaunchScreen.storyboard in Resources */,
 				DAF6752F255AB5AC0033D861 /* Code.storyboard in Resources */,
@@ -581,6 +596,7 @@
 				DAF6753C255AC4520033D861 /* SavePasswordController.swift in Sources */,
 				DA8CAB75255BFD420064A198 /* NetworkService.swift in Sources */,
 				DAEBE605255EC76D00AF7B8A /* PricingController.swift in Sources */,
+				FA98DCC925C5961C00CAA052 /* UserAchivemntsCell.swift in Sources */,
 				DA8CAB7A255C1B460064A198 /* Connection.swift in Sources */,
 				FA02F603259C58A90056865E /* CustonNavBar.swift in Sources */,
 				DAF6754C255AC87C0033D861 /* AboutCell.swift in Sources */,
@@ -745,7 +761,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "hovo.malxasyan-Reboott";
+				PRODUCT_BUNDLE_IDENTIFIER = com.armboldmind.reboot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -766,7 +782,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "hovo.malxasyan-Reboott";
+				PRODUCT_BUNDLE_IDENTIFIER = com.armboldmind.reboot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

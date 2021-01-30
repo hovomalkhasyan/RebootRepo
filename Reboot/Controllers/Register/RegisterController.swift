@@ -37,13 +37,11 @@ class RegisterController: NavBarViewController {
         tapGesture()
         setupBirthDayTf()
         setupStackView()
-       
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         super.hideNavBar()
-        
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -52,7 +50,6 @@ class RegisterController: NavBarViewController {
                 setupStackView()
             }
         }
-        
     }
     
     //MARK: - IBActions
@@ -78,9 +75,7 @@ class RegisterController: NavBarViewController {
                 }
             }
         }
-        
     }
-    
 }
 
 //MARK: - Extension
@@ -93,7 +88,6 @@ extension RegisterController {
             guard let borderColor = color else {return}
             sub.layer.borderColor = borderColor.cgColor
         }
-        
     }
     
     private func setupBirthDayTf() {
@@ -101,6 +95,10 @@ extension RegisterController {
         let flaxSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil )
         toolbar.setItems([flaxSpace,tulbarBtn], animated: true)
         birthDay.inputAccessoryView = toolbar
+        if #available(iOS 14, *) {
+            datePicker.preferredDatePickerStyle = .wheels
+            datePicker.sizeToFit()
+            }
         birthDay.inputView = datePicker
         datePicker.datePickerMode = .date
         toolbar.sizeToFit()
@@ -109,25 +107,21 @@ extension RegisterController {
     @objc func doneAction() {
         getDateFromPicker()
         self.view.endEditing(true)
-        
     }
-    
+
     private func getDateFromPicker() {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-dd-MM"
         birthDay.text = formatter.string(from: datePicker.date)
-        
     }
     
     private func tapGesture() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
-        
     }
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
-        
     }
     
     private func setupTeftFields() {
@@ -139,7 +133,6 @@ extension RegisterController {
         fullName.delegate = self
         password.isSecureTextEntry = true
         password.textContentType = UITextContentType(rawValue: "")
-        
     }
     
     private func showAlert(title: String, message: String) {
@@ -147,7 +140,6 @@ extension RegisterController {
         let okBtn = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alert.addAction(okBtn)
         present(alert, animated: true, completion: nil)
-        
     }
     
     private func registerRequest(_ completion: @escaping () -> Void) {
@@ -166,7 +158,6 @@ extension RegisterController {
             }
         }
     }
-    
 }
 
 //MARK: TextFieldDelegate
@@ -174,31 +165,23 @@ extension RegisterController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
-        
         case fullName:
             phoneNumber.becomeFirstResponder()
-            
         case phoneNumber:
             email.becomeFirstResponder()
-            
         case email:
             birthDay.becomeFirstResponder()
-            
         case birthDay:
             work.becomeFirstResponder()
-            
         case work:
             password.becomeFirstResponder()
-            
         case password:
             UIView.animate(withDuration: 1) {
                 self.view.endEditing(true)
             }
-            
         default:
             break
         }
-        
         return true
     }
     
@@ -209,5 +192,4 @@ extension RegisterController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         return true
     }
-    
 }

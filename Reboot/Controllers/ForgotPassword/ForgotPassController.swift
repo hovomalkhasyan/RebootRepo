@@ -11,7 +11,6 @@ class ForgotPassController: NavBarViewController {
     //MARK: - InitializeStoryboard
     static func initializeStoryboard() -> ForgotPassController {
         return UIStoryboard(name: "ForgotPassword", bundle: nil).instantiateViewController(withIdentifier: "ForgotPassController") as! ForgotPassController
-        
     }
     
     //MARK:- IBOutlets
@@ -24,23 +23,19 @@ class ForgotPassController: NavBarViewController {
         super.rootBtnSetup()
         setupEmailTf()
         tapGesture()
-       
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         super.hideNavBar()
-        
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         if #available(iOS 13.0, *) {
             if (traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection)) {
                 emailTf.layer.borderColor = UIColor(named: "borderColor")?.cgColor
-                
             }
         }
-        
     }
     
     //MARK: - IBAtions
@@ -52,9 +47,7 @@ class ForgotPassController: NavBarViewController {
             UserDefaults.standard.setValue(email, forKey: "email")
             navigationController?.pushViewController(CodeController.initializeStoryboard(), animated: true)
         }
-        
     }
-    
 }
 
 //MARK: - Extension
@@ -63,19 +56,16 @@ extension ForgotPassController {
     private func tapGesture() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
-        
     }
     
     @objc private func dismissKeyboard() {
         view.endEditing(true)
-        
     }
     
     private func setupEmailTf() {
         emailTf.layer.cornerRadius = 10
         emailTf.layer.borderWidth = 1
         emailTf.layer.borderColor = UIColor(named: "borderColor")?.cgColor
-        
     }
     
     private func showAlert(title: String, message: String) {
@@ -83,7 +73,5 @@ extension ForgotPassController {
         let okBtn = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alert.addAction(okBtn)
         present(alert, animated: true, completion: nil)
-        
     }
-    
 }

@@ -28,7 +28,6 @@ class InfoController: BaseViewController {
         tableView.dataSource = self
         tableView.isScrollEnabled = false
         tableView.contentInset.top = 15
-        
     }
     
     private func accountRequest() {
@@ -45,7 +44,6 @@ class InfoController: BaseViewController {
             }
         }
     }
-    
 }
 
 //MARK: - tableViewDelegate
@@ -65,7 +63,5 @@ extension InfoController: UITableViewDelegate, UITableViewDataSource {
             cell.packegesCount.text = packages[indexPath.row].plan.title
         } 
         return cell
-        
     }
-    
 }

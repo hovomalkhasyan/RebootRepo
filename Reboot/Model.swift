@@ -111,6 +111,9 @@ struct AccountResponse: Codable {
     let isStaff: Bool
     let lastName, phone: String?
     
+    var fullName: String {
+        return (lastName ?? "") + " " + firstName
+    }
 }
 
 // MARK: - LoyaltyLevel

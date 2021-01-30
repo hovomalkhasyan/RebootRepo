@@ -78,10 +78,8 @@ class NetWorkService {
             case.failure(let error):
                 print(error.localizedDescription)
                 self.showAlert(title: error.localizedDescription)
-                
             }
         }
-        
     }
     
     private class func showAlert(title: String) {
@@ -89,7 +87,6 @@ class NetWorkService {
         let alertAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alert.addAction(alertAction)
         UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true, completion: nil)
-        
     }
     
     private class func refreshToken(complition: @escaping () -> Void) {
@@ -106,7 +103,6 @@ class NetWorkService {
             }
         }
     }
-    
 }
 
 struct RefreshToken: Codable {

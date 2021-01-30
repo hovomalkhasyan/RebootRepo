@@ -16,6 +16,5 @@ class InfoCell: UITableViewCell {
         super.awakeFromNib()
         
     }
-    
 }
 

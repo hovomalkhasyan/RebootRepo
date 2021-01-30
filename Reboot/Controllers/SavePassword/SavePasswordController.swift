@@ -24,13 +24,11 @@ class SavePasswordController: NavBarViewController {
         super.rootBtnSetup()
         setupTextTF()
         tapGesture()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         super.hideNavBar()
-        
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -40,14 +38,12 @@ class SavePasswordController: NavBarViewController {
                 
             }
         }
-        
     }
     
     //MARK: - IBActions
     @IBAction func savePassword(_ sender: UIButton) {
         
     }
-    
 }
 
 //MARK: - Extension 
@@ -55,19 +51,15 @@ extension SavePasswordController {
     private func tapGesture() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
-        
     }
     
     @objc private func dismissKeyboard() {
         view.endEditing(true)
-        
     }
     
     private func setupTextTF() {
         passwordTF.layer.borderWidth = 1
         passwordTF.layer.cornerRadius = 10
         passwordTF.layer.borderColor = UIColor(named: "borderColor")?.cgColor
-        
     }
-    
 }

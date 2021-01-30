@@ -27,19 +27,16 @@ class ViewController: BaseViewController {
         super.viewDidLoad()
         setupTextFields()
         setupTf()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         super.hideNavBar()
-        
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         passwordTF.layer.borderColor = UIColor(named: "borderColor")?.cgColor
         emailTf.layer.borderColor = UIColor(named: "borderColor")?.cgColor
-        
     }
     
     //MARK: - IBActions
@@ -61,6 +58,7 @@ class ViewController: BaseViewController {
     }
     
     @IBAction func signInAction(_ sender: UIButton) {
+        sender.startLoading()
         if CheckInternet.Connection() {
             self.view.endEditing(true)
             if passwordTF.text == "" ||  emailTf.text == "" {
@@ -73,11 +71,11 @@ class ViewController: BaseViewController {
                     sender.isUserInteractionEnabled = false
                     loginRequest {
                         sender.isUserInteractionEnabled = true
+                        sender.endLoading()
                     }
                 }
             }
         }
-        
     }
     
     @IBAction func registerAction(_ sender: UIButton) {
@@ -91,7 +89,6 @@ class ViewController: BaseViewController {
             
         }
     }
-    
 }
 
 //MARK: - Extension
@@ -102,7 +99,6 @@ extension ViewController {
         emailTf.delegate = self
         passwordTF.delegate = self
         passwordTF.isSecureTextEntry = true
-        
     }
     
     private func setupTf() {
@@ -119,7 +115,6 @@ extension ViewController {
         toolbar.setItems([flaxSpace,tulbarBtn], animated: true)
         emailTf.inputAccessoryView = toolbar
         passwordTF.inputAccessoryView = toolbar
-        
     }
     
     private func showAlert(title: String, message: String) {
@@ -127,7 +122,6 @@ extension ViewController {
         let okBtn = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alert.addAction(okBtn)
         present(alert, animated: true, completion: nil)
-        
     }
     
     private func loginRequest(_ completion: @escaping () -> Void) {
@@ -145,14 +139,12 @@ extension ViewController {
                 print(error)
             }
         }
-        
     }
     
     @objc private func dismissKeyboard() {
         view.endEditing(true)
         
     }
-
 }
 
 //MARK: - TextFieldDelegate

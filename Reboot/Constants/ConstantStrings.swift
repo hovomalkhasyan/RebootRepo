@@ -81,7 +81,7 @@ enum ConstantStrings {
         return  "https://reboot.ru/account/packages"
     }
     static var PERSONAL_INFORMATION_URL:String {
-        return   "https://reboot.ru/account"
+        return "https://reboot.ru/account"
     }
     static var INVITE_A_FRIEND_URL: String {
         return "https://reboot.ru/account/referrals"

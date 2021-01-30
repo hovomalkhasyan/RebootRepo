@@ -61,9 +61,7 @@ extension PopUpController: UITableViewDelegate, UITableViewDataSource {
                 }
                 
                 UserDefaults.standard.removeObject(forKey: "token")
-                
             }
-            
             let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
             alert.addAction(alertAction)
             alert.addAction(cancelAction)
@@ -75,7 +73,6 @@ extension PopUpController: UITableViewDelegate, UITableViewDataSource {
             
         }
     }
-
 }
 
 enum RebootPopUp: String, CaseIterable {
@@ -101,7 +98,6 @@ enum RebootPopUp: String, CaseIterable {
         case .logOut:
             return ConstantStrings.LOG_OUT
         }
-        
     }
     
     var url: String {
@@ -120,7 +116,11 @@ enum RebootPopUp: String, CaseIterable {
            return ""
         }
     }
-    
 }
 
-
+extension PopUpController {
+    private func showAlert(with title: String, message: String?) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+    }
+}

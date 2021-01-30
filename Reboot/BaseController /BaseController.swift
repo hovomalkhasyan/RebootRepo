@@ -17,8 +17,6 @@ class BaseViewController: UIViewController {
     @IBOutlet weak var logOutBtn: UIButton!
     @IBOutlet weak var rootBtn: UIButton!
     
-
-    
     func hideNavBar() {
         navigationController?.isNavigationBarHidden = true
     }
@@ -27,7 +25,6 @@ class BaseViewController: UIViewController {
         logOutBtn.setImage(UIImage(named:  "user"), for: .normal)
         logo.image = UIImage(named: "Group 6544")
         logOutBtn.setImageColor(color: UIColor(named: "borderColor")!, for: .normal)
-        
     }
     
     func rootBtnSetup() {
@@ -54,7 +51,6 @@ class BaseViewController: UIViewController {
                 print(error)
             }
         }
-    
     }
     
     func setupGesture() {
@@ -65,7 +61,6 @@ class BaseViewController: UIViewController {
         let infoPop = UITapGestureRecognizer(target: self, action: #selector(infoBtnTap))
         tapGesture.numberOfTapsRequired = 1
         infoBtn.addGestureRecognizer(infoPop)
-        
     }
 
     @objc private func tapped() {
@@ -80,7 +75,6 @@ class BaseViewController: UIViewController {
         popVC.preferredContentSize = CGSize(width: 189, height: 223)
         
         self.present(popVC, animated: true, completion: nil)
-        
     }
     
     
@@ -94,21 +88,17 @@ class BaseViewController: UIViewController {
         popVC.preferredContentSize = CGSize(width: 146, height: 123)
         
         self.present(popVC, animated: true, completion: nil)
-        
     }
     
     func setbarView() {
         barView.layer.shadowColor =  UIColor.black.withAlphaComponent(0.16).cgColor
         barView.layer.shadowOffset = CGSize(width: 0, height: 6)
         barView.layer.shadowOpacity = 1
-        
     }
-    
 }
 
 extension BaseViewController: UIPopoverPresentationControllerDelegate {
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return .none
     }
-    
 }
