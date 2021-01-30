@@ -64,7 +64,6 @@ extension UserPageController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.contentInset.bottom = 5
-        tableView.registerCellFromXib(cell: UserAchivemntsCell.self)
     }
     
     private func accountRequest() {
@@ -117,10 +116,6 @@ extension UserPageController: UITableViewDelegate, UITableViewDataSource {
             } else {
                 return 1
             }
-        case .achievement:
-            return 1
-        case .info:
-            return 1
         default:
             return 1
         }
@@ -151,11 +146,11 @@ extension UserPageController: UITableViewDelegate, UITableViewDataSource {
             
         case .achievement:
             
-            let cell = tableView.dequeueReusableCell(withIdentifier: UserAchivemntsCell.name, for: indexPath) as! UserAchivemntsCell
-            cell.levelLabel.text = loyality?.title
-            cell.cashBackLabel.text = loyality?.title
-//            cell.level.text = loyality?.title
-//            cell.cashBack.text = loyality?.description
+            let cell = tableView.dequeueReusableCell(withIdentifier: AchievementsCell.name, for: indexPath) as! AchievementsCell
+//            cell.levelLabel.text = loyality?.title
+//            cell.cashBackLabel.text = loyality?.title
+            cell.level.text = loyality?.title
+            cell.cashBack.text = loyality?.description
 //            //            cell.levelImage.setImage(urlString: loyality?.iconInactive, placeholder: nil, completed: nil)
             cell.backgroundColor = UIColor(named: "Cellcolors")
             return cell

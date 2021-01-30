@@ -11,11 +11,11 @@ class UserAchivemntsCell: UITableViewCell {
 
     @IBOutlet weak var cashBackLabel: UILabel!
     @IBOutlet weak var levelLabel: UILabel!
-    @IBOutlet weak var activityImage: UILabel!
-    @IBOutlet weak var activityLabel: UILabel!
-    @IBOutlet weak var achievementsLabel: UILabel!
-    @IBOutlet weak var achievementsImage: UIImageView!
-    @IBOutlet weak var levelImage: UIImageView!
+    @IBOutlet weak private var activityImage: UILabel!
+    @IBOutlet weak private var activityLabel: UILabel!
+    @IBOutlet weak private var achievementsLabel: UILabel!
+    @IBOutlet weak private var achievementsImage: UIImageView!
+    @IBOutlet weak private var levelImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
       
@@ -26,4 +26,11 @@ class UserAchivemntsCell: UITableViewCell {
 
     }
     
+}
+
+extension UserAchivemntsCell {
+    public func setData(with data: LoyaltyLevels?) {
+        cashBackLabel.text = data?.description
+        levelLabel.text = data?.title
+    }
 }
