@@ -65,7 +65,7 @@ class BaseViewController: UIViewController {
 
     @objc private func tapped() {
         
-        guard let popVC = storyboard?.instantiateViewController(withIdentifier: "PopUpController") else {return}
+        let popVC = UIStoryboard(name: "HomePage", bundle: nil).instantiateViewController(withIdentifier: "PopUpController") as! PopUpController
         popVC.modalPresentationStyle = .popover
         
         let popoverVC = popVC.popoverPresentationController
@@ -79,7 +79,7 @@ class BaseViewController: UIViewController {
     
     
     @objc private func infoBtnTap() {
-        guard let popVC = storyboard?.instantiateViewController(withIdentifier: "InfoController") else {return}
+        let popVC = UIStoryboard(name: "HomePage", bundle: nil).instantiateViewController(withIdentifier: "InfoController") as! InfoController
         popVC.modalPresentationStyle = .popover
         let popoverVC = popVC.popoverPresentationController
         popoverVC?.delegate = self

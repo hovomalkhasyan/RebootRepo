@@ -10,7 +10,7 @@ import YandexMapKit
 import SafariServices
 
 class AddressController: BaseViewController {
-     
+    
     //MARK: - IBOutlets
     @IBOutlet weak var scroll: UIScrollView!
     @IBOutlet weak var swMapImage: UIImageView!
@@ -23,22 +23,23 @@ class AddressController: BaseViewController {
     @IBOutlet weak var btnView: UIView!
     @IBOutlet weak var scheduleBtnLast: UIButton!
     @IBOutlet weak var scheduleBtn: UIButton!
+    @IBOutlet weak var rebootEastStack: UIStackView!
+    @IBOutlet weak var rebootSwStack: UIStackView!
     
+    //MARK: - Propertyes
     var hide = true
     var isSecondHide = true
-    
     var zoom: Float = 15
     var zooms: Float = 15
-    
     var YKmap: YMKMap {
         return map.mapWindow.map
         
     }
-    
     var secondYKMap: YMKMap {
         return secondMap.mapWindow.map
     }
     
+    //MARK: - MapStyle
     let style = """
     [{
         "featureType" : "all",
@@ -60,7 +61,21 @@ class AddressController: BaseViewController {
         setupYKMap()
         setupWpCallBtn()
         addMapObjects()
-        
+        setupEastGest()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        super.hideNavBar()
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        if #available(iOS 13.0, *) {
+            if (traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection)) {
+                scheduleBtn.layer.borderColor = UIColor(named: "borderColor")?.cgColor
+                scheduleBtnLast.layer.borderColor = UIColor(named: "borderColor")?.cgColor
+            }
+        }
     }
     
     //MARK: - IBActions
@@ -95,7 +110,6 @@ class AddressController: BaseViewController {
         default:
             break
         }
-        
     }
     
     @IBAction func wpCall(_ sender: UIButton) {
@@ -105,58 +119,81 @@ class AddressController: BaseViewController {
     }
     
     @IBAction func scheduleBtn(_ sender: UIButton) {
+        let vc = AboutUsDetailsController.initializeStoryboard()
         switch sender.tag {
         case 0:
-            let url = URL(string: "https://reboot.ru/registration?studio=reboot_east&day")
-            let safariController = SFSafariViewController(url: url!)
-            present(safariController, animated: true, completion: nil)
+            vc.webViewUrl = ConstantStrings.REBOOT_ADDRESS_EAST
+            navigationController?.pushViewController(vc, animated: true)
         case 1:
-            let url = URL(string: "https://reboot.ru/registration?studio=reboot-sw&day")
-            let safariController = SFSafariViewController(url: url!)
-            present(safariController, animated: true, completion: nil)
+            vc.webViewUrl = ConstantStrings.REBOOT_ADDRESS_EAST
+            navigationController?.pushViewController(vc, animated: true)
         default:
             break
         }
-        
     }
-    
-    @IBAction func hideMao(_ sender: UIButton) {
-        if sender.tag == 1 {
-            if hide {
-                UIView.animate(withDuration: 0.3) {
-                    self.secondMap.isHidden = false
-                }completion: { (_) in
-                    self.secondMap.alpha = 1
-                }
-                self.scroll.scrollToBottom(animated: true)
-                swMapImage.image = UIImage(named: "Arrow")
-            } else {
-                UIView.animate(withDuration: 0.3) {
-                    self.secondMap.alpha = 0
-                    self.secondMap.isHidden = true
-                }
-                swMapImage.image = UIImage(named: "Arrow 02")
+}
+
+private extension AddressController {
+    func setupEastGest() {
+        let eastGest = UITapGestureRecognizer(target: self, action: #selector(hideSecondMap))
+        let swGeast = UITapGestureRecognizer(target: self, action: #selector(hideMap))
+        rebootEastStack.addGestureRecognizer(eastGest)
+        rebootSwStack.addGestureRecognizer(swGeast)
+    }
+   
+    @objc func hideMap() {
+        if hide {
+            UIView.animate(withDuration: 0.3) {
+                self.secondMap.isHidden = false
+            }completion: { (_) in
+                self.secondMap.alpha = 1
             }
-            hide = !hide
+            self.scroll.scrollToBottom(animated: true)
+            swMapImage.image = UIImage(named: "Arrow")
         } else {
-            if isSecondHide {
-                UIView.animate(withDuration: 0.3) {
-                    self.map.isHidden = false
-                }completion: { (_) in
-                    self.map.alpha = 1
-                }
-                mapImage.image = UIImage(named: "Arrow")
-            }else {
-                UIView.animate(withDuration: 0.3) {
-                    self.map.alpha = 0
-                    self.map.isHidden = true
-                }
-                mapImage.image = UIImage(named: "Arrow 02")
+            UIView.animate(withDuration: 0.3) {
+                self.secondMap.alpha = 0
+                self.secondMap.isHidden = true
             }
-            isSecondHide = !isSecondHide
+            swMapImage.image = UIImage(named: "Arrow 02")
         }
+        hide = !hide
     }
     
+    @objc func hideSecondMap() {
+        if isSecondHide {
+            UIView.animate(withDuration: 0.3) {
+                self.map.isHidden = false
+            }completion: { (_) in
+                self.map.alpha = 1
+            }
+            mapImage.image = UIImage(named: "Arrow")
+        }else {
+            UIView.animate(withDuration: 0.3) {
+                self.map.alpha = 0
+                self.map.isHidden = true
+            }
+            mapImage.image = UIImage(named: "Arrow 02")
+        }
+        isSecondHide = !isSecondHide
+    }
+}
+
+//MARK: - SetupBtn
+private extension AddressController {
+    func setupBtn() {
+        scheduleBtnLast.layer.borderWidth = 1
+        scheduleBtn.layer.borderWidth = 1
+        scheduleBtn.layer.borderColor = UIColor(named: "borderColor")?.cgColor
+        scheduleBtnLast.layer.borderColor = UIColor(named: "borderColor")?.cgColor
+        scheduleBtn.layer.cornerRadius = 2
+        scheduleBtnLast.layer.cornerRadius = 2
+    }
+    
+    func setupWpCallBtn() {
+        wpCall.setImageColor(color: UIColor(named: "Cellcolors")!, for: .normal)
+        wpcallBtn.setImageColor(color: UIColor(named: "Cellcolors")!, for: .normal)
+    }
 }
 
 //MARK: - Extension
@@ -188,38 +225,11 @@ extension AddressController {
             YKmap.mapObjects.addPlacemark(with: YMKPoint(latitude: 55.731846, longitude: 37.644379), view: .init(uiView: imageView))
             secondYKMap.mapObjects.addPlacemark(with: YMKPoint(latitude: 55.736160, longitude: 37.585415), view: .init(uiView: imageView))
         }
-        
     }
     
     override func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return .none
         
     }
-    
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        if #available(iOS 13.0, *) {
-            if (traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection)) {
-                scheduleBtn.layer.borderColor = UIColor(named: "borderColor")?.cgColor
-                scheduleBtnLast.layer.borderColor = UIColor(named: "borderColor")?.cgColor
-            }
-        }
-        
-    }
-    
-    private func setupBtn() {
-        scheduleBtnLast.layer.borderWidth = 1
-        scheduleBtn.layer.borderWidth = 1
-        scheduleBtn.layer.borderColor = UIColor(named: "borderColor")?.cgColor
-        scheduleBtnLast.layer.borderColor = UIColor(named: "borderColor")?.cgColor
-        scheduleBtn.layer.cornerRadius = 2
-        scheduleBtnLast.layer.cornerRadius = 2
-        
-    }
-    
-    private func setupWpCallBtn() {
-        wpCall.setImageColor(color: UIColor(named: "Cellcolors")!, for: .normal)
-        wpcallBtn.setImageColor(color: UIColor(named: "Cellcolors")!, for: .normal)
-    }
-    
 }
 

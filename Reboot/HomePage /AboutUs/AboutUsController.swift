@@ -66,12 +66,11 @@ extension AboutUsController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let url = URL(string: cells[indexPath.row].url)
-        let safariController = SFSafariViewController(url: url!)
-        present(safariController, animated: true, completion: nil)
-        
+        let url = cells[indexPath.row].url
+        let vc = AboutUsDetailsController.initializeStoryboard()
+        vc.webViewUrl = url
+        self.navigationController?.pushViewController(vc, animated: true)
     }
-    
 }
 
 //MARK: - RebootAdressEnum

@@ -50,13 +50,12 @@ class UserPageController: BaseViewController {
         setupTableView()
         accountRequest()
         reserveResponse()
-        
     }
     
     override func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return .none
-        
     }
+    
 }
 
 extension UserPageController {
@@ -64,6 +63,7 @@ extension UserPageController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.contentInset.bottom = 5
+        tableView.register(UINib(nibName: UserReservedCell.name, bundle: nil), forCellReuseIdentifier: UserReservedCell.name)
     }
     
     private func accountRequest() {
@@ -155,11 +155,11 @@ extension UserPageController: UITableViewDelegate, UITableViewDataSource {
             cell.backgroundColor = UIColor(named: "Cellcolors")
             return cell
         case .info:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "TrainingCell", for: indexPath) as! TrainingCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: TrainingCell.name, for: indexPath) as! TrainingCell
             cell.backgroundColor = UIColor(named: "Cellcolors")
             return cell
         default:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ReserveCell", for: indexPath) as! ReserveCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: ReserveCell.name, for: indexPath) as! ReserveCell
             
             return cell
         }
