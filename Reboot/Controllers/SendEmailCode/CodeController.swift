@@ -8,10 +8,6 @@
 import UIKit
 
 class CodeController: NavBarViewController {
-    //MARK: - InitializeStoryboard
-    static func initializeStoryboard() -> CodeController {
-        return UIStoryboard(name: "Code", bundle: nil).instantiateViewController(withIdentifier: "CodeController") as! CodeController
-    }
     
     //MARK:- IBOutlets
     @IBOutlet weak private var codeTF: TextField!
@@ -25,14 +21,12 @@ class CodeController: NavBarViewController {
         setupTextTF()
         tapGesture()
         setupMessageLbl()
-       
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         if #available(iOS 13.0, *) {
             if (traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection)) {
                 codeTF.layer.borderColor = UIColor(named: "borderColor")?.cgColor
-                
             }
         }
     }
@@ -69,5 +63,12 @@ extension CodeController {
         codeTF.layer.cornerRadius = 10
         codeTF.layer.borderWidth = 1
         codeTF.layer.borderColor = UIColor(named: "borderColor")?.cgColor
+    }
+}
+
+//MARK: - InitializeStoryboard
+extension CodeController {
+    static func initializeStoryboard() -> CodeController {
+        return UIStoryboard(name: "Code", bundle: nil).instantiateViewController(withIdentifier: "CodeController") as! CodeController
     }
 }

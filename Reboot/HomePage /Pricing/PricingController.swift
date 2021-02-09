@@ -10,7 +10,7 @@ import UIKit
 class PricingController: BaseViewController {
     
     //MARK: - IBOutlets
-    @IBOutlet weak var webView: UIWebView!
+    @IBOutlet weak private var webView: UIWebView!
     
     //MARK: - lifeCycle
     override func viewDidLoad() {

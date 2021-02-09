@@ -22,6 +22,7 @@ class StudioController: BaseViewController {
         super.setupGesture()
         super.setupDarkMode()
         super.workoutsCount()
+        super.hideNavBar()
         setbarView()
         setupTableView()
         
@@ -67,12 +68,10 @@ extension StudioController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let url = URL(string: cells[indexPath.row].rebootAddressUrl)
-        let safariController = SFSafariViewController(url: url!)
-        present(safariController, animated: true, completion: nil)
-        
+        let webWiev = AboutUsDetailsController.initializeStoryboard()
+        webWiev.webViewUrl = cells[indexPath.row].rebootAddressUrl
+        self.navigationController?.pushViewController(webWiev, animated: true)
     }
-    
 }
 
 //MARK: - RebootStudioEnum

@@ -30,12 +30,12 @@ enum SectionType: Int,CaseIterable {
 class UserPageController: BaseViewController {
     //MARK: - IBOutlets
     
-    @IBOutlet weak var indicator: UIActivityIndicatorView!
-    @IBOutlet weak var userView: UIView!
-    @IBOutlet weak var userAvatar: UIImageView!
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var bonus: UILabel!
-    @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak private var indicator: UIActivityIndicatorView!
+    @IBOutlet weak private var userView: UIView!
+    @IBOutlet weak private var userAvatar: UIImageView!
+    @IBOutlet weak private var tableView: UITableView!
+    @IBOutlet weak private var bonus: UILabel!
+    @IBOutlet weak private var userName: UILabel!
     
     private var loyality : LoyaltyLevels?
     private var object = [Object]()
@@ -55,14 +55,13 @@ class UserPageController: BaseViewController {
     override func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return .none
     }
-    
 }
 
 extension UserPageController {
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.contentInset.bottom = 5
+        tableView.contentInset.bottom = 0
         tableView.register(UINib(nibName: UserReservedCell.name, bundle: nil), forCellReuseIdentifier: UserReservedCell.name)
     }
     
@@ -130,33 +129,28 @@ extension UserPageController: UITableViewDelegate, UITableViewDataSource {
         switch sectionType {
         case .reserve:
             if object.count != 0 {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "ReserveCell", for: indexPath) as! ReserveCell
-                cell.placeRoom.text = object[indexPath.row].workoutPlace.roomPlace.placeNumber
-                cell.adress.text = object[indexPath.row].workout.workoutDay.room.slug
-                cell.coachName.text = object[indexPath.row].workout.trainer.title
-                cell.time.text = object[indexPath.row].workout.dateFrom.UTCToLocal(incomingFormat: "yyyy-MM-dd'T'HH:mm:ss", outGoingFormat: "HH:mm")
-                cell.date.text = object[indexPath.row].workout.dateFrom.UTCToLocal(incomingFormat: "yyyy-MM-dd'T'HH:mm:ss", outGoingFormat: "dd.MM/")
-                cell.backgroundColor = UIColor(named: "Cellcolors")
+                let cell = tableView.dequeueReusableCell(withIdentifier: ReserveCell.name, for: indexPath) as! ReserveCell
+                let finalString = NSMutableAttributedString(string: "")
+                    finalString
+                    .withGiloryMadium(object[indexPath.row].workout.dateFrom.UTCToLocal(incomingFormat: "yyyy-MM-dd'T'HH:mm:ss", outGoingFormat: "dd.MM/"))
+                    .withUltraLightItalic(object[indexPath.row].workout.dateFrom.UTCToLocal(incomingFormat: "yyyy-MM-dd'T'HH:mm:ss", outGoingFormat: "HH:mm"))
+                    .withBold(" \(object[indexPath.row].workout.trainer.title)")
+                    .withGilroyRegular(" \(object[indexPath.row].workout.workoutDay.room.slug)")
+                    .withGilroyRegular(" \(object[indexPath.row].workoutPlace.roomPlace.placeNumber)")
+                
+                cell.date.attributedText = finalString
                 return cell
             } else {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "ReservePageCell", for: indexPath) as! ReservePageCell
-                cell.backgroundColor = UIColor(named: "Cellcolors")
+                let cell = tableView.dequeueReusableCell(withIdentifier: ReservePageCell.name, for: indexPath) as! ReservePageCell
                 return cell
             }
-            
         case .achievement:
-            
             let cell = tableView.dequeueReusableCell(withIdentifier: AchievementsCell.name, for: indexPath) as! AchievementsCell
-//            cell.levelLabel.text = loyality?.title
-//            cell.cashBackLabel.text = loyality?.title
             cell.level.text = loyality?.title
             cell.cashBack.text = loyality?.description
-//            //            cell.levelImage.setImage(urlString: loyality?.iconInactive, placeholder: nil, completed: nil)
-            cell.backgroundColor = UIColor(named: "Cellcolors")
             return cell
         case .info:
             let cell = tableView.dequeueReusableCell(withIdentifier: TrainingCell.name, for: indexPath) as! TrainingCell
-            cell.backgroundColor = UIColor(named: "Cellcolors")
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: ReserveCell.name, for: indexPath) as! ReserveCell
@@ -168,11 +162,11 @@ extension UserPageController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let sectionType = SectionType(rawValue: section)
         if object.count != 0{
-            let header = tableView.dequeueReusableCell(withIdentifier: "Header") as! Header
+            let header = tableView.dequeueReusableCell(withIdentifier: Header.name) as! Header
             header.title.text = sectionType?.getTitle()
             return header
         } else {
-            let header = tableView.dequeueReusableCell(withIdentifier: "Header") as! Header
+            let header = tableView.dequeueReusableCell(withIdentifier: Header.name) as! Header
             header.backgroundColor = .clear
             header.title.textColor = .clear
             return header
@@ -182,12 +176,12 @@ extension UserPageController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let sectionType = SectionType(rawValue: section)
         if sectionType == .reserve {
-            let footer = tableView.dequeueReusableCell(withIdentifier: "Footer") as! Footer
+            let footer = tableView.dequeueReusableCell(withIdentifier: Footer.name) as! Footer
             footer.reserveBtn.addTarget(self, action: #selector(selectedItem), for: .touchUpInside)
             return footer
         }
         
-        let footer = tableView.dequeueReusableCell(withIdentifier: "Footer") as! Footer
+        let footer = tableView.dequeueReusableCell(withIdentifier: Footer.name) as! Footer
         footer.backgroundColor = .clear
         return footer
     }
@@ -204,11 +198,11 @@ extension UserPageController: UITableViewDelegate, UITableViewDataSource {
         let sectionType = SectionType(rawValue: section)
         if sectionType == .reserve {
             if object.count == 0 {
-                return CGFloat.leastNormalMagnitude
+                return 12
             } else {
                 return 40
             }
         }
-        return CGFloat.leastNormalMagnitude
+        return 12
     }
 }

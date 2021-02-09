@@ -11,10 +11,13 @@ import AVKit
 
 class SplashController: UIViewController {
     
+    //MARK: - IBOutlets
     @IBOutlet weak private var indicator: UIActivityIndicatorView!
     
+    //MARK: - Propertyes
     let player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: "Reboot", ofType: "mov")!))
     
+    //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -28,23 +31,31 @@ class SplashController: UIViewController {
         super.viewDidAppear(animated)
         setupSplash()
     }
-    
+}
+
+//MARK: - Setup
+extension SplashController {
     private func setupSplash() {
         indicator.color = .white
         indicator.startAnimating()
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.showRebootVideo), userInfo: nil, repeats: false)
         
         NotificationCenter.default.addObserver(self, selector:#selector(self.playerDidFinishPlaying(note:)),name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: player.currentItem)
-
+    }
+    
+    private func setupSplashVideo() {
+        let layer = AVPlayerLayer(player: player)
+        layer.frame = view.bounds
+        layer.videoGravity = .resizeAspectFill
+        view.layer.addSublayer(layer)
+        player.play()
     }
     
     @objc private func showRebootVideo() {
         indicator.stopAnimating()
         setupSplashVideo()
-        
     }
-    
-    
+   
     @objc func playerDidFinishPlaying(note: NSNotification){
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Navigation")
         let HomeVc = UIStoryboard(name: "HomePage", bundle: nil).instantiateViewController(withIdentifier: "TabBar")
@@ -63,16 +74,5 @@ class SplashController: UIViewController {
                 appDelegate.window?.rootViewController = vc
             }
         }
-        
     }
-    
-    private func setupSplashVideo() {
-        let layer = AVPlayerLayer(player: player)
-        layer.frame = view.bounds
-        layer.videoGravity = .resizeAspectFill
-        view.layer.addSublayer(layer)
-        player.play()
-        
-    }
-    
 }

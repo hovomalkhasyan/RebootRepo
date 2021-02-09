@@ -8,11 +8,6 @@
 import UIKit
 
 class SavePasswordController: NavBarViewController {
-    //MARK: - InitializeStoryboard
-    static func initializeStoryboard() -> SavePasswordController {
-        return UIStoryboard(name: "SavePassword", bundle: nil).instantiateViewController(withIdentifier: "SavePasswordController") as! SavePasswordController
-        
-    }
     
     //MARK: - IBOutlets
     @IBOutlet weak private var passwordTF: TextField!
@@ -61,5 +56,12 @@ extension SavePasswordController {
         passwordTF.layer.borderWidth = 1
         passwordTF.layer.cornerRadius = 10
         passwordTF.layer.borderColor = UIColor(named: "borderColor")?.cgColor
+    }
+}
+
+//MARK: - InitializeStoryboard
+extension SavePasswordController {
+    static func initializeStoryboard() -> SavePasswordController {
+        return UIStoryboard(name: "SavePassword", bundle: nil).instantiateViewController(withIdentifier: "SavePasswordController") as! SavePasswordController
     }
 }

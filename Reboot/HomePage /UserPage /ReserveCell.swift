@@ -9,19 +9,26 @@ import UIKit
 import Kingfisher
 
 class ReserveCell: UITableViewCell {
-
-    @IBOutlet weak var placeRoom: UILabel!
-    @IBOutlet weak var cellView: UIView!
+    
+    //MARK: - IBOutlets
+    @IBOutlet weak private var cellView: UIView!
     @IBOutlet weak var date: UILabel!
-    @IBOutlet weak var time: UILabel!
-    @IBOutlet weak var adress: UILabel!
-    @IBOutlet weak var coachName: UILabel!
+    
+    //MARK: - LifeCycle
     override func awakeFromNib() {
         super.awakeFromNib()
-        setupView() 
-        
+        setupView()
     }
     
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+        // Configure the view for the selected state
+    }
+}
+
+//MARK: - setupView
+extension ReserveCell {
     private func setupView() {
         cellView.layer.cornerRadius = 10
         cellView.layer.borderColor = UIColor.lightGray.cgColor
@@ -34,12 +41,4 @@ class ReserveCell: UITableViewCell {
         cellView.layer.shadowRadius = 3
         
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }
-

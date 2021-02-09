@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 extension NSMutableAttributedString {
 
-    @discardableResult func withBold(_ text: String, size: CGFloat = 16) -> NSMutableAttributedString {
+    @discardableResult func withBold(_ text: String, size: CGFloat = 17) -> NSMutableAttributedString {
         let attrs: [NSAttributedString.Key: Any] = [
             .font: UIFont.GilroyBold(size: size),
             NSAttributedString.Key.foregroundColor: UIColor.black]
@@ -19,7 +19,7 @@ extension NSMutableAttributedString {
         return self
     }
     
-    @discardableResult func withUltraLightItalic(_ text: String, size: CGFloat = 16) -> NSMutableAttributedString {
+    @discardableResult func withUltraLightItalic(_ text: String, size: CGFloat = 17) -> NSMutableAttributedString {
         let attrs: [NSAttributedString.Key: Any] = [
             .font: UIFont.GiloryUltraLightItalic(size: size),
             NSAttributedString.Key.foregroundColor: UIColor.black]
@@ -29,7 +29,7 @@ extension NSMutableAttributedString {
         return self
     }
     
-    @discardableResult func withGiloryMadium(_ text: String, size: CGFloat = 16) -> NSMutableAttributedString {
+    @discardableResult func withGiloryMadium(_ text: String, size: CGFloat = 17) -> NSMutableAttributedString {
         let attrs: [NSAttributedString.Key: Any] = [
             .font: UIFont.GiloryMadium(size: size),
             NSAttributedString.Key.foregroundColor: UIColor.black]
@@ -39,7 +39,7 @@ extension NSMutableAttributedString {
         return self
     }
     
-    @discardableResult func withGilroyRegular(_ text: String, size: CGFloat = 16) -> NSMutableAttributedString {
+    @discardableResult func withGilroyRegular(_ text: String, size: CGFloat = 17) -> NSMutableAttributedString {
         let attrs: [NSAttributedString.Key: Any] = [
             .font: UIFont.GilroyRegular(size: size),
             NSAttributedString.Key.foregroundColor: UIColor.black]
@@ -48,5 +48,4 @@ extension NSMutableAttributedString {
         
         return self
     }
-
 }

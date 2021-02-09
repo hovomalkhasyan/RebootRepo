@@ -14,7 +14,7 @@ class InfoController: BaseViewController {
     var packages = [Packages]()
     
     //MARK: - IBOutlets
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak private var tableView: UITableView!
     
     //MARK: - LifeCycle
     override func viewDidLoad() {

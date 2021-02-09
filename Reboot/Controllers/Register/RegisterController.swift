@@ -9,11 +9,6 @@ import UIKit
 import Alamofire
 
 class RegisterController: NavBarViewController {
-    //MARK: - InitializeStoryboard
-    static func initializeStoryboard() -> RegisterController {
-        return UIStoryboard(name: "Register", bundle: nil).instantiateViewController(withIdentifier: "RegisterController") as! RegisterController
-        
-    }
     
     //MARK: - IBOutlets
     @IBOutlet weak private var registerStack: UIStackView!
@@ -25,6 +20,7 @@ class RegisterController: NavBarViewController {
     @IBOutlet weak private var phoneNumber: UITextField!
     @IBOutlet weak private var fullName: UITextField!
     
+    //MARK: - propertyes
     private let datePicker = UIDatePicker()
     private let toolbar = UIToolbar()
     
@@ -78,6 +74,26 @@ class RegisterController: NavBarViewController {
     }
 }
 
+//MARK: - PostRequest
+extension RegisterController {
+    private func registerRequest(_ completion: @escaping () -> Void) {
+        
+        let model = RegisterParams(birth_date: birthDay.text, email: email.text, first_name: fullName.text, occupation: work.text, password: password.text, phone: phoneNumber.text)
+        NetWorkService.request(url: Constants.AUTH_REGISTER_ENDPOINT, method: .post, param: model, encoding: JSONEncoding.default) { (resp: RequestResult<LoginResponse?>) in
+            completion()
+            switch resp {
+            case .success(let data):
+                guard let data = data else {return}
+                UserDefaults.standard.setValue(data?.token, forKey: "token")
+                let vc = UIStoryboard(name: "HomePage", bundle: nil).instantiateViewController(withIdentifier: "TabBar")
+                self.navigationController?.pushViewController(vc, animated: true)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+}
+
 //MARK: - Extension
 extension RegisterController {
     func setupStackView() {
@@ -90,7 +106,18 @@ extension RegisterController {
         }
     }
     
-    private func setupBirthDayTf() {
+    private func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okBtn = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(okBtn)
+        present(alert, animated: true, completion: nil)
+    }
+}
+
+//MARK: - Setup
+private extension RegisterController {
+    
+    func setupBirthDayTf() {
         let tulbarBtn = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneAction))
         let flaxSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil )
         toolbar.setItems([flaxSpace,tulbarBtn], animated: true)
@@ -98,7 +125,7 @@ extension RegisterController {
         if #available(iOS 14, *) {
             datePicker.preferredDatePickerStyle = .wheels
             datePicker.sizeToFit()
-            }
+        }
         birthDay.inputView = datePicker
         datePicker.datePickerMode = .date
         toolbar.sizeToFit()
@@ -108,7 +135,7 @@ extension RegisterController {
         getDateFromPicker()
         self.view.endEditing(true)
     }
-
+    
     private func getDateFromPicker() {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-dd-MM"
@@ -133,30 +160,6 @@ extension RegisterController {
         fullName.delegate = self
         password.isSecureTextEntry = true
         password.textContentType = UITextContentType(rawValue: "")
-    }
-    
-    private func showAlert(title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okBtn = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        alert.addAction(okBtn)
-        present(alert, animated: true, completion: nil)
-    }
-    
-    private func registerRequest(_ completion: @escaping () -> Void) {
-        
-        let model = RegisterParams(birth_date: birthDay.text, email: email.text, first_name: fullName.text, occupation: work.text, password: password.text, phone: phoneNumber.text)
-        NetWorkService.request(url: Constants.AUTH_REGISTER_ENDPOINT, method: .post, param: model, encoding: JSONEncoding.default) { (resp: RequestResult<LoginResponse?>) in
-            completion()
-            switch resp {
-            case .success(let data):
-                guard let data = data else {return}
-                UserDefaults.standard.setValue(data?.token, forKey: "token")
-                let vc = UIStoryboard(name: "HomePage", bundle: nil).instantiateViewController(withIdentifier: "TabBar")
-                self.navigationController?.pushViewController(vc, animated: true)
-            case .failure(let error):
-                print(error)
-            }
-        }
     }
 }
 
@@ -191,5 +194,21 @@ extension RegisterController: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         return true
+    }
+}
+
+//MARK: - InitializeStoryboard
+extension RegisterController {
+    static func initializeStoryboard() -> RegisterController {
+        return UIStoryboard(name: "Register", bundle: nil).instantiateViewController(withIdentifier: "RegisterController") as! RegisterController
+    }
+}
+
+private extension RegisterController {
+    func showPopUp(title: String) {
+        let alertController = UIAlertController(title: title, message: "", preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alertController.addAction(alertAction)
+        self.present(alertController, animated: true, completion: nil)
     }
 }

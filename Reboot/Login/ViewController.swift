@@ -9,18 +9,14 @@ import UIKit
 import Alamofire
 class ViewController: BaseViewController {
     
-    static func initializeStoryboard() -> ViewController {
-        return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as! ViewController
-        
-    }
-    
+    //MARK: - propertyes
     private var iconClick = true
     
     //MARK: - IBOutlets
-    @IBOutlet weak var emailTf: TextField!
-    @IBOutlet weak var passwordTF: TextField!
-    @IBOutlet weak var loginBtn: UIButton!
-    @IBOutlet weak var passwordShowBtn: UIButton!
+    @IBOutlet weak private var emailTf: TextField!
+    @IBOutlet weak private var passwordTF: TextField!
+    @IBOutlet weak private var loginBtn: UIButton!
+    @IBOutlet weak private var passwordShowBtn: UIButton!
     
     //MARK: - LifeCycle
     override func viewDidLoad() {
@@ -86,13 +82,11 @@ class ViewController: BaseViewController {
             navigationController?.pushViewController(ForgotPassController.initializeStoryboard(), animated: true)
         default:
             break
-            
         }
     }
 }
 
 //MARK: - Extension
-
 extension ViewController {
     
     private func setupTextFields() {
@@ -143,7 +137,6 @@ extension ViewController {
     
     @objc private func dismissKeyboard() {
         view.endEditing(true)
-        
     }
 }
 
@@ -152,19 +145,15 @@ extension ViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
-        
         case emailTf:
             passwordTF.becomeFirstResponder()
-            
         case passwordTF:
             UIView.animate(withDuration: 1) {
                 self.view.endEditing(true)
             }
-            
         default:
             break
         }
-        
         return true
     }
     
@@ -175,6 +164,11 @@ extension ViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         return true
     }
-    
 }
 
+//MARK: - initializeStoryboard
+extension ViewController {
+    static func initializeStoryboard() -> ViewController {
+        return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as! ViewController
+    }
+}

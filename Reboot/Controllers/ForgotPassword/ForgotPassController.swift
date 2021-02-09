@@ -8,10 +8,6 @@
 import UIKit
 
 class ForgotPassController: NavBarViewController {
-    //MARK: - InitializeStoryboard
-    static func initializeStoryboard() -> ForgotPassController {
-        return UIStoryboard(name: "ForgotPassword", bundle: nil).instantiateViewController(withIdentifier: "ForgotPassController") as! ForgotPassController
-    }
     
     //MARK:- IBOutlets
     @IBOutlet weak private var emailTf: TextField!
@@ -52,7 +48,6 @@ class ForgotPassController: NavBarViewController {
 
 //MARK: - Extension
 extension ForgotPassController {
-    
     private func tapGesture() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
@@ -73,5 +68,12 @@ extension ForgotPassController {
         let okBtn = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alert.addAction(okBtn)
         present(alert, animated: true, completion: nil)
+    }
+}
+
+//MARK: - InitializeStoryboard
+extension ForgotPassController {
+    static func initializeStoryboard() -> ForgotPassController {
+        return UIStoryboard(name: "ForgotPassword", bundle: nil).instantiateViewController(withIdentifier: "ForgotPassController") as! ForgotPassController
     }
 }

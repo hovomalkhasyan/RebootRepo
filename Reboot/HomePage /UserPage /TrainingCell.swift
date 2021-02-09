@@ -9,7 +9,7 @@ import UIKit
 
 class TrainingCell: UITableViewCell {
 
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak private var collectionView: UICollectionView!
     override func awakeFromNib() {
         super.awakeFromNib()
         setupCollectionView()
@@ -37,7 +37,9 @@ extension TrainingCell: UICollectionViewDelegate, UICollectionViewDataSource, UI
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 274, height: 172)
+        let height = contentView.frame.height
+        let width = height * 15 / 6
+        return CGSize(width: width, height: height)
     }
     
 }
