@@ -14,9 +14,6 @@ extension UIImageView {
         self.image = templateImage
         self.tintColor = color
     }
-}
-
-extension UIImageView {
     func setImage(urlString: String?, placeholder: UIImage? = nil, completed: (() -> Void)? = nil) {
         guard let string = urlString else {
             image = placeholder
@@ -28,3 +25,4 @@ extension UIImageView {
         })
     }
 }
+

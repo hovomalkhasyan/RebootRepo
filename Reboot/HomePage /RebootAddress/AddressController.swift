@@ -7,24 +7,23 @@
 
 import UIKit
 import YandexMapKit
-import SafariServices
 
 class AddressController: BaseViewController {
     
     //MARK: - IBOutlets
-    @IBOutlet weak var scroll: UIScrollView!
-    @IBOutlet weak var swMapImage: UIImageView!
-    @IBOutlet weak var mapImage: UIImageView!
-    @IBOutlet weak var wpcallBtn: UIButton!
-    @IBOutlet weak var wpCall: UIButton!
-    @IBOutlet weak var secondMap: YMKMapView!
-    @IBOutlet weak var map: YMKMapView!
-    @IBOutlet weak var btnView2: UIView!
-    @IBOutlet weak var btnView: UIView!
-    @IBOutlet weak var scheduleBtnLast: UIButton!
-    @IBOutlet weak var scheduleBtn: UIButton!
-    @IBOutlet weak var rebootEastStack: UIStackView!
-    @IBOutlet weak var rebootSwStack: UIStackView!
+    @IBOutlet weak private var scroll: UIScrollView!
+    @IBOutlet weak private var swMapImage: UIImageView!
+    @IBOutlet weak private var mapImage: UIImageView!
+    @IBOutlet weak private var wpcallBtn: UIButton!
+    @IBOutlet weak private var wpCall: UIButton!
+    @IBOutlet weak private var secondMap: YMKMapView!
+    @IBOutlet weak private var map: YMKMapView!
+    @IBOutlet weak private var btnView2: UIView!
+    @IBOutlet weak private var btnView: UIView!
+    @IBOutlet weak private var scheduleBtnLast: UIButton!
+    @IBOutlet weak private var scheduleBtn: UIButton!
+    @IBOutlet weak private var rebootEastStack: UIStackView!
+    @IBOutlet weak private var rebootSwStack: UIStackView!
     
     //MARK: - Propertyes
     var hide = true
@@ -99,6 +98,7 @@ class AddressController: BaseViewController {
         }
     }
     
+    //MARK: - CallAction
     @IBAction func callAction(_ sender: UIButton) {
         switch sender.tag {
         case 0:
@@ -112,6 +112,7 @@ class AddressController: BaseViewController {
         }
     }
     
+    //MARK: - wpCallAction
     @IBAction func wpCall(_ sender: UIButton) {
         guard let number = URL(string: "https://api.whatsapp.com/send?phone=\(Constants.REBOOT_PHONE_NUMBER)") else { return }
         UIApplication.shared.open(number)
@@ -147,6 +148,7 @@ private extension AddressController {
                 self.secondMap.isHidden = false
             }completion: { (_) in
                 self.secondMap.alpha = 1
+                self.scroll.isScrollEnabled = false
             }
             self.scroll.scrollToBottom(animated: true)
             swMapImage.image = UIImage(named: "Arrow")
@@ -155,6 +157,7 @@ private extension AddressController {
                 self.secondMap.alpha = 0
                 self.secondMap.isHidden = true
             }
+            self.scroll.isScrollEnabled = true
             swMapImage.image = UIImage(named: "Arrow 02")
         }
         hide = !hide
@@ -166,6 +169,8 @@ private extension AddressController {
                 self.map.isHidden = false
             }completion: { (_) in
                 self.map.alpha = 1
+                self.scroll.scrollRectToVisible(self.map.frame , animated: true)
+                self.scroll.isScrollEnabled = false
             }
             mapImage.image = UIImage(named: "Arrow")
         }else {
@@ -173,6 +178,7 @@ private extension AddressController {
                 self.map.alpha = 0
                 self.map.isHidden = true
             }
+            self.scroll.isScrollEnabled = true
             mapImage.image = UIImage(named: "Arrow 02")
         }
         isSecondHide = !isSecondHide
@@ -221,8 +227,9 @@ extension AddressController {
             let imageView = UIImageView(image: image)
             imageView.bounds.size = CGSize(width: 50, height: 50)
             imageView.backgroundColor = .clear
-            
             YKmap.mapObjects.addPlacemark(with: YMKPoint(latitude: 55.731846, longitude: 37.644379), view: .init(uiView: imageView))
+            YKmap.mapObjects.addPlacemark(with: YMKPoint(latitude: 55.736160, longitude: 37.585415), view: .init(uiView: imageView))
+            secondYKMap.mapObjects.addPlacemark(with: YMKPoint(latitude: 55.731846, longitude: 37.644379), view: .init(uiView: imageView))
             secondYKMap.mapObjects.addPlacemark(with: YMKPoint(latitude: 55.736160, longitude: 37.585415), view: .init(uiView: imageView))
         }
     }

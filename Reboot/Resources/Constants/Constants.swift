@@ -8,6 +8,7 @@
 import Foundation
 
 class Constants {
+    static let imageUrl = "https://api.reboot.ru"
     static let BASE_URl = "https://api.reboot.ru/api/ru/"
     static let REFRESH_TOKEN_ENDPOINT = "auth/tokens/refresh/"
     static let MY_ACCOUNT_ENDPOINT = "my/account/"

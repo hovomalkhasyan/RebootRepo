@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 import Alamofire
-
+import PanModal
 class BaseViewController: UIViewController {
     //MARK: - IBoutlets
     @IBOutlet weak var logo: UIImageView!
@@ -79,15 +79,19 @@ class BaseViewController: UIViewController {
     
     
     @objc private func infoBtnTap() {
-        let popVC = UIStoryboard(name: "HomePage", bundle: nil).instantiateViewController(withIdentifier: "InfoController") as! InfoController
-        popVC.modalPresentationStyle = .popover
-        let popoverVC = popVC.popoverPresentationController
-        popoverVC?.delegate = self
-        popoverVC?.sourceView = self.infoBtn
-        popoverVC?.sourceRect = CGRect(x: self.infoBtn.bounds.height/2, y: self.infoBtn.bounds.maxY, width: 0, height: 0)
-        popVC.preferredContentSize = CGSize(width: 146, height: 123)
-        
-        self.present(popVC, animated: true, completion: nil)
+       
+        let popVC = UIStoryboard(name: "PnPopup", bundle: nil).instantiateViewController(withIdentifier: "PopupController") as! PopupController
+        popVC.modalPresentationStyle = .custom
+        self.presentPanModal(popVC)
+//        let popVC = UIStoryboard(name: "HomePage", bundle: nil).instantiateViewController(withIdentifier: "InfoController") as! InfoController
+//        popVC.modalPresentationStyle = .overFullScreen
+//        let popoverVC = popVC.popoverPresentationController
+//        popoverVC?.delegate = self
+//        popoverVC?.sourceView = self.infoBtn
+//        popoverVC?.sourceRect = CGRect(x: self.infoBtn.bounds.height/2, y: self.infoBtn.bounds.maxY, width: 0, height: 0)
+//        popVC.preferredContentSize = CGSize(width: 146, height: 123)
+//
+//        self.present(popVC, animated: true, completion: nil)
     }
     
     func setbarView() {

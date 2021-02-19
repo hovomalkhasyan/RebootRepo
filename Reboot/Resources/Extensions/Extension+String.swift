@@ -19,4 +19,22 @@ extension String {
         
         return dateFormatter.string(from: dt ?? Date())
     }
+//
+//    var formatedPhoneNumber: String {
+//        var number = self
+//        switch number.prefix(1) {
+//        case "+":
+//            return number
+//        case "00":
+//            number.removeFirst(2)
+//            return "+" + number
+//        case "0":
+//            number.removeFirst()
+//            return "+374" + number
+//        case "374":
+//            return "+" + number
+//        default:
+//            return "+374" + number
+//        }
+//    }
 }

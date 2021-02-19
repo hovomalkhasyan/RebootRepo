@@ -71,7 +71,7 @@ extension UserPageController {
             case .success(let model):
                 guard let m = model, let finalModel = m else { return }
                 if let image = finalModel.avatar {
-                    self.userAvatar.setImage(urlString: image, placeholder: nil, completed: nil)
+                    self.userAvatar.setImage(urlString: Constants.imageUrl + image, placeholder: nil, completed: nil)
                 }
                 self.bonus.text = String(finalModel.bonusesBalance)
                 self.loyality = finalModel.loyaltyLevel
@@ -130,15 +130,7 @@ extension UserPageController: UITableViewDelegate, UITableViewDataSource {
         case .reserve:
             if object.count != 0 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: ReserveCell.name, for: indexPath) as! ReserveCell
-                let finalString = NSMutableAttributedString(string: "")
-                    finalString
-                    .withGiloryMadium(object[indexPath.row].workout.dateFrom.UTCToLocal(incomingFormat: "yyyy-MM-dd'T'HH:mm:ss", outGoingFormat: "dd.MM/"))
-                    .withUltraLightItalic(object[indexPath.row].workout.dateFrom.UTCToLocal(incomingFormat: "yyyy-MM-dd'T'HH:mm:ss", outGoingFormat: "HH:mm"))
-                    .withBold(" \(object[indexPath.row].workout.trainer.title)")
-                    .withGilroyRegular(" \(object[indexPath.row].workout.workoutDay.room.slug)")
-                    .withGilroyRegular(" \(object[indexPath.row].workoutPlace.roomPlace.placeNumber)")
-                
-                cell.date.attributedText = finalString
+                cell.setData(model: object[indexPath.row])
                 return cell
             } else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: ReservePageCell.name, for: indexPath) as! ReservePageCell
@@ -146,15 +138,13 @@ extension UserPageController: UITableViewDelegate, UITableViewDataSource {
             }
         case .achievement:
             let cell = tableView.dequeueReusableCell(withIdentifier: AchievementsCell.name, for: indexPath) as! AchievementsCell
-            cell.level.text = loyality?.title
-            cell.cashBack.text = loyality?.description
+            cell.setData(model: loyality)
             return cell
         case .info:
             let cell = tableView.dequeueReusableCell(withIdentifier: TrainingCell.name, for: indexPath) as! TrainingCell
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: ReserveCell.name, for: indexPath) as! ReserveCell
-            
             return cell
         }
     }

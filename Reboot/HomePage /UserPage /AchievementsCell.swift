@@ -9,12 +9,12 @@ import UIKit
 
 class AchievementsCell: UITableViewCell {
 
-    @IBOutlet weak var achievments: UILabel!
-    @IBOutlet weak var activity: UILabel!
-    @IBOutlet weak var cashBack: UILabel!
-    @IBOutlet weak var level: UILabel!
-    @IBOutlet weak var levelImage: UIImageView!
-    @IBOutlet weak var achievementsImage: UIImageView!
+    @IBOutlet weak private var achievments: UILabel!
+    @IBOutlet weak private var activity: UILabel!
+    @IBOutlet weak private var cashBack: UILabel!
+    @IBOutlet weak private var level: UILabel!
+    @IBOutlet weak private var levelImage: UIImageView!
+    @IBOutlet weak private var achievementsImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -22,7 +22,15 @@ class AchievementsCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+}
 
-        // Configure the view for the selected state
+extension AchievementsCell {
+    func setData(model: LoyaltyLevels?) {
+        self.level.text = model?.title
+        self.cashBack.text = model?.description
+        if let image = model?.iconActive {
+            self.levelImage.setImage(urlString: Constants.imageUrl + image)
+        }
     }
 }

@@ -72,6 +72,9 @@
 		FA1AE07D25C5D2C30052AEBB /* Extension+UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1AE07C25C5D2C30052AEBB /* Extension+UIFont.swift */; };
 		FA1AE08725C5D7FD0052AEBB /* UserReservedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1AE08525C5D7FD0052AEBB /* UserReservedCell.swift */; };
 		FA1AE08825C5D7FD0052AEBB /* UserReservedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1AE08625C5D7FD0052AEBB /* UserReservedCell.xib */; };
+		FA5F013425DF9704006FD55E /* PopupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F013325DF9704006FD55E /* PopupController.swift */; };
+		FA5F013725DF9751006FD55E /* PnPopup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA5F013625DF9751006FD55E /* PnPopup.storyboard */; };
+		FA5F013B25DF97A1006FD55E /* PopupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F013A25DF97A1006FD55E /* PopupCell.swift */; };
 		FA98DCC925C5961C00CAA052 /* UserAchivemntsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98DCC725C5961C00CAA052 /* UserAchivemntsCell.swift */; };
 		FA98DCCA25C5961C00CAA052 /* UserAchivemntsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA98DCC825C5961C00CAA052 /* UserAchivemntsCell.xib */; };
 		FAA2F18A25D164A1006763D4 /* AboutUsDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA2F18925D164A1006763D4 /* AboutUsDetailsController.swift */; };
@@ -150,6 +153,9 @@
 		FA1AE07C25C5D2C30052AEBB /* Extension+UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIFont.swift"; sourceTree = "<group>"; };
 		FA1AE08525C5D7FD0052AEBB /* UserReservedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserReservedCell.swift; sourceTree = "<group>"; };
 		FA1AE08625C5D7FD0052AEBB /* UserReservedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserReservedCell.xib; sourceTree = "<group>"; };
+		FA5F013325DF9704006FD55E /* PopupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupController.swift; sourceTree = "<group>"; };
+		FA5F013625DF9751006FD55E /* PnPopup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PnPopup.storyboard; sourceTree = "<group>"; };
+		FA5F013A25DF97A1006FD55E /* PopupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupCell.swift; sourceTree = "<group>"; };
 		FA98DCC725C5961C00CAA052 /* UserAchivemntsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAchivemntsCell.swift; sourceTree = "<group>"; };
 		FA98DCC825C5961C00CAA052 /* UserAchivemntsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserAchivemntsCell.xib; sourceTree = "<group>"; };
 		FAA2F18925D164A1006763D4 /* AboutUsDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsDetailsController.swift; sourceTree = "<group>"; };
@@ -299,6 +305,7 @@
 		DA9DCC61255DA58900E3E8AB /* PopUpInfo  */ = {
 			isa = PBXGroup;
 			children = (
+				FA5F013025DF96E2006FD55E /* PanPopup */,
 				DA9DCC63255DA5B300E3E8AB /* InfoController.swift */,
 				DA9DCC66255DA5C800E3E8AB /* InfoCell.swift */,
 			);
@@ -489,6 +496,24 @@
 			path = UserReservedCell;
 			sourceTree = "<group>";
 		};
+		FA5F013025DF96E2006FD55E /* PanPopup */ = {
+			isa = PBXGroup;
+			children = (
+				FA5F013925DF9787006FD55E /* Cell */,
+				FA5F013325DF9704006FD55E /* PopupController.swift */,
+				FA5F013625DF9751006FD55E /* PnPopup.storyboard */,
+			);
+			path = PanPopup;
+			sourceTree = "<group>";
+		};
+		FA5F013925DF9787006FD55E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FA5F013A25DF97A1006FD55E /* PopupCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		FA98DCC525C595B600CAA052 /* Achivements */ = {
 			isa = PBXGroup;
 			children = (
@@ -567,6 +592,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA5F013725DF9751006FD55E /* PnPopup.storyboard in Resources */,
 				DA10B529256254BF0010A819 /* gilroy-ultralightitalic.ttf in Resources */,
 				FA98DCCA25C5961C00CAA052 /* UserAchivemntsCell.xib in Resources */,
 				DA8CAB51255BCB1D0064A198 /* gilroy-bold.ttf in Resources */,
@@ -680,6 +706,7 @@
 				DA10B54A2562A5EA0010A819 /* ReservePageCell.swift in Sources */,
 				DA10B535256267CA0010A819 /* CollectionCell.swift in Sources */,
 				DA606765255E744A0074497D /* BaseController.swift in Sources */,
+				FA5F013425DF9704006FD55E /* PopupController.swift in Sources */,
 				FAC3D3E4259B535500C00270 /* RegisterRequestModel.swift in Sources */,
 				FA1666EE25C5AD6B00A39FCB /* Extension+UIViewController.swift in Sources */,
 				DACE564C2570ECAB00F6683F /* SplashController.swift in Sources */,
@@ -703,6 +730,7 @@
 				DA8CAB63255BEE110064A198 /* PopUpController.swift in Sources */,
 				DA8CAB4B255BC0CD0064A198 /* StudioCell.swift in Sources */,
 				FA1666EB25C5AD1E00A39FCB /* Extension+Encodable.swift in Sources */,
+				FA5F013B25DF97A1006FD55E /* PopupCell.swift in Sources */,
 				DA9DCC64255DA5B300E3E8AB /* InfoController.swift in Sources */,
 				DA9DCC67255DA5C800E3E8AB /* InfoCell.swift in Sources */,
 				FA1666F125C5ADBC00A39FCB /* Extension+UIButton.swift in Sources */,

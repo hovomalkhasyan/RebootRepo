@@ -12,7 +12,7 @@ class ReserveCell: UITableViewCell {
     
     //MARK: - IBOutlets
     @IBOutlet weak private var cellView: UIView!
-    @IBOutlet weak var date: UILabel!
+    @IBOutlet weak private var date: UILabel!
     
     //MARK: - LifeCycle
     override func awakeFromNib() {
@@ -22,8 +22,6 @@ class ReserveCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
     }
 }
 
@@ -39,6 +37,19 @@ extension ReserveCell {
         cellView.layer.shadowOffset = CGSize(width: 0, height: 1)
         cellView.layer.shadowOpacity = 1
         cellView.layer.shadowRadius = 3
+    }
+}
+
+extension ReserveCell {
+    func setData(model: Object) {
+        let finalString = NSMutableAttributedString(string: "")
+            finalString
+            .withGiloryMadium(model.workout.dateFrom.UTCToLocal(incomingFormat: "yyyy-MM-dd'T'HH:mm:ss", outGoingFormat: "dd.MM/"))
+            .withUltraLightItalic(model.workout.dateFrom.UTCToLocal(incomingFormat: "yyyy-MM-dd'T'HH:mm:ss", outGoingFormat: "HH:mm"))
+            .withBold(" \(model.workout.trainer.title)")
+            .withGilroyRegular(" \(model.workout.workoutDay.room.slug)")
+            .withGilroyRegular(" \(model.workoutPlace.roomPlace.placeNumber)")
         
+        self.date.attributedText = finalString
     }
 }

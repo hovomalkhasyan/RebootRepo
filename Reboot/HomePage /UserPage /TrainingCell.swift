@@ -41,5 +41,7 @@ extension TrainingCell: UICollectionViewDelegate, UICollectionViewDataSource, UI
         let width = height * 15 / 6
         return CGSize(width: width, height: height)
     }
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath.row)
+    }
 }
