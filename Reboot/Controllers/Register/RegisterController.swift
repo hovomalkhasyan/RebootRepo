@@ -105,13 +105,6 @@ extension RegisterController {
             sub.layer.borderColor = borderColor.cgColor
         }
     }
-    
-    private func showAlert(title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okBtn = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        alert.addAction(okBtn)
-        present(alert, animated: true, completion: nil)
-    }
 }
 
 //MARK: - Setup

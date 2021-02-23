@@ -78,13 +78,13 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите студию" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oNT-z7-gyw">
-                                <rect key="frame" x="103.5" y="118" width="168.5" height="24.5"/>
+                                <rect key="frame" x="104" y="118" width="167.5" height="23.5"/>
                                 <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Fsm-lx-Q5q">
-                                <rect key="frame" x="0.0" y="167.5" width="375" height="450.5"/>
+                                <rect key="frame" x="0.0" y="166.5" width="375" height="451.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="StudioCell" rowHeight="56" id="k4I-2e-isz" customClass="StudioCell" customModule="Reboot" customModuleProvider="target">
@@ -109,7 +109,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k5r-om-Qxq">
-                                                            <rect key="frame" x="32" y="14.5" width="46" height="22"/>
+                                                            <rect key="frame" x="32" y="15" width="44.5" height="21"/>
                                                             <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy" pointSize="18"/>
                                                             <color key="textColor" name="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -598,10 +598,10 @@
                                 <rect key="frame" x="0.0" y="96" width="375" height="522"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="f20-qz-sP3">
-                                        <rect key="frame" x="12" y="12" width="351" height="641.5"/>
+                                        <rect key="frame" x="12" y="12" width="351" height="640.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="wfe-j8-r4L">
-                                                <rect key="frame" x="0.0" y="0.0" width="351" height="335.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="351" height="334.5"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 2" translatesAutoresizingMaskIntoConstraints="NO" id="Lfj-kl-GjA">
                                                         <rect key="frame" x="0.0" y="0.0" width="351" height="175.5"/>
@@ -610,16 +610,16 @@
                                                         </constraints>
                                                     </imageView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="776-WU-5M3">
-                                                        <rect key="frame" x="0.0" y="188.5" width="321.5" height="67"/>
+                                                        <rect key="frame" x="0.0" y="188.5" width="327" height="66"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REBOOT EAST на Павелецкой" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rzk-oI-2Zg">
-                                                                <rect key="frame" x="0.0" y="0.0" width="276.5" height="24.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="283" height="23.5"/>
                                                                 <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy" pointSize="20"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Шлюзовая набережная, 4, БЦ Россо Рива, м. Павелецкая" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pTz-QO-iJj">
-                                                                <rect key="frame" x="0.0" y="29.5" width="321.5" height="37.5"/>
+                                                                <rect key="frame" x="0.0" y="28.5" width="327" height="37.5"/>
                                                                 <fontDescription key="fontDescription" name="Gilroy-Regular" family="Gilroy" pointSize="16"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -627,7 +627,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="kyD-5a-CUC">
-                                                        <rect key="frame" x="0.0" y="268.5" width="351" height="34"/>
+                                                        <rect key="frame" x="0.0" y="267.5" width="351" height="34"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rie-cn-egi">
                                                                 <rect key="frame" x="0.0" y="0.0" width="140" height="34"/>
@@ -686,7 +686,7 @@
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="eie-Qa-zE3">
-                                                        <rect key="frame" x="0.0" y="315.5" width="197" height="20"/>
+                                                        <rect key="frame" x="0.0" y="314.5" width="197" height="20"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="b0t-0J-xAB">
                                                                 <rect key="frame" x="0.0" y="0.0" width="175" height="20"/>
@@ -727,7 +727,7 @@
                                                 </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="apy-7t-EF3" customClass="YMKMapView">
-                                                <rect key="frame" x="0.0" y="351.5" width="351" height="290"/>
+                                                <rect key="frame" x="0.0" y="350.5" width="351" height="290"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n1V-8G-udG">
                                                         <rect key="frame" x="307" y="185" width="35" height="70"/>
@@ -802,10 +802,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="p76-ae-dR6">
-                                        <rect key="frame" x="12" y="673.5" width="351" height="641.5"/>
+                                        <rect key="frame" x="12" y="672.5" width="351" height="640.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="CIF-kC-1DS">
-                                                <rect key="frame" x="0.0" y="0.0" width="351" height="335.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="351" height="334.5"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 1" translatesAutoresizingMaskIntoConstraints="NO" id="Mhh-GE-5Pv">
                                                         <rect key="frame" x="0.0" y="0.0" width="351" height="175.5"/>
@@ -814,16 +814,16 @@
                                                         </constraints>
                                                     </imageView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="uiS-mX-Vhz">
-                                                        <rect key="frame" x="0.0" y="188.5" width="315" height="67"/>
+                                                        <rect key="frame" x="0.0" y="188.5" width="315" height="66"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REBOOT SW в Хамовниках" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9B-Mx-n0C">
-                                                                <rect key="frame" x="0.0" y="0.0" width="248" height="24.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="254" height="23.5"/>
                                                                 <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy" pointSize="20"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="улица Тимура Фрунзе, 11. к. 1, БЦ «Демидов», м. Парк культуры" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xIp-0H-mfV">
-                                                                <rect key="frame" x="0.0" y="29.5" width="315" height="37.5"/>
+                                                                <rect key="frame" x="0.0" y="28.5" width="315" height="37.5"/>
                                                                 <fontDescription key="fontDescription" name="Gilroy-Regular" family="Gilroy" pointSize="16"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -831,7 +831,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="yGS-nD-Ndq">
-                                                        <rect key="frame" x="0.0" y="268.5" width="351" height="34"/>
+                                                        <rect key="frame" x="0.0" y="267.5" width="351" height="34"/>
                                                         <subviews>
                                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GsJ-zr-s6Q">
                                                                 <rect key="frame" x="0.0" y="0.0" width="140" height="34"/>
@@ -890,7 +890,7 @@
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="J6u-25-hHB">
-                                                        <rect key="frame" x="0.0" y="315.5" width="197" height="20"/>
+                                                        <rect key="frame" x="0.0" y="314.5" width="197" height="20"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="A7c-y8-P2C">
                                                                 <rect key="frame" x="0.0" y="0.0" width="175" height="20"/>
@@ -932,7 +932,7 @@
                                                 </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e6k-dE-ni6" customClass="YMKMapView">
-                                                <rect key="frame" x="0.0" y="351.5" width="351" height="290"/>
+                                                <rect key="frame" x="0.0" y="350.5" width="351" height="290"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z58-O9-vuT">
                                                         <rect key="frame" x="307" y="185" width="35" height="70"/>
@@ -1184,7 +1184,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="jVq-WC-xQ6">
-                                            <rect key="frame" x="88" y="-9" width="122" height="104"/>
+                                            <rect key="frame" x="88" y="-9" width="125" height="104"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OAd-m0-lkH">
                                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -1193,16 +1193,16 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Yma-wz-8FO">
-                                                    <rect key="frame" x="0.0" y="54" width="122" height="50"/>
+                                                    <rect key="frame" x="0.0" y="54" width="125" height="50"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Бонусы: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erq-IJ-Kex">
-                                                            <rect key="frame" x="0.0" y="0.0" width="71" height="50"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="74" height="50"/>
                                                             <fontDescription key="fontDescription" name="Gilroy-Regular" family="Gilroy" pointSize="18"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SUr-Rj-pho">
-                                                            <rect key="frame" x="72" y="0.0" width="50" height="50"/>
+                                                            <rect key="frame" x="75" y="0.0" width="50" height="50"/>
                                                             <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy" pointSize="18"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -1260,13 +1260,13 @@
                                                     <rect key="frame" x="10" y="0.0" width="355" height="48"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="S9n-tN-3sO">
-                                                            <rect key="frame" x="5" y="13" width="37" height="21.5"/>
+                                                            <rect key="frame" x="5" y="13" width="34" height="21.5"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Hbe-qP-6ze">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="37" height="21.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="34" height="21.5"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6VC-ZK-HDP">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="37" height="21.5"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="34" height="21.5"/>
                                                                             <fontDescription key="fontDescription" name="Gilroy-Medium" family="Gilroy" pointSize="16"/>
                                                                             <color key="textColor" name="textColor"/>
                                                                             <nil key="highlightedColor"/>
@@ -1339,35 +1339,35 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="tss-d2-wbe">
-                                                    <rect key="frame" x="10" y="8" width="355" height="103"/>
+                                                    <rect key="frame" x="10" y="8" width="355" height="102.5"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9Ss-UI-1bm">
-                                                            <rect key="frame" x="0.0" y="0.0" width="115" height="103"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="115" height="102.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="МОЙ УРОВЕНЬ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rr1-aM-GGw">
-                                                                    <rect key="frame" x="12.5" y="0.0" width="90" height="16"/>
+                                                                    <rect key="frame" x="10" y="0.0" width="95.5" height="15.5"/>
                                                                     <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy" pointSize="13"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="warrior_active" translatesAutoresizingMaskIntoConstraints="NO" id="lVE-7t-o1b">
-                                                                    <rect key="frame" x="39" y="24" width="37" height="41"/>
+                                                                    <rect key="frame" x="39" y="23.5" width="37" height="41"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="41" id="HP4-y6-pe6"/>
                                                                         <constraint firstAttribute="width" constant="37" id="ZB9-Sh-5UY"/>
                                                                     </constraints>
                                                                 </imageView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="aAS-E4-s8q">
-                                                                    <rect key="frame" x="18.5" y="73" width="78" height="30"/>
+                                                                    <rect key="frame" x="17.5" y="72.5" width="80.5" height="30"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Legend IV" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1e6-L6-YkI">
-                                                                            <rect key="frame" x="11.5" y="0.0" width="55" height="14"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Legend IV" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1e6-L6-YkI">
+                                                                            <rect key="frame" x="13" y="0.0" width="54.5" height="14"/>
                                                                             <fontDescription key="fontDescription" name="Gilroy-Regular" family="Gilroy" pointSize="12"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="cash back 3% " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qzf-k4-RcR">
-                                                                            <rect key="frame" x="0.0" y="16" width="78" height="14"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cash back 3% " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qzf-k4-RcR">
+                                                                            <rect key="frame" x="0.0" y="16" width="80.5" height="14"/>
                                                                             <fontDescription key="fontDescription" name="Gilroy-Regular" family="Gilroy" pointSize="12"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
@@ -1380,22 +1380,22 @@
                                                             </constraints>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cAa-a1-ssI">
-                                                            <rect key="frame" x="120" y="0.0" width="115" height="103"/>
+                                                            <rect key="frame" x="120" y="0.0" width="115" height="102.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="АКТИВНОСТЬ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QUs-jh-ooV">
-                                                                    <rect key="frame" x="16" y="0.0" width="83.5" height="16"/>
+                                                                    <rect key="frame" x="13.5" y="0.0" width="88" height="15.5"/>
                                                                     <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy" pointSize="13"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vma-Qf-dAO">
-                                                                    <rect key="frame" x="48" y="24" width="19" height="41"/>
+                                                                    <rect key="frame" x="48" y="23.5" width="19" height="41"/>
                                                                     <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy" pointSize="34"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="за последние 30 дней" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sVU-gA-vfg">
-                                                                    <rect key="frame" x="17.5" y="73" width="80.5" height="30"/>
+                                                                    <rect key="frame" x="18" y="72.5" width="79.5" height="30"/>
                                                                     <fontDescription key="fontDescription" name="Gilroy-Regular" family="Gilroy" pointSize="12"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -1403,23 +1403,23 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="O68-yF-9Ez">
-                                                            <rect key="frame" x="240" y="0.0" width="115" height="103"/>
+                                                            <rect key="frame" x="240" y="0.0" width="115" height="102.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ДОСТИЖЕНИЯ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d67-Wc-ZgY">
-                                                                    <rect key="frame" x="13" y="0.0" width="89" height="16"/>
+                                                                    <rect key="frame" x="10.5" y="0.0" width="94.5" height="15.5"/>
                                                                     <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy" pointSize="13"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Subtract" translatesAutoresizingMaskIntoConstraints="NO" id="VId-kb-SNk">
-                                                                    <rect key="frame" x="39" y="24" width="37" height="41"/>
+                                                                    <rect key="frame" x="39" y="23.5" width="37" height="41"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="41" id="4oo-la-ySX"/>
                                                                         <constraint firstAttribute="width" constant="37" id="c08-hp-H8F"/>
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Прошел 100 UPPER BODY" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ff2-1D-qJI">
-                                                                    <rect key="frame" x="22" y="73" width="71.5" height="30"/>
+                                                                    <rect key="frame" x="19" y="72.5" width="77" height="30"/>
                                                                     <fontDescription key="fontDescription" name="Gilroy-Regular" family="Gilroy" pointSize="12"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -1526,6 +1526,9 @@
                                                                 </constraints>
                                                             </collectionViewCellContentView>
                                                             <size key="customSize" width="274" height="172"/>
+                                                            <connections>
+                                                                <outlet property="collectionCellImage" destination="uz4-zb-QIN" id="fRC-v5-ldz"/>
+                                                            </connections>
                                                         </collectionViewCell>
                                                     </cells>
                                                 </collectionView>
@@ -1609,7 +1612,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jpq-fG-jtq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2103.75" y="671.83098591549299"/>
+            <point key="canvasLocation" x="-2104.8000000000002" y="671.51424287856082"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1ra-ux-DwV">

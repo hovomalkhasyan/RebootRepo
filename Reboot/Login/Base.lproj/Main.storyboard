@@ -131,6 +131,7 @@
                                     <constraint firstAttribute="height" constant="20" id="Wxl-z2-eNl"/>
                                 </constraints>
                                 <state key="normal" image="Eye 02"/>
+                                <state key="selected" image="eye"/>
                                 <connections>
                                     <action selector="showPasswordAction:" destination="0F2-fd-WPc" eventType="touchUpInside" id="81f-Pd-FVi"/>
                                 </connections>
@@ -196,6 +197,7 @@
     <resources>
         <image name="Eye 02" width="25" height="25"/>
         <image name="Group 6544" width="210" height="64"/>
+        <image name="eye" width="25" height="25"/>
         <namedColor name="ForgotPassColor">
             <color red="0.039215686274509803" green="0.039215686274509803" blue="0.039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

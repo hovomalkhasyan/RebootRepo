@@ -11,6 +11,8 @@ class PopupCell: UITableViewCell {
     
     @IBOutlet weak var packages: UILabel!
     @IBOutlet weak var packegesCount: UILabel!
+    @IBOutlet weak var packagesCounts: UILabel!
+    @IBOutlet weak var pacagesView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

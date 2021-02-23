@@ -56,6 +56,7 @@
 		DAF6753F255AC4620033D861 /* SavePassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAF6753E255AC4620033D861 /* SavePassword.storyboard */; };
 		DAF67548255AC8470033D861 /* AboutUsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF67547255AC8470033D861 /* AboutUsController.swift */; };
 		DAF6754C255AC87C0033D861 /* AboutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF6754B255AC87C0033D861 /* AboutCell.swift */; };
+		FA013A8D25E4FA2D0050C270 /* Extension+Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA013A8C25E4FA2D0050C270 /* Extension+Double.swift */; };
 		FA02F603259C58A90056865E /* CustonNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02F602259C58A90056865E /* CustonNavBar.swift */; };
 		FA1666DA25C5A94300A39FCB /* UserReserveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1666D825C5A94300A39FCB /* UserReserveCell.swift */; };
 		FA1666DB25C5A94300A39FCB /* UserReserveCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1666D925C5A94300A39FCB /* UserReserveCell.xib */; };
@@ -137,6 +138,7 @@
 		DAF67547255AC8470033D861 /* AboutUsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsController.swift; sourceTree = "<group>"; };
 		DAF6754B255AC87C0033D861 /* AboutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCell.swift; sourceTree = "<group>"; };
 		DEF704F3B785D1EC47CB3B42 /* Pods-Reboot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reboot.debug.xcconfig"; path = "Target Support Files/Pods-Reboot/Pods-Reboot.debug.xcconfig"; sourceTree = "<group>"; };
+		FA013A8C25E4FA2D0050C270 /* Extension+Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Double.swift"; sourceTree = "<group>"; };
 		FA02F602259C58A90056865E /* CustonNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustonNavBar.swift; sourceTree = "<group>"; };
 		FA1666D825C5A94300A39FCB /* UserReserveCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserReserveCell.swift; sourceTree = "<group>"; };
 		FA1666D925C5A94300A39FCB /* UserReserveCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserReserveCell.xib; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 				FA1666F825C5AE4300A39FCB /* Extension+UITextField.swift */,
 				FA1AE07925C5D2330052AEBB /* Extension+NSMutableAttributedString.swift */,
 				FA1AE07C25C5D2C30052AEBB /* Extension+UIFont.swift */,
+				FA013A8C25E4FA2D0050C270 /* Extension+Double.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -714,6 +717,7 @@
 				DA22C794255D549000865E23 /* AddressController.swift in Sources */,
 				FA1666E825C5ACDC00A39FCB /* Extension+UIView.swift in Sources */,
 				FA1AE07D25C5D2C30052AEBB /* Extension+UIFont.swift in Sources */,
+				FA013A8D25E4FA2D0050C270 /* Extension+Double.swift in Sources */,
 				DA10B52F256260D30010A819 /* AchievementsCell.swift in Sources */,
 				DAF67527255AAC2B0033D861 /* ForgotPassController.swift in Sources */,
 				DAF6753C255AC4520033D861 /* SavePasswordController.swift in Sources */,

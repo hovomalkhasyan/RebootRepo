@@ -6,14 +6,15 @@
 //
 
 import Foundation
+import Alamofire
 import UIKit
 
 class NavBarViewController: BaseViewController {
-    
+    //MARK: - Property
     var navBar: UIView!
     var backButton: UIButton!
     
-
+    //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareNavBar()
@@ -22,15 +23,17 @@ class NavBarViewController: BaseViewController {
         self.view.addGestureRecognizer(swipeRight)
     }
     
+    //MARK: - gestures
     @objc func rightSwiped() {
         self.navigationController?.popViewController(animated: true)
     }
     
+    //MARK: - navBarSetup
     func zeroShadowOpacityNavBar() {
         navBar.layer.shadowOpacity = .zero
-        
     }
-
+        
+    //MARK: - prepareNavBar
     func prepareNavBar() {
 
         navBar = UIView()
@@ -62,6 +65,7 @@ class NavBarViewController: BaseViewController {
      
     }
     
+    //MARK: - BackButtonAction
     @objc func backBtnAction() {
         self.navigationController?.popViewController(animated: true)
         

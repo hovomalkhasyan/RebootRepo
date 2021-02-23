@@ -37,19 +37,19 @@ class UserPageController: BaseViewController {
     @IBOutlet weak private var bonus: UILabel!
     @IBOutlet weak private var userName: UILabel!
     
-    private var loyality : LoyaltyLevels?
-    private var object = [Object]()
-    
+    private var loyality : Loyalty?
+    private var reserves = [Reserves]()
+    private var activity: Activity?
+    private var ads = ["MAp"]
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        super.setbarView()
-        super.setupGesture()
-        super.setupDarkMode()
-        super.workoutsCount()
+        setbarView()
+        setupGesture()
+        setupDarkMode()
         setupTableView()
-        accountRequest()
-        reserveResponse()
+        userInfoRequest()
+        workoutsCount()
     }
     
     override func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
@@ -65,17 +65,39 @@ extension UserPageController {
         tableView.register(UINib(nibName: UserReservedCell.name, bundle: nil), forCellReuseIdentifier: UserReservedCell.name)
     }
     
-    private func accountRequest() {
-        NetWorkService.request(url: Constants.MY_ACCOUNT_ENDPOINT, method: .get, param: nil, encoding: JSONEncoding.prettyPrinted) { (resp: RequestResult<AccountResponse?>) in
+//    private func accountRequest() {
+//        NetWorkService.request(url: Constants.MY_ACCOUNT_ENDPOINT, method: .get, param: nil, encoding: JSONEncoding.prettyPrinted) { (resp: RequestResult<AccountResponse?>) in
+//            switch resp {
+//            case .success(let model):
+//                guard let m = model, let finalModel = m else { return }
+//                if let image = finalModel.avatar {
+//                    self.userAvatar.setImage(urlString: Constants.imageUrl + image, placeholder: nil, completed: nil)
+//                }
+//                self.bonus.text = String(finalModel.bonusesBalance)
+//                self.loyality = finalModel.loyaltyLevel
+//                self.userName.text = finalModel.fullName
+//                self.tableView.reloadData()
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
+//    }
+    
+    private func userInfoRequest() {
+        NetWorkService.request(url: Constants.MOBILE_API, method: .get, param: nil, encoding: JSONEncoding.prettyPrinted) { (resp: RequestResult<BaseResponseModel?>) in
             switch resp {
             case .success(let model):
                 guard let m = model, let finalModel = m else { return }
-                if let image = finalModel.avatar {
-                    self.userAvatar.setImage(urlString: Constants.imageUrl + image, placeholder: nil, completed: nil)
+                self.bonus.text = finalModel.bonus.bonus
+                self.userName.text = finalModel.user.userName
+                if let image = finalModel.user.userAvatar {
+                    self.userAvatar.setImage(urlString: Constants.BASE_URl + image)
                 }
-                self.bonus.text = String(finalModel.bonusesBalance)
-                self.loyality = finalModel.loyaltyLevel
-                self.userName.text = finalModel.fullName
+                self.loyality = finalModel.user.loyalty
+                self.reserves = finalModel.reserves ?? []
+                self.activity = finalModel.activity
+//                self.ads = finalModel.ads ?? []
+                print(model)
                 self.tableView.reloadData()
             case .failure(let error):
                 print(error)
@@ -83,22 +105,22 @@ extension UserPageController {
         }
     }
     
-    private func reserveResponse() {
-        //        indicator.startAnimating()
-        NetWorkService.request(url: Constants.MY_RESERVES_ENDPOINT, method: .get, param: nil, encoding: JSONEncoding.prettyPrinted) { (resp: RequestResult<ReserveResp?>) in
-            switch resp {
-            case .success(let data):
-                guard let data = data, let obj = data?.objects else {return}
-                self.object = obj
-                self.tableView.reloadData()
-            //                self.userView.isHidden = true
-            //                self.indicator.stopAnimating()
-            //                self.indicator.hidesWhenStopped = true
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
+//    private func reserveResponse() {
+//        //        indicator.startAnimating()
+//        NetWorkService.request(url: Constants.MY_RESERVES_ENDPOINT, method: .get, param: nil, encoding: JSONEncoding.prettyPrinted) { (resp: RequestResult<ReserveResp?>) in
+//            switch resp {
+//            case .success(let data):
+//                guard let data = data, let obj = data?.objects else {return}
+//                self.object = obj
+//                self.tableView.reloadData()
+//            //                self.userView.isHidden = true
+//            //                self.indicator.stopAnimating()
+//            //                self.indicator.hidesWhenStopped = true
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
+//    }
     
     @objc func selectedItem() {
         self.tabBarController?.selectedIndex = 1
@@ -110,8 +132,8 @@ extension UserPageController: UITableViewDelegate, UITableViewDataSource {
         let sectionType = SectionType(rawValue: section)
         switch sectionType {
         case .reserve:
-            if object.count != 0 {
-                return object.count
+            if reserves.count != 0 {
+                return reserves.count
             } else {
                 return 1
             }
@@ -128,9 +150,9 @@ extension UserPageController: UITableViewDelegate, UITableViewDataSource {
         let sectionType = SectionType(rawValue: indexPath.section)
         switch sectionType {
         case .reserve:
-            if object.count != 0 {
+            if reserves.count != 0 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: ReserveCell.name, for: indexPath) as! ReserveCell
-                cell.setData(model: object[indexPath.row])
+                cell.setData(model: reserves[indexPath.row])
                 return cell
             } else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: ReservePageCell.name, for: indexPath) as! ReservePageCell
@@ -139,9 +161,11 @@ extension UserPageController: UITableViewDelegate, UITableViewDataSource {
         case .achievement:
             let cell = tableView.dequeueReusableCell(withIdentifier: AchievementsCell.name, for: indexPath) as! AchievementsCell
             cell.setData(model: loyality)
+            cell.activity.text = String(activity?.activityDays ?? 0)
             return cell
         case .info:
             let cell = tableView.dequeueReusableCell(withIdentifier: TrainingCell.name, for: indexPath) as! TrainingCell
+            cell.ads = ads
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: ReserveCell.name, for: indexPath) as! ReserveCell
@@ -151,7 +175,7 @@ extension UserPageController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let sectionType = SectionType(rawValue: section)
-        if object.count != 0{
+        if reserves.count != 0{
             let header = tableView.dequeueReusableCell(withIdentifier: Header.name) as! Header
             header.title.text = sectionType?.getTitle()
             return header
@@ -187,7 +211,7 @@ extension UserPageController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         let sectionType = SectionType(rawValue: section)
         if sectionType == .reserve {
-            if object.count == 0 {
+            if reserves.count == 0 {
                 return 12
             } else {
                 return 40

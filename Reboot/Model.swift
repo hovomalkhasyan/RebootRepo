@@ -45,7 +45,6 @@ struct User: Codable {
 }
 
 // MARK: - LoyaltyLevel
-
 struct LoyaltyLevel: Codable {
     let iconInactive: String?
     let activationPeriod: Int
@@ -81,8 +80,8 @@ struct Plan: Codable {
     let bottomContent: String?
     let isShowTitle, allowTrial, allowCredit: Bool
     let workoutsCount: Int?
-
-  
+    
+    
 }
 
 //MARK: - USER
@@ -124,7 +123,7 @@ struct LoyaltyLevels: Codable {
     let progress: [Int]
     let id: Int
     let title, iconInactive: String?
-
+    
 }
 
 // MARK: - Package
@@ -134,7 +133,7 @@ struct Packages: Codable {
     let workoutsCount: Int
     let created: String?
     let id, initialWorkoutsCount: Int
-
+    
 }
 
 // MARK: - Plan
@@ -154,14 +153,14 @@ struct Plans: Codable {
     let isUnlimited, isFirst: Bool
     let planTypeVerbose: String?
     let isShowTitle: Bool
-
+    
 }
 
 //MARK: - reserves
 struct ReserveResp: Codable {
     let numResults, offset, limit: Int
     let objects: [Object]
-
+    
 }
 
 // MARK: - Object
@@ -174,8 +173,8 @@ struct Object: Codable {
     let trainingProductsOrders: [String]
     let altID : String?
     let reserveStatus: String
-
-   
+    
+    
 }
 
 // MARK: - Workout
@@ -187,7 +186,7 @@ struct Workout: Codable {
     let id: Int
     let dateTo, title: String
     let inEnglish: Bool
-
+    
 }
 
 // MARK: - Trainer
@@ -204,7 +203,7 @@ struct WorkoutDay: Codable {
     let room: Room
     let id: Int
     let workoutDate: String
-
+    
 }
 
 // MARK: - Room
@@ -213,7 +212,7 @@ struct Room: Codable {
     let titleShort, schemaImage, slug, imageAlt: String
     let id: Int
     let title, phone, onlineLink: String
-
+    
 }
 
 // MARK: - WorkoutType
@@ -221,7 +220,7 @@ struct WorkoutType: Codable {
     let slug, iconAlt, body: String
     let id: Int
     let icon, title: String
-
+    
 }
 
 // MARK: - WorkoutPlace
@@ -229,7 +228,7 @@ struct WorkoutPlace: Codable {
     let roomPlace: RoomPlace
     let status: String?
     let id: Int
-
+    
 }
 
 // MARK: - RoomPlace
@@ -239,7 +238,7 @@ struct RoomPlace: Codable {
     let id: Int
     let placeNumber: String
     let top: Int
-
+    
 }
 
 // MARK: - StandardPlace
@@ -249,3 +248,52 @@ struct StandardPlace: Codable {
     let id, width: Int
 }
 
+
+//MARK: - mobile
+
+struct BaseResponseModel: Codable {
+    let user: UserResponse
+    let bonus: Bonus
+    let reserves: [Reserves]?
+    let activity: Activity?
+    let ads: [Ads]?
+}
+
+// MARK: - Activity
+struct Activity: Codable {
+    let lastActivity, activityDays, activityWeeks: Int
+    let compareCount: String
+}
+
+
+// MARK: - Bonus
+struct Bonus: Codable {
+    let bonus: String
+}
+
+// MARK: - User
+struct UserResponse: Codable {
+    let userAvatar: String?
+    let userName: String
+    let loyalty: Loyalty?
+}
+
+// MARK: - Loyalty
+struct Loyalty: Codable {
+    let title, description: String
+    let activationPeriod, subscribePercentage: Int
+    let body, iconActive, iconInactive: String
+}
+
+struct Ads: Codable {
+    let title: String
+    let image: String?
+    let url: String
+}
+
+struct Reserves:Codable {
+    let dateFrom: String
+    let workoutTrainerTitle: String
+    let workoutDayRoomSlug: String
+    let workoutPlaceRoomPlaceNumber: String
+}

@@ -9,4 +9,6 @@ import UIKit
 
 class CollectionCell: UICollectionViewCell {
     
+    @IBOutlet weak var collectionCellImage: UIImageView!
+    
 }

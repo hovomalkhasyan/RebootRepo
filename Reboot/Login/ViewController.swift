@@ -9,9 +9,6 @@ import UIKit
 import Alamofire
 class ViewController: BaseViewController {
     
-    //MARK: - propertyes
-    private var iconClick = true
-    
     //MARK: - IBOutlets
     @IBOutlet weak private var emailTf: TextField!
     @IBOutlet weak private var passwordTF: TextField!
@@ -37,34 +34,23 @@ class ViewController: BaseViewController {
     
     //MARK: - IBActions
     @IBAction func showPasswordAction(_ sender: UIButton) {
-        if iconClick  {
-            passwordTF.isSecureTextEntry = false
-            passwordShowBtn.setImage(UIImage(named: "eye"), for: .normal)
-            passwordShowBtn.setImageColor(color: UIColor(named: "borderColor")!, for: .normal)
-            
-        } else {
-            passwordTF.isSecureTextEntry = true
-            passwordShowBtn.setImage(UIImage(named: "Eye 02"), for: .normal)
-            passwordShowBtn.setImageColor(color: UIColor(named: "borderColor")!, for: .normal)
-            
-        }
-        
-        iconClick = !iconClick
-        
+        sender.isSelected = !sender.isSelected
+        passwordTF.isSecureTextEntry = !passwordTF.isSecureTextEntry
+//        passwordShowBtn.setImageColor(color: UIColor(named: "borderColor")!, for: .selected)
     }
     
     @IBAction func signInAction(_ sender: UIButton) {
-        sender.startLoading()
         if CheckInternet.Connection() {
             self.view.endEditing(true)
             if passwordTF.text == "" ||  emailTf.text == "" {
                 showAlert(title: "Заполните все поля", message: "")
             }else {
-                guard let emails = emailTf.text else {return}
+                guard let emails = emailTf.text else { return }
                 if isValidEmail(emails) == false {
                     showAlert(title: "Електронная почта не подтверждена", message: "")
                 } else {
                     sender.isUserInteractionEnabled = false
+                    sender.startLoading()
                     loginRequest {
                         sender.isUserInteractionEnabled = true
                         sender.endLoading()
@@ -96,27 +82,23 @@ extension ViewController {
     }
     
     private func setupTf() {
+        let toolbar = UIToolbar()
+        let tulbarBtn = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissKeyboard))
+        let flaxSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil )
+        toolbar.setItems([flaxSpace,tulbarBtn], animated: true)
+        toolbar.sizeToFit()
+        
         emailTf.layer.borderWidth = 1
         emailTf.layer.cornerRadius = 10
         passwordTF.layer.borderWidth = 1
         passwordTF.layer.cornerRadius = 10
         passwordTF.layer.borderColor = UIColor(named: "borderColor")?.cgColor
         emailTf.layer.borderColor = UIColor(named: "borderColor")?.cgColor
-        let toolbar = UIToolbar()
-        toolbar.sizeToFit()
-        let tulbarBtn = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissKeyboard))
-        let flaxSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil )
-        toolbar.setItems([flaxSpace,tulbarBtn], animated: true)
         emailTf.inputAccessoryView = toolbar
         passwordTF.inputAccessoryView = toolbar
     }
     
-    private func showAlert(title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okBtn = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        alert.addAction(okBtn)
-        present(alert, animated: true, completion: nil)
-    }
+
     
     private func loginRequest(_ completion: @escaping () -> Void) {
         
@@ -126,6 +108,7 @@ extension ViewController {
             switch resp {
             case .success(let data):
                 guard let data = data else {return}
+                print(data?.token)
                 UserDefaults.standard.setValue(data?.token, forKey: "token")
                 let vc = UIStoryboard(name: "HomePage", bundle: nil).instantiateViewController(withIdentifier: "TabBar")
                 self.navigationController?.pushViewController(vc, animated: true)

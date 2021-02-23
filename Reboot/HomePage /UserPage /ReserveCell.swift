@@ -41,14 +41,15 @@ extension ReserveCell {
 }
 
 extension ReserveCell {
-    func setData(model: Object) {
+    func setData(model: Reserves) {
         let finalString = NSMutableAttributedString(string: "")
-            finalString
-            .withGiloryMadium(model.workout.dateFrom.UTCToLocal(incomingFormat: "yyyy-MM-dd'T'HH:mm:ss", outGoingFormat: "dd.MM/"))
-            .withUltraLightItalic(model.workout.dateFrom.UTCToLocal(incomingFormat: "yyyy-MM-dd'T'HH:mm:ss", outGoingFormat: "HH:mm"))
-            .withBold(" \(model.workout.trainer.title)")
-            .withGilroyRegular(" \(model.workout.workoutDay.room.slug)")
-            .withGilroyRegular(" \(model.workoutPlace.roomPlace.placeNumber)")
+
+        finalString.withGiloryMadium(model.dateFrom.UTCToLocal(incomingFormat: "yyyy-MM-dd'T'HH:mm:ss", outGoingFormat: "dd.MM/")).withUltraLightItalic(model.dateFrom.UTCToLocal(incomingFormat: "yyyy-MM-dd'T'HH:mm:ss", outGoingFormat: "HH:mm")).withBold(model.workoutTrainerTitle).withGilroyRegular(model.workoutDayRoomSlug).withGilroyRegular(model.workoutPlaceRoomPlaceNumber)
+//            .withGiloryMadium(model.workout.dateFrom.UTCToLocal(incomingFormat: "yyyy-MM-dd'T'HH:mm:ss", outGoingFormat: "dd.MM/"))
+//            .withUltraLightItalic(model.workout.dateFrom.UTCToLocal(incomingFormat: "yyyy-MM-dd'T'HH:mm:ss", outGoingFormat: "HH:mm"))
+//            .withBold(" \(model.workout.trainer.title)")
+//            .withGilroyRegular(" \(model.workout.workoutDay.room.slug)")
+//            .withGilroyRegular(" \(model.workoutPlace.roomPlace.placeNumber)")
         
         self.date.attributedText = finalString
     }

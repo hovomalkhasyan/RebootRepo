@@ -10,7 +10,7 @@ import UIKit
 class AchievementsCell: UITableViewCell {
 
     @IBOutlet weak private var achievments: UILabel!
-    @IBOutlet weak private var activity: UILabel!
+    @IBOutlet weak var activity: UILabel!
     @IBOutlet weak private var cashBack: UILabel!
     @IBOutlet weak private var level: UILabel!
     @IBOutlet weak private var levelImage: UIImageView!
@@ -26,11 +26,13 @@ class AchievementsCell: UITableViewCell {
 }
 
 extension AchievementsCell {
-    func setData(model: LoyaltyLevels?) {
+    func setData(model: Loyalty?) {
         self.level.text = model?.title
         self.cashBack.text = model?.description
-        if let image = model?.iconActive {
-            self.levelImage.setImage(urlString: Constants.imageUrl + image)
-        }
+//        if let image = model?.iconActive {
+//            self.levelImage.setImage(urlString: Constants.imageUrl + image)
+//        } else {
+            self.levelImage.image = UIImage(named: "warrior_active")
+//        }
     }
 }

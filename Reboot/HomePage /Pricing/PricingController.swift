@@ -15,11 +15,11 @@ class PricingController: BaseViewController {
     //MARK: - lifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        super.setupGesture()
-        super.setupDarkMode()
-        super.workoutsCount()
-        super.setbarView()
+        setupGesture()
+        setupDarkMode()
+        setbarView()
         setUrlInWebView()
+        workoutsCount()
     }
 }
 

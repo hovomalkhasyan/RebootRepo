@@ -21,7 +21,8 @@ class Detail: Codable {
 
 class Message: Codable {
     let message: String
-    
+    let code: String
+    let name: String
 }
 
 typealias RequestCompletion<T: Codable> = ((RequestResult<T>) -> Void)

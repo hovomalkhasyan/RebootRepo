@@ -18,13 +18,12 @@ class AboutUsController: BaseViewController {
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        super.setbarView()
-        super.setupGesture()
-        super.setupDarkMode()
-        super.workoutsCount()
+        setbarView()
+        setupGesture()
+        setupDarkMode()
         setupTableView()
         setbarView()
-        
+        workoutsCount()
     }
     
     override func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
@@ -34,8 +33,7 @@ class AboutUsController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        super.hideNavBar()
-        
+        hideNavBar()
     }
     
 }

@@ -52,20 +52,20 @@ class AddressController: BaseViewController {
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        super.setupGesture()
-        super.setbarView()
-        super.setupDarkMode()
-        super.workoutsCount()
+        setupGesture()
+        setbarView()
+        setupDarkMode()
         setupBtn()
         setupYKMap()
         setupWpCallBtn()
         addMapObjects()
         setupEastGest()
+        workoutsCount()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        super.hideNavBar()
+        hideNavBar()
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -227,10 +227,10 @@ extension AddressController {
             let imageView = UIImageView(image: image)
             imageView.bounds.size = CGSize(width: 50, height: 50)
             imageView.backgroundColor = .clear
-            YKmap.mapObjects.addPlacemark(with: YMKPoint(latitude: 55.731846, longitude: 37.644379), view: .init(uiView: imageView))
-            YKmap.mapObjects.addPlacemark(with: YMKPoint(latitude: 55.736160, longitude: 37.585415), view: .init(uiView: imageView))
-            secondYKMap.mapObjects.addPlacemark(with: YMKPoint(latitude: 55.731846, longitude: 37.644379), view: .init(uiView: imageView))
-            secondYKMap.mapObjects.addPlacemark(with: YMKPoint(latitude: 55.736160, longitude: 37.585415), view: .init(uiView: imageView))
+            YKmap.mapObjects.addPlacemark(with: YMKPoint(latitude: 55.731442, longitude: 37.644889), view: .init(uiView: imageView))
+            YKmap.mapObjects.addPlacemark(with: YMKPoint(latitude: 55.736054, longitude: 37.585356), view: .init(uiView: imageView))
+            secondYKMap.mapObjects.addPlacemark(with: YMKPoint(latitude: 55.731442, longitude: 37.644889), view: .init(uiView: imageView))
+            secondYKMap.mapObjects.addPlacemark(with: YMKPoint(latitude: 55.736054, longitude: 37.585356), view: .init(uiView: imageView))
         }
     }
     
