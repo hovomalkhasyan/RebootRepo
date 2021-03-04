@@ -19,8 +19,10 @@ class BaseViewController: UIViewController {
     
     //MARK: - property
     var sum = 0
-    
-    //MARK: - setupNavBar
+    var loadingView: UIView!
+    var loading: UIActivityIndicatorView!
+  
+    //MARK: - hideNavBar
     func hideNavBar() {
         navigationController?.isNavigationBarHidden = true
     }
@@ -34,7 +36,7 @@ class BaseViewController: UIViewController {
     
     //MARK: - buttonAction
     func rootBtnSetup() {
-        rootBtn.addTarget(self, action: #selector(rottBtnAction), for: .touchDragInside)
+        rootBtn.addTarget(self, action: #selector(rottBtnAction), for: .touchUpInside)
     }
     //MARk: - rootBtnAction
     @objc func rottBtnAction() {
@@ -43,19 +45,20 @@ class BaseViewController: UIViewController {
     
     //MARK: - workoutCountRequest
     func workoutsCount() {
+        showView()
         NetWorkService.request(url: Constants.MY_ACCOUNT_ENDPOINT, method: .get, param: nil, encoding: JSONEncoding.prettyPrinted) { (resp: RequestResult<AccountResponse?>) in
             switch resp {
             case .success(let data):
-                guard let data = data else {return}
-                if data?.packages?.count == 0 {
-                    self.infoBtn.setTitle("0", for: .normal)
-                }else {
-                    guard let package = data?.packages else {return}
-                    package.forEach { p in
+                guard let responeData = data, let packages = responeData?.packages else {return}
+                if !packages.isEmpty {
+                    packages.forEach { p in
                         self.sum += p.workoutsCount
                     }
                     self.infoBtn.setTitle(String(self.sum), for: .normal)
+                } else {
+                    self.infoBtn.setTitle("0", for: .normal)
                 }
+                self.hideLoadingView()
             case .failure(let error):
                 print(error)
             }
@@ -71,6 +74,29 @@ class BaseViewController: UIViewController {
         let infoPop = UITapGestureRecognizer(target: self, action: #selector(infoBtnTap))
         tapGesture.numberOfTapsRequired = 1
         infoBtn.addGestureRecognizer(infoPop)
+    }
+    
+    //MARK: - ShowLoadingView
+    func showView() {
+        loadingView = UIView()
+        loading = UIActivityIndicatorView(style: .gray)
+        view.addSubview(loadingView)
+        loadingView.addSubview(loading)
+        
+        loadingView.frame = view.frame
+        loadingView.backgroundColor = .white
+        
+        loading.center = self.loadingView.center
+        loading.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        loading.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        
+        loading.startAnimating()
+    }
+    
+    //MARK: - hideLoadingView
+    func hideLoadingView() {
+        loading.stopAnimating()
+        loadingView.removeFromSuperview()
     }
     
     //NARK: - GestureAction

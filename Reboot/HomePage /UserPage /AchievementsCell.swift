@@ -9,7 +9,7 @@ import UIKit
 
 class AchievementsCell: UITableViewCell {
 
-    @IBOutlet weak private var achievments: UILabel!
+    @IBOutlet weak var achievments: UILabel!
     @IBOutlet weak var activity: UILabel!
     @IBOutlet weak private var cashBack: UILabel!
     @IBOutlet weak private var level: UILabel!

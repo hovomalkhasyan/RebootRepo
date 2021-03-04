@@ -98,28 +98,29 @@ extension ViewController {
         passwordTF.inputAccessoryView = toolbar
     }
     
-
+    @objc private func dismissKeyboard() {
+        view.endEditing(true)
+    }
     
     private func loginRequest(_ completion: @escaping () -> Void) {
-        
         let model =  LoginParameters(username: emailTf.text, password: passwordTF.text)
         NetWorkService.request(url: Constants.AUTH_LOGIN_ENDPOINT, method: .post, param: model, encoding: JSONEncoding.prettyPrinted) { (resp: RequestResult<LoginResponse?>) in
             completion()
             switch resp {
             case .success(let data):
                 guard let data = data else {return}
-                print(data?.token)
                 UserDefaults.standard.setValue(data?.token, forKey: "token")
-                let vc = UIStoryboard(name: "HomePage", bundle: nil).instantiateViewController(withIdentifier: "TabBar")
-                self.navigationController?.pushViewController(vc, animated: true)
+                self.toHomePage()
             case .failure(let error):
                 print(error)
             }
         }
     }
     
-    @objc private func dismissKeyboard() {
-        view.endEditing(true)
+    //MARK: - ChangeController
+    private func toHomePage() {
+        let vc = UIStoryboard(name: "HomePage", bundle: nil).instantiateViewController(withIdentifier: "TabBar")
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

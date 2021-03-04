@@ -8,7 +8,6 @@ target 'Reboot' do
 	pod ‘Kingfisher’, ‘~> 5.0’
 	pod ‘YandexMapKit’, ’3.4’	
 	pod 'PanModal'
-	
   # Pods for Reboot
 
 end

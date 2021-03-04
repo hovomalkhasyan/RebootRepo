@@ -248,7 +248,6 @@ struct StandardPlace: Codable {
     let id, width: Int
 }
 
-
 //MARK: - mobile
 
 struct BaseResponseModel: Codable {
@@ -256,6 +255,7 @@ struct BaseResponseModel: Codable {
     let bonus: Bonus
     let reserves: [Reserves]?
     let activity: Activity?
+    let achievement: Achievement?
     let ads: [Ads]?
 }
 
@@ -265,7 +265,17 @@ struct Activity: Codable {
     let compareCount: String
 }
 
-
+struct Achievement: Codable {
+   let title: String?
+   let achievement: Int?
+    
+    var achivementWithTitle: String {
+        guard let title = title, let achvements = achievement else {
+            return "Нет достижений"
+        }
+        return title + " " + String(achvements) + "X"
+    }
+}
 // MARK: - Bonus
 struct Bonus: Codable {
     let bonus: String

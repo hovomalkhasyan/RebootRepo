@@ -6,36 +6,28 @@
 //
 
 import UIKit
-import Alamofire
+
+protocol DidSelectDelegate: class {
+    func didSelect(selectedIndex: String)
+}
+
 class TrainingCell: UITableViewCell {
+    //MARK: - collectionView
+    @IBOutlet weak var collectionView: UICollectionView!
     
-    var ads = [String]()
-    @IBOutlet weak private var collectionView: UICollectionView!
+    //MARK: - Property
+    private var adsArray: [Ads] = []
+    weak var delegate: DidSelectDelegate?
+    //MARK: - LifeCycle
     override func awakeFromNib() {
         super.awakeFromNib()
         setupCollectionView()
-//        userInfoRequest()
-        //        accountRequest()
     }
     
-    private func userInfoRequest() {
-        NetWorkService.request(url: Constants.MOBILE_API, method: .get, param: nil, encoding: JSONEncoding.prettyPrinted) { (resp: RequestResult<BaseResponseModel?>) in
-            switch resp {
-            case .success(let model):
-                guard let m = model, let finalModel = m else { return }
-//                self.ads = finalModel.ads ?? []
-                print(model)
-                self.collectionView.reloadData()
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    
-    private func setupCollectionView() {
+    //MARK: - setupDelegate
+    func setupCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.reloadData()
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -46,28 +38,24 @@ class TrainingCell: UITableViewCell {
 
 extension TrainingCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
-    
+        return adsArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionCell", for: indexPath) as! CollectionCell
-//        if let image = ads[indexPath.row].image {
-//            cell.collectionCellImage.setImage(urlString: image)
-//        } else {
-//            cell.collectionCellImage.image = UIImage(named: "Group 1")
-//        }
-        cell.collectionCellImage.image = UIImage(named: "MAp")
+        if let image = adsArray[indexPath.row].image {
+            cell.collectionCellImage.setImage(urlString: Constants.imageUrl + image)
+        }
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let height = contentView.frame.height
-        let width = height * 15 / 6
-        return CGSize(width: width, height: height)
-    }
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.row)
+        delegate?.didSelect(selectedIndex: adsArray[indexPath.row].url )
+    }
+}
+
+extension TrainingCell {
+    func setData(ads: [Ads]) {
+        self.adsArray = ads
     }
 }

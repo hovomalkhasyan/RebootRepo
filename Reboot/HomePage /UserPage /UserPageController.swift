@@ -40,16 +40,19 @@ class UserPageController: BaseViewController {
     private var loyality : Loyalty?
     private var reserves = [Reserves]()
     private var activity: Activity?
-    private var ads = ["MAp"]
+    private var achivements: Achievement?
+    private var catergoryArray = [Category]()
+    private var ads = [Ads]()
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setbarView()
         setupGesture()
         setupDarkMode()
-        setupTableView()
         userInfoRequest()
+        setupTableView()
         workoutsCount()
+        setupImageView()
     }
     
     override func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
@@ -62,65 +65,34 @@ extension UserPageController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.contentInset.bottom = 0
-        tableView.register(UINib(nibName: UserReservedCell.name, bundle: nil), forCellReuseIdentifier: UserReservedCell.name)
     }
     
-//    private func accountRequest() {
-//        NetWorkService.request(url: Constants.MY_ACCOUNT_ENDPOINT, method: .get, param: nil, encoding: JSONEncoding.prettyPrinted) { (resp: RequestResult<AccountResponse?>) in
-//            switch resp {
-//            case .success(let model):
-//                guard let m = model, let finalModel = m else { return }
-//                if let image = finalModel.avatar {
-//                    self.userAvatar.setImage(urlString: Constants.imageUrl + image, placeholder: nil, completed: nil)
-//                }
-//                self.bonus.text = String(finalModel.bonusesBalance)
-//                self.loyality = finalModel.loyaltyLevel
-//                self.userName.text = finalModel.fullName
-//                self.tableView.reloadData()
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
-//    }
+    private func setupImageView() {
+        userAvatar.layer.borderWidth = 1
+        userAvatar.layer.borderColor = UIColor.black.cgColor
+    }
     
     private func userInfoRequest() {
         NetWorkService.request(url: Constants.MOBILE_API, method: .get, param: nil, encoding: JSONEncoding.prettyPrinted) { (resp: RequestResult<BaseResponseModel?>) in
             switch resp {
             case .success(let model):
-                guard let m = model, let finalModel = m else { return }
+                guard let model = model, let finalModel = model else { return }
+                if let image = finalModel.user.userAvatar {
+                    self.userAvatar.setImage(urlString: Constants.imageUrl + image)
+                }
                 self.bonus.text = finalModel.bonus.bonus
                 self.userName.text = finalModel.user.userName
-                if let image = finalModel.user.userAvatar {
-                    self.userAvatar.setImage(urlString: Constants.BASE_URl + image)
-                }
                 self.loyality = finalModel.user.loyalty
                 self.reserves = finalModel.reserves ?? []
                 self.activity = finalModel.activity
-//                self.ads = finalModel.ads ?? []
-                print(model)
+                self.achivements = finalModel.achievement
+                self.ads = finalModel.ads ?? []
                 self.tableView.reloadData()
             case .failure(let error):
                 print(error)
             }
         }
     }
-    
-//    private func reserveResponse() {
-//        //        indicator.startAnimating()
-//        NetWorkService.request(url: Constants.MY_RESERVES_ENDPOINT, method: .get, param: nil, encoding: JSONEncoding.prettyPrinted) { (resp: RequestResult<ReserveResp?>) in
-//            switch resp {
-//            case .success(let data):
-//                guard let data = data, let obj = data?.objects else {return}
-//                self.object = obj
-//                self.tableView.reloadData()
-//            //                self.userView.isHidden = true
-//            //                self.indicator.stopAnimating()
-//            //                self.indicator.hidesWhenStopped = true
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
-//    }
     
     @objc func selectedItem() {
         self.tabBarController?.selectedIndex = 1
@@ -162,10 +134,13 @@ extension UserPageController: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: AchievementsCell.name, for: indexPath) as! AchievementsCell
             cell.setData(model: loyality)
             cell.activity.text = String(activity?.activityDays ?? 0)
+            cell.achievments.text = achivements?.achivementWithTitle
             return cell
         case .info:
             let cell = tableView.dequeueReusableCell(withIdentifier: TrainingCell.name, for: indexPath) as! TrainingCell
-            cell.ads = ads
+            cell.setData(ads: ads)
+            cell.delegate = self
+            cell.collectionView.reloadData()
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: ReserveCell.name, for: indexPath) as! ReserveCell
@@ -220,3 +195,47 @@ extension UserPageController: UITableViewDelegate, UITableViewDataSource {
         return 12
     }
 }
+
+//MARK: - didSelect
+extension UserPageController: DidSelectDelegate {
+    func didSelect(selectedIndex: String) {
+        let vc = AboutUsDetailsController.initializeStoryboard()
+        vc.webViewUrl = selectedIndex
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+//    private func accountRequest() {
+//        NetWorkService.request(url: Constants.MY_ACCOUNT_ENDPOINT, method: .get, param: nil, encoding: JSONEncoding.prettyPrinted) { (resp: RequestResult<AccountResponse?>) in
+//            switch resp {
+//            case .success(let model):
+//                guard let m = model, let finalModel = m else { return }
+//                if let image = finalModel.avatar {
+//                    self.userAvatar.setImage(urlString: Constants.imageUrl + image, placeholder: nil, completed: nil)
+//                }
+//                self.bonus.text = String(finalModel.bonusesBalance)
+//                self.loyality = finalModel.loyaltyLevel
+//                self.userName.text = finalModel.fullName
+//                self.tableView.reloadData()
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
+//    }
+
+//   private func reserveResponse() {
+//        //        indicator.startAnimating()
+//        NetWorkService.request(url: Constants.MY_RESERVES_ENDPOINT, method: .get, param: nil, encoding: JSONEncoding.prettyPrinted) { (resp: RequestResult<ReserveResp?>) in
+//            switch resp {
+//            case .success(let data):
+//                guard let data = data, let obj = data?.objects else {return}
+//                self.object = obj
+//                self.tableView.reloadData()
+//            //                self.userView.isHidden = true
+//            //                self.indicator.stopAnimating()
+//            //                self.indicator.hidesWhenStopped = true
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
+//    }

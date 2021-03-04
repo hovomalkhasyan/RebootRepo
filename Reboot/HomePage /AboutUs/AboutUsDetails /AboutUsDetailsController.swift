@@ -21,13 +21,13 @@ class AboutUsDetailsController: BaseViewController {
         super.setupGesture()
         super.setbarView()
         super.workoutsCount()
-        setUrlInWebView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         super.hideNavBar()
         setupPageGesture()
+        setUrlInWebView()
     }
     
     //MARK: - backBtnAction

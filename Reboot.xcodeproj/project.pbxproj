@@ -71,13 +71,9 @@
 		FA1666F925C5AE4300A39FCB /* Extension+UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1666F825C5AE4300A39FCB /* Extension+UITextField.swift */; };
 		FA1AE07A25C5D2330052AEBB /* Extension+NSMutableAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1AE07925C5D2330052AEBB /* Extension+NSMutableAttributedString.swift */; };
 		FA1AE07D25C5D2C30052AEBB /* Extension+UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1AE07C25C5D2C30052AEBB /* Extension+UIFont.swift */; };
-		FA1AE08725C5D7FD0052AEBB /* UserReservedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1AE08525C5D7FD0052AEBB /* UserReservedCell.swift */; };
-		FA1AE08825C5D7FD0052AEBB /* UserReservedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1AE08625C5D7FD0052AEBB /* UserReservedCell.xib */; };
 		FA5F013425DF9704006FD55E /* PopupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F013325DF9704006FD55E /* PopupController.swift */; };
 		FA5F013725DF9751006FD55E /* PnPopup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA5F013625DF9751006FD55E /* PnPopup.storyboard */; };
 		FA5F013B25DF97A1006FD55E /* PopupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F013A25DF97A1006FD55E /* PopupCell.swift */; };
-		FA98DCC925C5961C00CAA052 /* UserAchivemntsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98DCC725C5961C00CAA052 /* UserAchivemntsCell.swift */; };
-		FA98DCCA25C5961C00CAA052 /* UserAchivemntsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA98DCC825C5961C00CAA052 /* UserAchivemntsCell.xib */; };
 		FAA2F18A25D164A1006763D4 /* AboutUsDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA2F18925D164A1006763D4 /* AboutUsDetailsController.swift */; };
 		FAA2F18D25D164B7006763D4 /* AboutUsDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAA2F18C25D164B7006763D4 /* AboutUsDetails.storyboard */; };
 		FAC3D3BF259B4EC600C00270 /* LoginRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3D3BE259B4EC600C00270 /* LoginRequestModel.swift */; };
@@ -153,13 +149,9 @@
 		FA1666F825C5AE4300A39FCB /* Extension+UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UITextField.swift"; sourceTree = "<group>"; };
 		FA1AE07925C5D2330052AEBB /* Extension+NSMutableAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+NSMutableAttributedString.swift"; sourceTree = "<group>"; };
 		FA1AE07C25C5D2C30052AEBB /* Extension+UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIFont.swift"; sourceTree = "<group>"; };
-		FA1AE08525C5D7FD0052AEBB /* UserReservedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserReservedCell.swift; sourceTree = "<group>"; };
-		FA1AE08625C5D7FD0052AEBB /* UserReservedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserReservedCell.xib; sourceTree = "<group>"; };
 		FA5F013325DF9704006FD55E /* PopupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupController.swift; sourceTree = "<group>"; };
 		FA5F013625DF9751006FD55E /* PnPopup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PnPopup.storyboard; sourceTree = "<group>"; };
 		FA5F013A25DF97A1006FD55E /* PopupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupCell.swift; sourceTree = "<group>"; };
-		FA98DCC725C5961C00CAA052 /* UserAchivemntsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAchivemntsCell.swift; sourceTree = "<group>"; };
-		FA98DCC825C5961C00CAA052 /* UserAchivemntsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserAchivemntsCell.xib; sourceTree = "<group>"; };
 		FAA2F18925D164A1006763D4 /* AboutUsDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsDetailsController.swift; sourceTree = "<group>"; };
 		FAA2F18C25D164B7006763D4 /* AboutUsDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AboutUsDetails.storyboard; sourceTree = "<group>"; };
 		FAC3D3BE259B4EC600C00270 /* LoginRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequestModel.swift; sourceTree = "<group>"; };
@@ -281,9 +273,7 @@
 		DA9DCC58255DA17E00E3E8AB /* UserPage  */ = {
 			isa = PBXGroup;
 			children = (
-				FA1AE08425C5D7D90052AEBB /* UserReservedCell */,
 				FA1666D725C5A92400A39FCB /* UserReserveCell */,
-				FA98DCC525C595B600CAA052 /* Achivements */,
 				DA9DCC59255DA19D00E3E8AB /* UserPageController.swift */,
 				DA10B52E256260D30010A819 /* AchievementsCell.swift */,
 				DA10B540256270950010A819 /* Footer.swift */,
@@ -490,15 +480,6 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		FA1AE08425C5D7D90052AEBB /* UserReservedCell */ = {
-			isa = PBXGroup;
-			children = (
-				FA1AE08525C5D7FD0052AEBB /* UserReservedCell.swift */,
-				FA1AE08625C5D7FD0052AEBB /* UserReservedCell.xib */,
-			);
-			path = UserReservedCell;
-			sourceTree = "<group>";
-		};
 		FA5F013025DF96E2006FD55E /* PanPopup */ = {
 			isa = PBXGroup;
 			children = (
@@ -515,15 +496,6 @@
 				FA5F013A25DF97A1006FD55E /* PopupCell.swift */,
 			);
 			path = Cell;
-			sourceTree = "<group>";
-		};
-		FA98DCC525C595B600CAA052 /* Achivements */ = {
-			isa = PBXGroup;
-			children = (
-				FA98DCC725C5961C00CAA052 /* UserAchivemntsCell.swift */,
-				FA98DCC825C5961C00CAA052 /* UserAchivemntsCell.xib */,
-			);
-			path = Achivements;
 			sourceTree = "<group>";
 		};
 		FAA2F18725D1643A006763D4 /* AboutUsDetails  */ = {
@@ -597,7 +569,6 @@
 			files = (
 				FA5F013725DF9751006FD55E /* PnPopup.storyboard in Resources */,
 				DA10B529256254BF0010A819 /* gilroy-ultralightitalic.ttf in Resources */,
-				FA98DCCA25C5961C00CAA052 /* UserAchivemntsCell.xib in Resources */,
 				DA8CAB51255BCB1D0064A198 /* gilroy-bold.ttf in Resources */,
 				DAF67504255A6CC10033D861 /* LaunchScreen.storyboard in Resources */,
 				DAF6752F255AB5AC0033D861 /* Code.storyboard in Resources */,
@@ -610,7 +581,6 @@
 				DAF674FF255A6CBF0033D861 /* Main.storyboard in Resources */,
 				DAF6751C255A86830033D861 /* Register.storyboard in Resources */,
 				FAA2F18D25D164B7006763D4 /* AboutUsDetails.storyboard in Resources */,
-				FA1AE08825C5D7FD0052AEBB /* UserReservedCell.xib in Resources */,
 				DA8CAB54255BCB2D0064A198 /* gilroy-regular.ttf in Resources */,
 				DACE56492570EC9300F6683F /* Splash.storyboard in Resources */,
 				FA1666DB25C5A94300A39FCB /* UserReserveCell.xib in Resources */,
@@ -685,7 +655,6 @@
 			files = (
 				DA8CAB6C255BFBF40064A198 /* Model.swift in Sources */,
 				D437509B257E12FE005D3273 /* Constants.swift in Sources */,
-				FA1AE08725C5D7FD0052AEBB /* UserReservedCell.swift in Sources */,
 				FA1666DF25C5AC3100A39FCB /* Extension+UIImageView.swift in Sources */,
 				DAF6751F255A86AD0033D861 /* RegisterController.swift in Sources */,
 				DA606761255E66D80074497D /* ReserveCell.swift in Sources */,
@@ -723,7 +692,6 @@
 				DAF6753C255AC4520033D861 /* SavePasswordController.swift in Sources */,
 				DA8CAB75255BFD420064A198 /* NetworkService.swift in Sources */,
 				DAEBE605255EC76D00AF7B8A /* PricingController.swift in Sources */,
-				FA98DCC925C5961C00CAA052 /* UserAchivemntsCell.swift in Sources */,
 				DA8CAB7A255C1B460064A198 /* Connection.swift in Sources */,
 				FA02F603259C58A90056865E /* CustonNavBar.swift in Sources */,
 				FA1666F925C5AE4300A39FCB /* Extension+UITextField.swift in Sources */,
@@ -886,6 +854,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 4EJQ3DNKGU;
 				INFOPLIST_FILE = Reboot/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -893,6 +862,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.armboldmind.reboot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -907,6 +877,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 4EJQ3DNKGU;
 				INFOPLIST_FILE = Reboot/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -914,6 +885,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.armboldmind.reboot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
