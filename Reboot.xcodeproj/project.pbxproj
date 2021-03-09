@@ -292,8 +292,8 @@
 			isa = PBXGroup;
 			children = (
 				FADF1C1025F76EE5006D2799 /* LogOutViewController.swift */,
-				FADF1C1725F76F13006D2799 /* LogOut.storyboard */,
 				FADF1C1A25F77017006D2799 /* LogOutCell.swift */,
+				FADF1C1725F76F13006D2799 /* LogOut.storyboard */,
 			);
 			path = "popUplogOut ";
 			sourceTree = "<group>";

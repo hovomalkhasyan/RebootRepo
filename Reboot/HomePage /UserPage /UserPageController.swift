@@ -52,7 +52,7 @@ class UserPageController: BaseViewController {
         setupDarkMode()
         userInfoRequest()
         setupTableView()
-        workoutsCount()
+//        workoutsCount()
         setupImageView()
     }
     

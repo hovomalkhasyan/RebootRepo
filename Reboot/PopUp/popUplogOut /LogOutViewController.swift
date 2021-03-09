@@ -18,7 +18,7 @@ class LogOutViewController: BaseViewController {
         setupInfoBtn()
         setbarView()
         setupInfoBtn()
-        workoutsCount()
+//        workoutsCount()
         setupViews()
     }
     

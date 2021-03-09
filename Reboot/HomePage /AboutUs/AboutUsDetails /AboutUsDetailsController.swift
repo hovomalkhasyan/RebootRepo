@@ -19,7 +19,7 @@ class AboutUsDetailsController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupGesture()
-        workoutsCount()
+//        workoutsCount()
         setupInfoBtn()
         addMapView()
         setupPageGesture()

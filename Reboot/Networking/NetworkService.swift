@@ -20,9 +20,9 @@ class Detail: Codable {
 }
 
 class Message: Codable {
-    let message: String
+    let message: String?
     let code: String?
-    let name: String
+    let name: String?
 }
 
 typealias RequestCompletion<T: Codable> = ((RequestResult<T>) -> Void)
@@ -45,6 +45,7 @@ class NetWorkService {
     
     class func request<T: Codable>(url: String, method: HTTPMethod, param: Encodable?, encoding: JSONEncoding, complition: @escaping (RequestCompletion<T?>)) {
         alamofireSessionMeneger.request(Constants.BASE_URl + url, method: method, parameters: param?.asDictionary(), encoding: encoding, headers: getHeaders()).responseJSON { (resp) in
+            print(resp.response?.statusCode)
             if resp.response?.statusCode == 401 {
                 refreshToken {
                     request(url: url, method: method, param: param, encoding: encoding, complition: complition)
@@ -102,9 +103,7 @@ class NetWorkService {
             case .success(let data):
                 guard let data = data else {return}
                 UserDefaults.standard.setValue(data?.token, forKey: "token")
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                     complition()
-                }
             case .failure(let error):
                 print(error)
             }
