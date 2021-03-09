@@ -20,9 +20,9 @@ class AboutUsController: BaseViewController {
         super.viewDidLoad()
         setbarView()
         setupGesture()
+        setupInfoBtn()
         setupDarkMode()
         setupTableView()
-        setbarView()
         workoutsCount()
     }
     

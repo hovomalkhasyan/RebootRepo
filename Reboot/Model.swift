@@ -278,13 +278,13 @@ struct Achievement: Codable {
 }
 // MARK: - Bonus
 struct Bonus: Codable {
-    let bonus: String
+    let bonus: Int
 }
 
 // MARK: - User
 struct UserResponse: Codable {
     let userAvatar: String?
-    let userName: String
+    let userName: String?
     let loyalty: Loyalty?
 }
 

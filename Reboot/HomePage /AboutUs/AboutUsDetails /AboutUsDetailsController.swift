@@ -6,10 +6,10 @@
 //
 
 import UIKit
-
+import WebKit
 class AboutUsDetailsController: BaseViewController {
     //MARK:- IBOutlets
-    @IBOutlet weak private var aboutUsWebView: UIWebView!
+    private var webView: WKWebView!
     @IBOutlet weak private var backButton: UIButton!
     
     //MARK: - propertyes
@@ -18,16 +18,18 @@ class AboutUsDetailsController: BaseViewController {
     //MARK: - LifeSycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        super.setupGesture()
-        super.setbarView()
-        super.workoutsCount()
+        setupGesture()
+        workoutsCount()
+        setupInfoBtn()
+        addMapView()
+        setupPageGesture()
+        setbarView()
+        setUrlInWebView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         super.hideNavBar()
-        setupPageGesture()
-        setUrlInWebView()
     }
     
     //MARK: - backBtnAction
@@ -40,9 +42,18 @@ class AboutUsDetailsController: BaseViewController {
 private extension AboutUsDetailsController {
         func setUrlInWebView() {
         guard let webUrl = webViewUrl else {return}
-        let url = URL(string: webUrl)
-        let urlRequest = URLRequest(url: url!)
-        aboutUsWebView.loadRequest(urlRequest)
+        webView.load(URLRequest(url: URL(string: webUrl)!))
+    }
+  
+    func addMapView() {
+        webView = WKWebView(frame: self.view.frame)
+        webView.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(webView)
+
+        webView.topAnchor.constraint(equalTo: self.barView.bottomAnchor).isActive = true
+        webView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        webView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
+        webView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
     }
 }
 

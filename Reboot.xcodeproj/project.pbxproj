@@ -26,8 +26,6 @@
 		DA8CAB4E255BC0E40064A198 /* StudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8CAB4D255BC0E40064A198 /* StudioController.swift */; };
 		DA8CAB51255BCB1D0064A198 /* gilroy-bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DA8CAB50255BCB1D0064A198 /* gilroy-bold.ttf */; };
 		DA8CAB54255BCB2D0064A198 /* gilroy-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DA8CAB53255BCB2D0064A198 /* gilroy-regular.ttf */; };
-		DA8CAB63255BEE110064A198 /* PopUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8CAB62255BEE110064A198 /* PopUpController.swift */; };
-		DA8CAB67255BEE500064A198 /* PopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8CAB66255BEE500064A198 /* PopCell.swift */; };
 		DA8CAB6C255BFBF40064A198 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8CAB6B255BFBF40064A198 /* Model.swift */; };
 		DA8CAB75255BFD420064A198 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8CAB74255BFD420064A198 /* NetworkService.swift */; };
 		DA8CAB7A255C1B460064A198 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8CAB79255C1B460064A198 /* Connection.swift */; };
@@ -78,6 +76,9 @@
 		FAA2F18D25D164B7006763D4 /* AboutUsDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAA2F18C25D164B7006763D4 /* AboutUsDetails.storyboard */; };
 		FAC3D3BF259B4EC600C00270 /* LoginRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3D3BE259B4EC600C00270 /* LoginRequestModel.swift */; };
 		FAC3D3E4259B535500C00270 /* RegisterRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3D3E3259B535500C00270 /* RegisterRequestModel.swift */; };
+		FADF1C1125F76EE6006D2799 /* LogOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADF1C1025F76EE5006D2799 /* LogOutViewController.swift */; };
+		FADF1C1825F76F13006D2799 /* LogOut.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FADF1C1725F76F13006D2799 /* LogOut.storyboard */; };
+		FADF1C1B25F77017006D2799 /* LogOutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADF1C1A25F77017006D2799 /* LogOutCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,8 +102,6 @@
 		DA8CAB4D255BC0E40064A198 /* StudioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudioController.swift; sourceTree = "<group>"; };
 		DA8CAB50255BCB1D0064A198 /* gilroy-bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gilroy-bold.ttf"; sourceTree = "<group>"; };
 		DA8CAB53255BCB2D0064A198 /* gilroy-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gilroy-regular.ttf"; sourceTree = "<group>"; };
-		DA8CAB62255BEE110064A198 /* PopUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpController.swift; sourceTree = "<group>"; };
-		DA8CAB66255BEE500064A198 /* PopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopCell.swift; sourceTree = "<group>"; };
 		DA8CAB6B255BFBF40064A198 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		DA8CAB74255BFD420064A198 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		DA8CAB79255C1B460064A198 /* Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
@@ -156,6 +155,9 @@
 		FAA2F18C25D164B7006763D4 /* AboutUsDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AboutUsDetails.storyboard; sourceTree = "<group>"; };
 		FAC3D3BE259B4EC600C00270 /* LoginRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequestModel.swift; sourceTree = "<group>"; };
 		FAC3D3E3259B535500C00270 /* RegisterRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequestModel.swift; sourceTree = "<group>"; };
+		FADF1C1025F76EE5006D2799 /* LogOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutViewController.swift; sourceTree = "<group>"; };
+		FADF1C1725F76F13006D2799 /* LogOut.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogOut.storyboard; sourceTree = "<group>"; };
+		FADF1C1A25F77017006D2799 /* LogOutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,8 +291,9 @@
 		DA9DCC5E255DA56700E3E8AB /* popUplogOut  */ = {
 			isa = PBXGroup;
 			children = (
-				DA8CAB66255BEE500064A198 /* PopCell.swift */,
-				DA8CAB62255BEE110064A198 /* PopUpController.swift */,
+				FADF1C1025F76EE5006D2799 /* LogOutViewController.swift */,
+				FADF1C1725F76F13006D2799 /* LogOut.storyboard */,
+				FADF1C1A25F77017006D2799 /* LogOutCell.swift */,
 			);
 			path = "popUplogOut ";
 			sourceTree = "<group>";
@@ -583,6 +586,7 @@
 				FAA2F18D25D164B7006763D4 /* AboutUsDetails.storyboard in Resources */,
 				DA8CAB54255BCB2D0064A198 /* gilroy-regular.ttf in Resources */,
 				DACE56492570EC9300F6683F /* Splash.storyboard in Resources */,
+				FADF1C1825F76F13006D2799 /* LogOut.storyboard in Resources */,
 				FA1666DB25C5A94300A39FCB /* UserReserveCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -665,6 +669,7 @@
 				FA1AE07A25C5D2330052AEBB /* Extension+NSMutableAttributedString.swift in Sources */,
 				DA10B541256270950010A819 /* Footer.swift in Sources */,
 				FA1666F525C5ADFB00A39FCB /* Extension+String.swift in Sources */,
+				FADF1C1125F76EE6006D2799 /* LogOutViewController.swift in Sources */,
 				DA6A66AD256BCFA1008C076C /* Extension+UIScrollView.swift in Sources */,
 				D4375094257E0475005D3273 /* ConstantStrings.swift in Sources */,
 				DAF674FC255A6CBF0033D861 /* ViewController.swift in Sources */,
@@ -673,7 +678,6 @@
 				FAA2F18A25D164A1006763D4 /* AboutUsDetailsController.swift in Sources */,
 				DAF674F8255A6CBF0033D861 /* AppDelegate.swift in Sources */,
 				DA10B544256272450010A819 /* Header.swift in Sources */,
-				DA8CAB67255BEE500064A198 /* PopCell.swift in Sources */,
 				DAF6752B255AB59D0033D861 /* CodeController.swift in Sources */,
 				DA10B54A2562A5EA0010A819 /* ReservePageCell.swift in Sources */,
 				DA10B535256267CA0010A819 /* CollectionCell.swift in Sources */,
@@ -686,6 +690,7 @@
 				DA22C794255D549000865E23 /* AddressController.swift in Sources */,
 				FA1666E825C5ACDC00A39FCB /* Extension+UIView.swift in Sources */,
 				FA1AE07D25C5D2C30052AEBB /* Extension+UIFont.swift in Sources */,
+				FADF1C1B25F77017006D2799 /* LogOutCell.swift in Sources */,
 				FA013A8D25E4FA2D0050C270 /* Extension+Double.swift in Sources */,
 				DA10B52F256260D30010A819 /* AchievementsCell.swift in Sources */,
 				DAF67527255AAC2B0033D861 /* ForgotPassController.swift in Sources */,
@@ -699,7 +704,6 @@
 				DAF67517255A7BBE0033D861 /* TextField.swift in Sources */,
 				DAF674FA255A6CBF0033D861 /* SceneDelegate.swift in Sources */,
 				FA1666E525C5ACAC00A39FCB /* Extension+UITableView.swift in Sources */,
-				DA8CAB63255BEE110064A198 /* PopUpController.swift in Sources */,
 				DA8CAB4B255BC0CD0064A198 /* StudioCell.swift in Sources */,
 				FA1666EB25C5AD1E00A39FCB /* Extension+Encodable.swift in Sources */,
 				FA5F013B25DF97A1006FD55E /* PopupCell.swift in Sources */,

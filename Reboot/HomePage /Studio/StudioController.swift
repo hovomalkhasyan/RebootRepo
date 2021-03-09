@@ -20,6 +20,7 @@ class StudioController: BaseViewController {
         super.viewDidLoad()
         setbarView()
         setupGesture()
+        setupInfoBtn()
         setupDarkMode()
         hideNavBar()
         setbarView()

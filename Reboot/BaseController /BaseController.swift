@@ -19,9 +19,9 @@ class BaseViewController: UIViewController {
     
     //MARK: - property
     var sum = 0
-    var loadingView: UIView!
-    var loading: UIActivityIndicatorView!
-  
+//    var loadingView: UIView!
+//    var loading: UIActivityIndicatorView!
+    
     //MARK: - hideNavBar
     func hideNavBar() {
         navigationController?.isNavigationBarHidden = true
@@ -45,7 +45,7 @@ class BaseViewController: UIViewController {
     
     //MARK: - workoutCountRequest
     func workoutsCount() {
-        showView()
+//        showView()
         NetWorkService.request(url: Constants.MY_ACCOUNT_ENDPOINT, method: .get, param: nil, encoding: JSONEncoding.prettyPrinted) { (resp: RequestResult<AccountResponse?>) in
             switch resp {
             case .success(let data):
@@ -58,7 +58,7 @@ class BaseViewController: UIViewController {
                 } else {
                     self.infoBtn.setTitle("0", for: .normal)
                 }
-                self.hideLoadingView()
+//                self.hideLoadingView()
             case .failure(let error):
                 print(error)
             }
@@ -71,67 +71,54 @@ class BaseViewController: UIViewController {
         tapGesture.numberOfTapsRequired = 1
         logOutBtn.addGestureRecognizer(tapGesture)
         
+    }
+    
+    func setupInfoBtn() {
         let infoPop = UITapGestureRecognizer(target: self, action: #selector(infoBtnTap))
-        tapGesture.numberOfTapsRequired = 1
+        infoPop.numberOfTapsRequired = 1
         infoBtn.addGestureRecognizer(infoPop)
     }
     
-    //MARK: - ShowLoadingView
-    func showView() {
-        loadingView = UIView()
-        loading = UIActivityIndicatorView(style: .gray)
-        view.addSubview(loadingView)
-        loadingView.addSubview(loading)
-        
-        loadingView.frame = view.frame
-        loadingView.backgroundColor = .white
-        
-        loading.center = self.loadingView.center
-        loading.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        loading.widthAnchor.constraint(equalToConstant: 40).isActive = true
-        
-        loading.startAnimating()
-    }
     
-    //MARK: - hideLoadingView
-    func hideLoadingView() {
-        loading.stopAnimating()
-        loadingView.removeFromSuperview()
-    }
+    //MARK: - ShowLoadingView
+//    func showView() {
+//        loadingView = UIView()
+//        loading = UIActivityIndicatorView(style: .gray)
+//        view.addSubview(loadingView)
+//        loadingView.addSubview(loading)
+//        
+//        loadingView.frame = view.frame
+//        loadingView.backgroundColor = .white
+//        
+//        loading.center = self.loadingView.center
+//        loading.heightAnchor.constraint(equalToConstant: 40).isActive = true
+//        loading.widthAnchor.constraint(equalToConstant: 40).isActive = true
+//        
+//        loading.startAnimating()
+//    }
+//    
+//    //MARK: - hideLoadingView
+//    func hideLoadingView() {
+//        loading.stopAnimating()
+//        loadingView.removeFromSuperview()
+//    }
     
     //NARK: - GestureAction
     @objc private func tapped() {
+        let popVC = UIStoryboard(name: "LogOut", bundle: nil).instantiateViewController(withIdentifier: "LogOutViewController") as! LogOutViewController
+        self.navigationController?.pushViewController(popVC, animated: true)
         
-        let popVC = UIStoryboard(name: "HomePage", bundle: nil).instantiateViewController(withIdentifier: "PopUpController") as! PopUpController
-        popVC.modalPresentationStyle = .popover
-        
-        let popoverVC = popVC.popoverPresentationController
-        popoverVC?.delegate = self
-        popoverVC?.sourceView = self.logOutBtn
-        popoverVC?.sourceRect = CGRect(x: self.logOutBtn.bounds.width/2 , y: self.logOutBtn.bounds.maxY, width: 0, height: 0)
-        popVC.preferredContentSize = CGSize(width: 189, height: 223)
-        
-        self.present(popVC, animated: true, completion: nil)
     }
     
     //MARK: - infoBtnAction
     @objc private func infoBtnTap() {
-        
         let popVC = UIStoryboard(name: "PnPopup", bundle: nil).instantiateViewController(withIdentifier: "PopupController") as! PopupController
         popVC.modalPresentationStyle = .custom
         self.presentPanModal(popVC)
-        //        let popVC = UIStoryboard(name: "HomePage", bundle: nil).instantiateViewController(withIdentifier: "InfoController") as! InfoController
-        //        popVC.modalPresentationStyle = .overFullScreen
-        //        let popoverVC = popVC.popoverPresentationController
-        //        popoverVC?.delegate = self
-        //        popoverVC?.sourceView = self.infoBtn
-        //        popoverVC?.sourceRect = CGRect(x: self.infoBtn.bounds.height/2, y: self.infoBtn.bounds.maxY, width: 0, height: 0)
-        //        popVC.preferredContentSize = CGSize(width: 146, height: 123)
-        //
-        //        self.present(popVC, animated: true, completion: nil)
+        
     }
     
-        func showAlert(title: String, message: String) {
+    func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okBtn = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alert.addAction(okBtn)

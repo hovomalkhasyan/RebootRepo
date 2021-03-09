@@ -29,10 +29,10 @@ extension AchievementsCell {
     func setData(model: Loyalty?) {
         self.level.text = model?.title
         self.cashBack.text = model?.description
-//        if let image = model?.iconActive {
-//            self.levelImage.setImage(urlString: Constants.imageUrl + image)
-//        } else {
+        if let image = model?.iconActive {
+            self.levelImage.setImage(urlString: Constants.imageUrl + image)
+        } else {
             self.levelImage.image = UIImage(named: "warrior_active")
-//        }
+        }
     }
 }

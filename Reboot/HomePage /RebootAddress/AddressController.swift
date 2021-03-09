@@ -53,6 +53,7 @@ class AddressController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupGesture()
+        setupInfoBtn()
         setbarView()
         setupDarkMode()
         setupBtn()
@@ -205,21 +206,24 @@ private extension AddressController {
 //MARK: - Extension
 extension AddressController {
     private func setupYKMap() {
-        map.mapWindow.map.move(
-            with: YMKCameraPosition.init(target: YMKPoint(latitude: 55.731846, longitude: 37.644379), zoom: zoom, azimuth: 0, tilt: 0),
-            animationType: YMKAnimation(type: YMKAnimationType.smooth, duration: 5),
-            cameraCallback: nil)
-        map.addSubview(btnView)
-        map.mapWindow.map.setMapStyleWithStyle(style)
-        map.isHidden = true
-        map.alpha = 0
-        secondMap.mapWindow.map.move(with: YMKCameraPosition.init(target: YMKPoint(latitude: 55.736160, longitude: 37.585415), zoom: zoom, azimuth: 0, tilt: 0),
-                                     animationType: YMKAnimation(type: YMKAnimationType.smooth, duration: 5),
-                                     cameraCallback: nil)
-        secondMap.mapWindow.map.setMapStyleWithStyle(style)
-        secondMap.addSubview(btnView2)
-        secondMap.isHidden = true
-        map.alpha = 0
+        DispatchQueue.main.async {
+            self.map.mapWindow.map.move(
+                with: YMKCameraPosition.init(target: YMKPoint(latitude: 55.731846, longitude: 37.644379), zoom: self.zoom, azimuth: 0, tilt: 0),
+                animationType: YMKAnimation(type: YMKAnimationType.smooth, duration: 5),
+                cameraCallback: nil)
+            self.map.addSubview(self.btnView)
+            self.map.mapWindow.map.setMapStyleWithStyle(self.style)
+            self.map.isHidden = true
+            self.map.alpha = 0
+            
+            self.secondMap.mapWindow.map.move(with: YMKCameraPosition.init(target: YMKPoint(latitude: 55.736160, longitude: 37.585415), zoom: self.zoom, azimuth: 0, tilt: 0),
+                                         animationType: YMKAnimation(type: YMKAnimationType.smooth, duration: 5),
+                                         cameraCallback: nil)
+            self.secondMap.mapWindow.map.setMapStyleWithStyle(self.style)
+            self.secondMap.addSubview(self.btnView2)
+            self.secondMap.isHidden = true
+            self.map.alpha = 0
+        }
     }
     
     private func addMapObjects() {

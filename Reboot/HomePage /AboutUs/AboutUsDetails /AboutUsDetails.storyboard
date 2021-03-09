@@ -79,10 +79,6 @@
                                     <constraint firstItem="Nap-nI-Gfy" firstAttribute="leading" secondItem="tmP-W1-3SP" secondAttribute="trailing" constant="10" id="nQ0-HH-55a"/>
                                 </constraints>
                             </view>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pel-x3-QUl">
-                                <rect key="frame" x="0.0" y="60" width="375" height="607"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </webView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9WM-GF-PrT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -90,17 +86,12 @@
                             <constraint firstItem="HcW-j6-sdJ" firstAttribute="top" secondItem="9WM-GF-PrT" secondAttribute="top" id="4jh-UT-Oqi"/>
                             <constraint firstItem="HcW-j6-sdJ" firstAttribute="leading" secondItem="FYI-bk-S0c" secondAttribute="leading" id="5hB-f1-u05"/>
                             <constraint firstItem="9WM-GF-PrT" firstAttribute="trailing" secondItem="HcW-j6-sdJ" secondAttribute="trailing" id="ChK-bm-lkA"/>
-                            <constraint firstItem="pel-x3-QUl" firstAttribute="top" secondItem="HcW-j6-sdJ" secondAttribute="bottom" constant="8" id="RKE-Id-2X9"/>
-                            <constraint firstItem="9WM-GF-PrT" firstAttribute="bottom" secondItem="pel-x3-QUl" secondAttribute="bottom" id="eUE-xC-J6u"/>
-                            <constraint firstItem="pel-x3-QUl" firstAttribute="leading" secondItem="9WM-GF-PrT" secondAttribute="leading" id="o0n-Bo-zv7"/>
-                            <constraint firstItem="9WM-GF-PrT" firstAttribute="trailing" secondItem="pel-x3-QUl" secondAttribute="trailing" id="wqL-Cm-xsy"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="DHS-hi-Rum"/>
                     <connections>
-                        <outlet property="aboutUsWebView" destination="pel-x3-QUl" id="cxX-7d-jpf"/>
                         <outlet property="backButton" destination="tmP-W1-3SP" id="Ulh-fK-ved"/>
-                        <outlet property="barView" destination="HcW-j6-sdJ" id="5qn-Fe-jFQ"/>
+                        <outlet property="barView" destination="HcW-j6-sdJ" id="YL4-5h-mec"/>
                         <outlet property="infoBtn" destination="m7O-J5-hoA" id="0wv-s8-IcX"/>
                         <outlet property="logOutBtn" destination="uR6-3W-WVe" id="zPw-5B-mS3"/>
                         <outlet property="logo" destination="Nap-nI-Gfy" id="GRz-Ab-kq7"/>

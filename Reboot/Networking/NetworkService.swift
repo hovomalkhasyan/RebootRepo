@@ -21,7 +21,7 @@ class Detail: Codable {
 
 class Message: Codable {
     let message: String
-    let code: String
+    let code: String?
     let name: String
 }
 
@@ -53,25 +53,29 @@ class NetWorkService {
             }
             switch resp.result {
             case.success(let data):
-                print(data)
+                print("LOG: ===== \(data)")
                 do {
                     let res = JSONDecoder()
                     res.keyDecodingStrategy = .convertFromSnakeCase
                     let json = try JSONSerialization.data(withJSONObject: data, options: .fragmentsAllowed)
                     let responseData = try res.decode(T.self, from: json)
+                    print("LOG: === True")
                     complition(RequestResult.success(responseData))
                 } catch {
-                    print(error)
+                    print("LOG === catch error \(error)")
                     do {
                         let json = try JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
                         let responseData = try JSONDecoder().decode(BaseError.self, from: json)
                         let error = responseData.detail?.errors.first?.message ?? ""
                         complition(RequestResult.failure(error))
+                        print("LOG: === error parse true")
                         
                         self.showAlert(title: error)
                         
                     } catch {
-                        print(error)
+                        print("LOG: ===  error parse error \(error.localizedDescription)")
+                        
+//                        print(error)
                     
                     }
                 }
@@ -98,7 +102,9 @@ class NetWorkService {
             case .success(let data):
                 guard let data = data else {return}
                 UserDefaults.standard.setValue(data?.token, forKey: "token")
-                complition()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                    complition()
+                }
             case .failure(let error):
                 print(error)
             }

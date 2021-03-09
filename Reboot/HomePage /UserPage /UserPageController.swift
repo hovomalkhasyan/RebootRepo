@@ -29,25 +29,26 @@ enum SectionType: Int,CaseIterable {
 
 class UserPageController: BaseViewController {
     //MARK: - IBOutlets
-    
-    @IBOutlet weak private var indicator: UIActivityIndicatorView!
-    @IBOutlet weak private var userView: UIView!
     @IBOutlet weak private var userAvatar: UIImageView!
     @IBOutlet weak private var tableView: UITableView!
     @IBOutlet weak private var bonus: UILabel!
     @IBOutlet weak private var userName: UILabel!
-    
+    var loadingView: UIView!
+    var loading: UIActivityIndicatorView!
+    //MARK: - Propertyes
     private var loyality : Loyalty?
     private var reserves = [Reserves]()
     private var activity: Activity?
     private var achivements: Achievement?
     private var catergoryArray = [Category]()
     private var ads = [Ads]()
+    
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setbarView()
         setupGesture()
+        setupInfoBtn()
         setupDarkMode()
         userInfoRequest()
         setupTableView()
@@ -55,6 +56,12 @@ class UserPageController: BaseViewController {
         setupImageView()
     }
     
+    //MARK: - LifeCycle
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        hideNavBar()
+    }
+   
     override func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return .none
     }
@@ -71,8 +78,31 @@ extension UserPageController {
         userAvatar.layer.borderWidth = 1
         userAvatar.layer.borderColor = UIColor.black.cgColor
     }
+   
+    private func showView() {
+        loadingView = UIView()
+        loading = UIActivityIndicatorView(style: .gray)
+        view.addSubview(loadingView)
+        loadingView.addSubview(loading)
+        
+        loadingView.frame = view.frame
+        loadingView.backgroundColor = .white
+        
+        loading.center = self.loadingView.center
+        loading.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        loading.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        
+        loading.startAnimating()
+    }
+    
+    //MARK: - hideLoadingView
+    private func hideLoadingView() {
+        loading.stopAnimating()
+        loadingView.removeFromSuperview()
+    }
     
     private func userInfoRequest() {
+        showView()
         NetWorkService.request(url: Constants.MOBILE_API, method: .get, param: nil, encoding: JSONEncoding.prettyPrinted) { (resp: RequestResult<BaseResponseModel?>) in
             switch resp {
             case .success(let model):
@@ -80,7 +110,7 @@ extension UserPageController {
                 if let image = finalModel.user.userAvatar {
                     self.userAvatar.setImage(urlString: Constants.imageUrl + image)
                 }
-                self.bonus.text = finalModel.bonus.bonus
+                self.bonus.text = String(finalModel.bonus.bonus)
                 self.userName.text = finalModel.user.userName
                 self.loyality = finalModel.user.loyalty
                 self.reserves = finalModel.reserves ?? []
@@ -88,6 +118,7 @@ extension UserPageController {
                 self.achivements = finalModel.achievement
                 self.ads = finalModel.ads ?? []
                 self.tableView.reloadData()
+                self.hideLoadingView()
             case .failure(let error):
                 print(error)
             }
