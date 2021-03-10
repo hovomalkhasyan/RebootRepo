@@ -19,12 +19,11 @@ class AboutUsDetailsController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupGesture()
-//        workoutsCount()
+        workoutsCount()
         setupInfoBtn()
-        addMapView()
         setupPageGesture()
         setbarView()
-        setUrlInWebView()
+        setup()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,22 +38,24 @@ class AboutUsDetailsController: BaseViewController {
 }
 
 //MARK: - setupUrlWebView
-private extension AboutUsDetailsController {
-        func setUrlInWebView() {
-        guard let webUrl = webViewUrl else {return}
-        webView.load(URLRequest(url: URL(string: webUrl)!))
-    }
-  
-    func addMapView() {
-        webView = WKWebView(frame: self.view.frame)
+extension AboutUsDetailsController {
+    private func setup() {
+        let configuration = WKWebViewConfiguration()
+        let contentController = WKUserContentController()
+        let js = "localStorage.setItem('token', '\(UserDefaults.standard.value(forKey: "token")!)')"
+        let userScript = WKUserScript(source: js, injectionTime: WKUserScriptInjectionTime.atDocumentStart, forMainFrameOnly: false)
+        contentController.addUserScript(userScript)
+        configuration.userContentController = contentController
+
+        webView = WKWebView(frame: .zero, configuration: configuration)
         webView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(webView)
-
         webView.topAnchor.constraint(equalTo: self.barView.bottomAnchor).isActive = true
         webView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         webView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
         webView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
-        
+        guard let webUrl = webViewUrl else {return}
+        webView.load(URLRequest(url: URL(string: webUrl)!))
     }
 }
 
