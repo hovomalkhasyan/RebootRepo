@@ -25,7 +25,7 @@ class StudioController: BaseViewController {
         hideNavBar()
         setbarView()
         setupTableView()
-//        workoutsCount()
+        workoutsCount()
     }
     
     override func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {

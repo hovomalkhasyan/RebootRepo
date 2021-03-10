@@ -45,7 +45,6 @@ class NetWorkService {
     
     class func request<T: Codable>(url: String, method: HTTPMethod, param: Encodable?, encoding: JSONEncoding, complition: @escaping (RequestCompletion<T?>)) {
         alamofireSessionMeneger.request(Constants.BASE_URl + url, method: method, parameters: param?.asDictionary(), encoding: encoding, headers: getHeaders()).responseJSON { (resp) in
-            print(resp.response?.statusCode)
             if resp.response?.statusCode == 401 {
                 refreshToken {
                     request(url: url, method: method, param: param, encoding: encoding, complition: complition)
@@ -76,8 +75,6 @@ class NetWorkService {
                     } catch {
                         print("LOG: ===  error parse error \(error.localizedDescription)")
                         
-//                        print(error)
-                    
                     }
                 }
                 

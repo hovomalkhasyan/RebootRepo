@@ -21,7 +21,7 @@ class PricingController: BaseViewController {
         setupDarkMode()
         setbarView()
         setUrlInWebView()
-//        workoutsCount()
+        workoutsCount()
     }
 }
 

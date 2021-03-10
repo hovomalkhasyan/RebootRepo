@@ -109,6 +109,7 @@ extension ViewController {
             switch resp {
             case .success(let data):
                 guard let data = data else {return}
+                print(data?.token)
                 UserDefaults.standard.setValue(data?.token, forKey: "token")
                 self.toHomePage()
             case .failure(let error):

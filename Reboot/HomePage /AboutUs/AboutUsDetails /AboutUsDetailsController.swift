@@ -54,6 +54,7 @@ private extension AboutUsDetailsController {
         webView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         webView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
         webView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
+        
     }
 }
 

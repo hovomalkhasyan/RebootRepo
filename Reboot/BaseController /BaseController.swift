@@ -19,8 +19,6 @@ class BaseViewController: UIViewController {
     
     //MARK: - property
     var sum = 0
-//    var loadingView: UIView!
-//    var loading: UIActivityIndicatorView!
     
     //MARK: - hideNavBar
     func hideNavBar() {
@@ -45,7 +43,6 @@ class BaseViewController: UIViewController {
     
     //MARK: - workoutCountRequest
     func workoutsCount() {
-//        showView()
         NetWorkService.request(url: Constants.MY_ACCOUNT_ENDPOINT, method: .get, param: nil, encoding: JSONEncoding.prettyPrinted) { (resp: RequestResult<AccountResponse?>) in
             switch resp {
             case .success(let data):
@@ -58,7 +55,6 @@ class BaseViewController: UIViewController {
                 } else {
                     self.infoBtn.setTitle("0", for: .normal)
                 }
-//                self.hideLoadingView()
             case .failure(let error):
                 print(error)
             }

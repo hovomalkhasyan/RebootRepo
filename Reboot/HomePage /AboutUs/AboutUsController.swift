@@ -23,7 +23,7 @@ class AboutUsController: BaseViewController {
         setupInfoBtn()
         setupDarkMode()
         setupTableView()
-//        workoutsCount()
+        workoutsCount()
     }
     
     override func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {

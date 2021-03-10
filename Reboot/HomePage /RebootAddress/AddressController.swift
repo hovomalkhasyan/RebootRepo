@@ -61,7 +61,7 @@ class AddressController: BaseViewController {
         setupWpCallBtn()
         addMapObjects()
         setupEastGest()
-//        workoutsCount()
+        workoutsCount()
     }
     
     override func viewWillAppear(_ animated: Bool) {
