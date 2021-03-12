@@ -52,7 +52,7 @@ class AddressController: BaseViewController {
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupGesture()
+        setupGest()
         setupInfoBtn()
         setbarView()
         setupDarkMode()

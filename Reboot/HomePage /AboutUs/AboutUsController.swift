@@ -19,7 +19,7 @@ class AboutUsController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setbarView()
-        setupGesture()
+        setupGest()
         setupInfoBtn()
         setupDarkMode()
         setupTableView()

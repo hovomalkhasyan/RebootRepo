@@ -59,14 +59,14 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qlH-jq-ea2">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="6Kn-If-QGN">
                                                 <rect key="frame" x="34" y="0.0" width="30" height="30"/>
-                                                <state key="normal" image="User"/>
-                                            </button>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="ElH-S5-PlG"/>
+                                                    <constraint firstAttribute="width" constant="30" id="LmM-4d-bMt"/>
+                                                </constraints>
+                                            </imageView>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstItem="qlH-jq-ea2" firstAttribute="width" secondItem="rhn-AO-ORl" secondAttribute="height" id="GqW-Un-20a"/>
-                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -177,7 +177,7 @@
                     <connections>
                         <outlet property="barView" destination="4Pc-wV-8nt" id="9l1-Xq-DE5"/>
                         <outlet property="infoBtn" destination="rhn-AO-ORl" id="w44-M6-emE"/>
-                        <outlet property="logOutBtn" destination="qlH-jq-ea2" id="1ul-9z-M6i"/>
+                        <outlet property="logOutPageImage" destination="6Kn-If-QGN" id="SdD-39-qLB"/>
                         <outlet property="logo" destination="kZS-kC-cUv" id="Dlv-ST-SKX"/>
                         <outlet property="tableView" destination="Fsm-lx-Q5q" id="xe2-gJ-Obf"/>
                     </connections>
@@ -223,14 +223,14 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0fw-i9-6Pw">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="hso-3l-NFx">
                                                 <rect key="frame" x="34" y="0.0" width="30" height="30"/>
-                                                <state key="normal" image="user"/>
-                                            </button>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="LlE-oC-EUC"/>
+                                                    <constraint firstAttribute="height" constant="30" id="hEo-S9-UxN"/>
+                                                </constraints>
+                                            </imageView>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstItem="0fw-i9-6Pw" firstAttribute="width" secondItem="xAv-p8-Pk4" secondAttribute="height" id="gzf-9Y-TYK"/>
-                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -256,7 +256,7 @@
                     <connections>
                         <outlet property="barView" destination="RaN-0s-4HW" id="SR5-aI-HoZ"/>
                         <outlet property="infoBtn" destination="xAv-p8-Pk4" id="g4p-yt-Swu"/>
-                        <outlet property="logOutBtn" destination="0fw-i9-6Pw" id="0wW-tn-ky9"/>
+                        <outlet property="logOutPageImage" destination="hso-3l-NFx" id="fuM-2p-HiJ"/>
                         <outlet property="logo" destination="4eE-d3-VyJ" id="653-mh-DHS"/>
                     </connections>
                 </viewController>
@@ -357,14 +357,13 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QU1-yI-rA3">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="Uga-xa-LvH">
                                                 <rect key="frame" x="34" y="0.0" width="30" height="30"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="GoM-21-cAZ"/>
-                                                    <constraint firstAttribute="width" constant="30" id="J2r-9a-pGD"/>
+                                                    <constraint firstAttribute="width" constant="30" id="c29-3J-b1R"/>
+                                                    <constraint firstAttribute="height" constant="30" id="frD-xF-zBx"/>
                                                 </constraints>
-                                                <state key="normal" image="User"/>
-                                            </button>
+                                            </imageView>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -394,7 +393,7 @@
                     <connections>
                         <outlet property="barView" destination="dDc-dE-lYe" id="9WK-HH-xBe"/>
                         <outlet property="infoBtn" destination="rTd-Y7-Aga" id="4sA-dt-a6l"/>
-                        <outlet property="logOutBtn" destination="QU1-yI-rA3" id="NRn-Xy-HK5"/>
+                        <outlet property="logOutPageImage" destination="Uga-xa-LvH" id="zqC-xQ-2Vi"/>
                         <outlet property="logo" destination="D4h-ya-0Xz" id="dA8-A1-znn"/>
                         <outlet property="tableView" destination="0eB-sg-QDa" id="nXO-1i-aiN"/>
                     </connections>
@@ -894,14 +893,14 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cR9-mw-Xnz">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="ceA-Lx-pzW">
                                                 <rect key="frame" x="34" y="0.0" width="30" height="30"/>
-                                                <state key="normal" image="User"/>
-                                            </button>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="ZoK-rl-gIO"/>
+                                                    <constraint firstAttribute="width" constant="30" id="bb3-RO-Fxd"/>
+                                                </constraints>
+                                            </imageView>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstItem="cR9-mw-Xnz" firstAttribute="width" secondItem="7Eh-re-hRw" secondAttribute="height" id="sdW-6v-DIQ"/>
-                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -932,7 +931,7 @@
                         <outlet property="btnView" destination="n1V-8G-udG" id="gKL-JE-lRi"/>
                         <outlet property="btnView2" destination="Z58-O9-vuT" id="4AI-u4-Z0z"/>
                         <outlet property="infoBtn" destination="7Eh-re-hRw" id="nmZ-hv-VDn"/>
-                        <outlet property="logOutBtn" destination="cR9-mw-Xnz" id="394-xn-N3t"/>
+                        <outlet property="logOutPageImage" destination="ceA-Lx-pzW" id="Qdd-RV-1eR"/>
                         <outlet property="logo" destination="Ehj-Lm-6IZ" id="oQv-pb-fm3"/>
                         <outlet property="map" destination="apy-7t-EF3" id="xLB-ei-fAC"/>
                         <outlet property="mapImage" destination="Fap-QA-Ayo" id="dLu-IS-RfS"/>
@@ -988,14 +987,14 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qhZ-Kc-HGM">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="PVt-jj-OLQ">
                                                 <rect key="frame" x="34" y="0.0" width="30" height="30"/>
-                                                <state key="normal" image="User"/>
-                                            </button>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="JAT-2X-Pau"/>
+                                                    <constraint firstAttribute="height" constant="30" id="Z4D-wg-z0T"/>
+                                                </constraints>
+                                            </imageView>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstItem="qhZ-Kc-HGM" firstAttribute="width" secondItem="TGa-B8-IJh" secondAttribute="height" id="ch6-2R-4Do"/>
-                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1177,18 +1176,18 @@
                                             <outlet property="reserveBtn" destination="dcy-01-80q" id="Z5G-RP-Bqq"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AchievementsCell" rowHeight="143" id="MxT-0o-evX" customClass="AchievementsCell" customModule="Reboot" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="309.5" width="375" height="143"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AchievementsCell" rowHeight="167" id="MxT-0o-evX" customClass="AchievementsCell" customModule="Reboot" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="309.5" width="375" height="167"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MxT-0o-evX" id="xJV-6c-hsv">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="143"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="167"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="tss-d2-wbe">
-                                                    <rect key="frame" x="10" y="8" width="355" height="121.5"/>
+                                                    <rect key="frame" x="10" y="8" width="355" height="131.5"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9Ss-UI-1bm">
-                                                            <rect key="frame" x="0.0" y="0.0" width="115" height="121.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="115" height="131.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="МОЙ УРОВЕНЬ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rr1-aM-GGw">
                                                                     <rect key="frame" x="10" y="0.0" width="95.5" height="15.5"/>
@@ -1197,14 +1196,14 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="warrior_active" translatesAutoresizingMaskIntoConstraints="NO" id="lVE-7t-o1b">
-                                                                    <rect key="frame" x="39" y="23.5" width="37" height="60"/>
+                                                                    <rect key="frame" x="32.5" y="23.5" width="50" height="70"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="60" id="HP4-y6-pe6"/>
-                                                                        <constraint firstAttribute="width" constant="37" id="ZB9-Sh-5UY"/>
+                                                                        <constraint firstAttribute="height" constant="70" id="HP4-y6-pe6"/>
+                                                                        <constraint firstAttribute="width" constant="50" id="ZB9-Sh-5UY"/>
                                                                     </constraints>
                                                                 </imageView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="aAS-E4-s8q">
-                                                                    <rect key="frame" x="17.5" y="91.5" width="80.5" height="30"/>
+                                                                    <rect key="frame" x="17.5" y="101.5" width="80.5" height="30"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Legend IV" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1e6-L6-YkI">
                                                                             <rect key="frame" x="13" y="0.0" width="54.5" height="14"/>
@@ -1226,7 +1225,7 @@
                                                             </constraints>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cAa-a1-ssI">
-                                                            <rect key="frame" x="120" y="0.0" width="115" height="121.5"/>
+                                                            <rect key="frame" x="120" y="0.0" width="115" height="131.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="АКТИВНОСТЬ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QUs-jh-ooV">
                                                                     <rect key="frame" x="13.5" y="0.0" width="88" height="15.5"/>
@@ -1235,13 +1234,13 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vma-Qf-dAO">
-                                                                    <rect key="frame" x="46" y="23.5" width="23" height="60"/>
-                                                                    <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy" pointSize="41"/>
+                                                                    <rect key="frame" x="43.5" y="23.5" width="28" height="70"/>
+                                                                    <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy" pointSize="50"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="за последние 30 дней" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sVU-gA-vfg">
-                                                                    <rect key="frame" x="18" y="91.5" width="79.5" height="30"/>
+                                                                    <rect key="frame" x="18" y="101.5" width="79.5" height="30"/>
                                                                     <fontDescription key="fontDescription" name="Gilroy-Regular" family="Gilroy" pointSize="12"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -1249,7 +1248,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="O68-yF-9Ez">
-                                                            <rect key="frame" x="240" y="0.0" width="115" height="121.5"/>
+                                                            <rect key="frame" x="240" y="0.0" width="115" height="131.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ДОСТИЖЕНИЯ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d67-Wc-ZgY">
                                                                     <rect key="frame" x="10.5" y="0.0" width="94.5" height="15.5"/>
@@ -1258,14 +1257,14 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Subtract" translatesAutoresizingMaskIntoConstraints="NO" id="VId-kb-SNk">
-                                                                    <rect key="frame" x="39" y="23.5" width="37" height="60"/>
+                                                                    <rect key="frame" x="32.5" y="23.5" width="50" height="70"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="60" id="4oo-la-ySX"/>
-                                                                        <constraint firstAttribute="width" constant="37" id="c08-hp-H8F"/>
+                                                                        <constraint firstAttribute="height" constant="70" id="4oo-la-ySX"/>
+                                                                        <constraint firstAttribute="width" constant="50" id="c08-hp-H8F"/>
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Прошел 100 UPPER BODY" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ff2-1D-qJI">
-                                                                    <rect key="frame" x="19" y="91.5" width="77" height="30"/>
+                                                                    <rect key="frame" x="19" y="101.5" width="77" height="30"/>
                                                                     <fontDescription key="fontDescription" name="Gilroy-Regular" family="Gilroy" pointSize="12"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -1300,7 +1299,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="TrainingCell" rowHeight="214" id="ujc-hJ-MxW" customClass="TrainingCell" customModule="Reboot" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="452.5" width="375" height="214"/>
+                                        <rect key="frame" x="0.0" y="476.5" width="375" height="214"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ujc-hJ-MxW" id="rMN-D8-yoF">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="214"/>
@@ -1313,24 +1312,24 @@
                                                         <constraint firstAttribute="height" constant="170" id="lbQ-yJ-2Nj"/>
                                                     </constraints>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ccz-gg-WFu">
-                                                        <size key="itemSize" width="274" height="172"/>
+                                                        <size key="itemSize" width="360" height="195"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionCell" id="sKX-6y-avY" customClass="CollectionCell" customModule="Reboot" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="15.5" width="274" height="172"/>
+                                                            <rect key="frame" x="0.0" y="4" width="360" height="195"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="BMy-vT-jmk">
-                                                                <rect key="frame" x="0.0" y="0.0" width="274" height="172"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="360" height="195"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 1" translatesAutoresizingMaskIntoConstraints="NO" id="uz4-zb-QIN">
-                                                                        <rect key="frame" x="5" y="0.0" width="264" height="162"/>
+                                                                        <rect key="frame" x="5" y="0.0" width="350" height="185"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="height" constant="152" id="Mhe-gy-tjJ"/>
-                                                                            <constraint firstAttribute="width" constant="264" id="iT5-6B-Am9"/>
+                                                                            <constraint firstAttribute="width" constant="350" id="Ev2-AQ-ORx"/>
+                                                                            <constraint firstAttribute="height" constant="185" id="ijA-Hr-CGP"/>
                                                                         </constraints>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -1339,9 +1338,9 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </imageView>
                                                                     <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="xzI-LH-Hip">
-                                                                        <rect key="frame" x="64.5" y="136" width="145" height="19"/>
+                                                                        <rect key="frame" x="107.5" y="159" width="145" height="19"/>
                                                                         <subviews>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dNd-og-YCc">
+                                                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dNd-og-YCc">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="145" height="15"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="15" id="19h-qr-38y"/>
@@ -1365,13 +1364,13 @@
                                                                 <constraints>
                                                                     <constraint firstItem="uz4-zb-QIN" firstAttribute="top" secondItem="BMy-vT-jmk" secondAttribute="top" id="2ph-fg-19k"/>
                                                                     <constraint firstAttribute="bottom" secondItem="xzI-LH-Hip" secondAttribute="bottom" constant="17" id="Pip-H9-u2n"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="uz4-zb-QIN" secondAttribute="bottom" constant="10" id="SPL-td-hzv"/>
                                                                     <constraint firstItem="xzI-LH-Hip" firstAttribute="centerX" secondItem="BMy-vT-jmk" secondAttribute="centerX" id="d6r-pW-ind"/>
                                                                     <constraint firstAttribute="trailing" secondItem="uz4-zb-QIN" secondAttribute="trailing" constant="5" id="iR4-Dg-vNI"/>
                                                                     <constraint firstItem="uz4-zb-QIN" firstAttribute="leading" secondItem="BMy-vT-jmk" secondAttribute="leading" constant="5" id="qCi-bo-GpX"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="uz4-zb-QIN" secondAttribute="bottom" constant="10" id="wKM-2f-Bha"/>
                                                                 </constraints>
                                                             </collectionViewCellContentView>
-                                                            <size key="customSize" width="274" height="172"/>
+                                                            <size key="customSize" width="360" height="195"/>
                                                             <connections>
                                                                 <outlet property="collectionCellImage" destination="uz4-zb-QIN" id="fRC-v5-ldz"/>
                                                             </connections>
@@ -1392,7 +1391,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ReservePageCell" rowHeight="121" id="2KI-vw-sfJ" customClass="ReservePageCell" customModule="Reboot" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="666.5" width="375" height="121"/>
+                                        <rect key="frame" x="0.0" y="690.5" width="375" height="121"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2KI-vw-sfJ" id="Js4-WI-wcb">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="121"/>
@@ -1449,7 +1448,7 @@
                         <outlet property="barView" destination="uDx-9D-deC" id="f0W-Tx-quj"/>
                         <outlet property="bonus" destination="SUr-Rj-pho" id="fk6-5m-LlV"/>
                         <outlet property="infoBtn" destination="TGa-B8-IJh" id="mN2-6k-Ayj"/>
-                        <outlet property="logOutBtn" destination="qhZ-Kc-HGM" id="VTq-cK-iMI"/>
+                        <outlet property="logOutPageImage" destination="PVt-jj-OLQ" id="I4M-xM-nVD"/>
                         <outlet property="logo" destination="iAC-qT-Uek" id="uzy-JC-esR"/>
                         <outlet property="tableView" destination="PRQ-eC-kMY" id="JIe-UH-KGD"/>
                         <outlet property="userAvatar" destination="jx4-Nd-Q6m" id="x4j-f7-GUV"/>
@@ -1458,7 +1457,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jpq-fG-jtq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1098" y="1406"/>
+            <point key="canvasLocation" x="-1098.4000000000001" y="1405.5472263868066"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1ra-ux-DwV">
@@ -1568,7 +1567,6 @@
         <image name="Shopping" width="25" height="25"/>
         <image name="Sport" width="25" height="25"/>
         <image name="Subtract" width="34" height="44"/>
-        <image name="User" width="18" height="20"/>
         <image name="location" width="25" height="25"/>
         <image name="user" width="25" height="25"/>
         <image name="user-1" width="25" height="25"/>

@@ -47,7 +47,7 @@ class UserPageController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setbarView()
-        setupGesture()
+        setupGest()
         setupInfoBtn()
         setupDarkMode()
         userInfoRequest()
@@ -236,37 +236,3 @@ extension UserPageController: DidSelectDelegate {
     }
 }
 
-//    private func accountRequest() {
-//        NetWorkService.request(url: Constants.MY_ACCOUNT_ENDPOINT, method: .get, param: nil, encoding: JSONEncoding.prettyPrinted) { (resp: RequestResult<AccountResponse?>) in
-//            switch resp {
-//            case .success(let model):
-//                guard let m = model, let finalModel = m else { return }
-//                if let image = finalModel.avatar {
-//                    self.userAvatar.setImage(urlString: Constants.imageUrl + image, placeholder: nil, completed: nil)
-//                }
-//                self.bonus.text = String(finalModel.bonusesBalance)
-//                self.loyality = finalModel.loyaltyLevel
-//                self.userName.text = finalModel.fullName
-//                self.tableView.reloadData()
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
-//    }
-
-//   private func reserveResponse() {
-//        //        indicator.startAnimating()
-//        NetWorkService.request(url: Constants.MY_RESERVES_ENDPOINT, method: .get, param: nil, encoding: JSONEncoding.prettyPrinted) { (resp: RequestResult<ReserveResp?>) in
-//            switch resp {
-//            case .success(let data):
-//                guard let data = data, let obj = data?.objects else {return}
-//                self.object = obj
-//                self.tableView.reloadData()
-//            //                self.userView.isHidden = true
-//            //                self.indicator.stopAnimating()
-//            //                self.indicator.hidesWhenStopped = true
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
-//    }

@@ -39,14 +39,14 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uR6-3W-WVe">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="336-QJ-1Vk">
                                                 <rect key="frame" x="34" y="0.0" width="30" height="30"/>
-                                                <state key="normal" image="user"/>
-                                            </button>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="Naw-Tn-SzX"/>
+                                                    <constraint firstAttribute="height" constant="30" id="fNI-VQ-sxJ"/>
+                                                </constraints>
+                                            </imageView>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstItem="uR6-3W-WVe" firstAttribute="width" secondItem="m7O-J5-hoA" secondAttribute="height" id="FVd-91-c1k"/>
-                                        </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tmP-W1-3SP">
                                         <rect key="frame" x="8" y="16" width="20" height="20"/>
@@ -93,7 +93,7 @@
                         <outlet property="backButton" destination="tmP-W1-3SP" id="Ulh-fK-ved"/>
                         <outlet property="barView" destination="HcW-j6-sdJ" id="YL4-5h-mec"/>
                         <outlet property="infoBtn" destination="m7O-J5-hoA" id="0wv-s8-IcX"/>
-                        <outlet property="logOutBtn" destination="uR6-3W-WVe" id="zPw-5B-mS3"/>
+                        <outlet property="logOutPageImage" destination="336-QJ-1Vk" id="WnS-2T-FwF"/>
                         <outlet property="logo" destination="Nap-nI-Gfy" id="GRz-Ab-kq7"/>
                     </connections>
                 </viewController>

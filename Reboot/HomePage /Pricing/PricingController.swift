@@ -16,12 +16,17 @@ class PricingController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addMapView()
-        setupGesture()
+        setupGest()
         setupInfoBtn()
         setupDarkMode()
         setbarView()
         setUrlInWebView()
         workoutsCount()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        hideNavBar()
     }
 }
 

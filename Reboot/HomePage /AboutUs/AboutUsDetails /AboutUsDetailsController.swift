@@ -18,7 +18,7 @@ class AboutUsDetailsController: BaseViewController {
     //MARK: - LifeSycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupGesture()
+        setupGest()
         workoutsCount()
         setupInfoBtn()
         setupPageGesture()

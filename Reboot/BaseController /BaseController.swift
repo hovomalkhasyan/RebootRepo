@@ -14,7 +14,7 @@ class BaseViewController: UIViewController {
     @IBOutlet weak var logo: UIImageView!
     @IBOutlet weak var barView: UIView!
     @IBOutlet weak var infoBtn: UIButton!
-    @IBOutlet weak var logOutBtn: UIButton!
+    @IBOutlet weak var logOutPageImage: UIImageView!
     @IBOutlet weak var rootBtn: UIButton!
     
     //MARK: - property
@@ -27,9 +27,8 @@ class BaseViewController: UIViewController {
     
     //MARK: - setupDarkMode
     func setupDarkMode() {
-        logOutBtn.setImage(UIImage(named:  "user"), for: .normal)
+        logOutPageImage.setImageColor(color: UIColor(named: "borderColor")!)
         logo.image = UIImage(named: "Group 6544")
-        logOutBtn.setImageColor(color: UIColor(named: "borderColor")!, for: .normal)
     }
     
     //MARK: - buttonAction
@@ -62,11 +61,11 @@ class BaseViewController: UIViewController {
     }
     
     //MARK: - setupGesture
-    func setupGesture() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapped))
-        tapGesture.numberOfTapsRequired = 1
-        logOutBtn.addGestureRecognizer(tapGesture)
-        
+    func setupGest() {
+        let gest = UITapGestureRecognizer(target: self, action: #selector(tapped))
+        logOutPageImage.isMultipleTouchEnabled = true
+        logOutPageImage.isUserInteractionEnabled = true
+        logOutPageImage.addGestureRecognizer(gest)
     }
     
     func setupInfoBtn() {
@@ -75,8 +74,22 @@ class BaseViewController: UIViewController {
         infoBtn.addGestureRecognizer(infoPop)
     }
     
+    //NARK: - GestureAction
+    @objc private func tapped() {
+        let popVC = UIStoryboard(name: "LogOut", bundle: nil).instantiateViewController(withIdentifier: "LogOutViewController") as! LogOutViewController
+        self.navigationController?.pushViewController(popVC, animated: true)
+        print("tap")
+    }
     
-    //MARK: - ShowLoadingView
+    //MARK: - infoBtnAction
+    @objc private func infoBtnTap() {
+        let popVC = UIStoryboard(name: "PnPopup", bundle: nil).instantiateViewController(withIdentifier: "PopupController") as! PopupController
+        popVC.modalPresentationStyle = .custom
+        self.presentPanModal(popVC)
+        
+    }
+    
+//    MARK: - ShowLoadingView
 //    func showView() {
 //        loadingView = UIView()
 //        loading = UIActivityIndicatorView(style: .gray)
@@ -99,20 +112,10 @@ class BaseViewController: UIViewController {
 //        loadingView.removeFromSuperview()
 //    }
     
-    //NARK: - GestureAction
-    @objc private func tapped() {
-        let popVC = UIStoryboard(name: "LogOut", bundle: nil).instantiateViewController(withIdentifier: "LogOutViewController") as! LogOutViewController
-        self.navigationController?.pushViewController(popVC, animated: true)
-        
-    }
     
-    //MARK: - infoBtnAction
-    @objc private func infoBtnTap() {
-        let popVC = UIStoryboard(name: "PnPopup", bundle: nil).instantiateViewController(withIdentifier: "PopupController") as! PopupController
-        popVC.modalPresentationStyle = .custom
-        self.presentPanModal(popVC)
-        
-    }
+  
+    
+    
     
     func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
