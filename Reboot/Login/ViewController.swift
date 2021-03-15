@@ -83,7 +83,7 @@ extension ViewController {
     
     private func setupTf() {
         let toolbar = UIToolbar()
-        let tulbarBtn = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissKeyboard))
+        let tulbarBtn = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(hideKeyboard))
         let flaxSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil )
         toolbar.setItems([flaxSpace,tulbarBtn], animated: true)
         toolbar.sizeToFit()
@@ -98,7 +98,7 @@ extension ViewController {
         passwordTF.inputAccessoryView = toolbar
     }
     
-    @objc private func dismissKeyboard() {
+    @objc private func hideKeyboard() {
         view.endEditing(true)
     }
     

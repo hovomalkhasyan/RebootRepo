@@ -54,6 +54,10 @@
 		DAF6753F255AC4620033D861 /* SavePassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAF6753E255AC4620033D861 /* SavePassword.storyboard */; };
 		DAF67548255AC8470033D861 /* AboutUsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF67547255AC8470033D861 /* AboutUsController.swift */; };
 		DAF6754C255AC87C0033D861 /* AboutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF6754B255AC87C0033D861 /* AboutCell.swift */; };
+		FA009E0D25FF535700011B86 /* GiftCardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA009E0C25FF535700011B86 /* GiftCardController.swift */; };
+		FA009E1025FF536500011B86 /* GiftCard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA009E0F25FF536500011B86 /* GiftCard.storyboard */; };
+		FA009E6625FF6C9E00011B86 /* AddGiftCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA009E6525FF6C9E00011B86 /* AddGiftCardView.swift */; };
+		FA009E6B25FF6CB900011B86 /* PromoCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA009E6A25FF6CB900011B86 /* PromoCodeView.swift */; };
 		FA013A8D25E4FA2D0050C270 /* Extension+Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA013A8C25E4FA2D0050C270 /* Extension+Double.swift */; };
 		FA02F603259C58A90056865E /* CustonNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02F602259C58A90056865E /* CustonNavBar.swift */; };
 		FA1666DA25C5A94300A39FCB /* UserReserveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1666D825C5A94300A39FCB /* UserReserveCell.swift */; };
@@ -72,6 +76,8 @@
 		FA5F013425DF9704006FD55E /* PopupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F013325DF9704006FD55E /* PopupController.swift */; };
 		FA5F013725DF9751006FD55E /* PnPopup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA5F013625DF9751006FD55E /* PnPopup.storyboard */; };
 		FA5F013B25DF97A1006FD55E /* PopupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F013A25DF97A1006FD55E /* PopupCell.swift */; };
+		FA7A846825FF438700E9B14E /* CustomPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7A846625FF438700E9B14E /* CustomPopUp.swift */; };
+		FA7A846925FF438700E9B14E /* CustomPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA7A846725FF438700E9B14E /* CustomPopUp.xib */; };
 		FAA2F18A25D164A1006763D4 /* AboutUsDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA2F18925D164A1006763D4 /* AboutUsDetailsController.swift */; };
 		FAA2F18D25D164B7006763D4 /* AboutUsDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAA2F18C25D164B7006763D4 /* AboutUsDetails.storyboard */; };
 		FAC3D3BF259B4EC600C00270 /* LoginRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3D3BE259B4EC600C00270 /* LoginRequestModel.swift */; };
@@ -133,6 +139,10 @@
 		DAF67547255AC8470033D861 /* AboutUsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsController.swift; sourceTree = "<group>"; };
 		DAF6754B255AC87C0033D861 /* AboutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCell.swift; sourceTree = "<group>"; };
 		DEF704F3B785D1EC47CB3B42 /* Pods-Reboot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reboot.debug.xcconfig"; path = "Target Support Files/Pods-Reboot/Pods-Reboot.debug.xcconfig"; sourceTree = "<group>"; };
+		FA009E0C25FF535700011B86 /* GiftCardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftCardController.swift; sourceTree = "<group>"; };
+		FA009E0F25FF536500011B86 /* GiftCard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GiftCard.storyboard; sourceTree = "<group>"; };
+		FA009E6525FF6C9E00011B86 /* AddGiftCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGiftCardView.swift; sourceTree = "<group>"; };
+		FA009E6A25FF6CB900011B86 /* PromoCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoCodeView.swift; sourceTree = "<group>"; };
 		FA013A8C25E4FA2D0050C270 /* Extension+Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Double.swift"; sourceTree = "<group>"; };
 		FA02F602259C58A90056865E /* CustonNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustonNavBar.swift; sourceTree = "<group>"; };
 		FA1666D825C5A94300A39FCB /* UserReserveCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserReserveCell.swift; sourceTree = "<group>"; };
@@ -151,6 +161,8 @@
 		FA5F013325DF9704006FD55E /* PopupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupController.swift; sourceTree = "<group>"; };
 		FA5F013625DF9751006FD55E /* PnPopup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PnPopup.storyboard; sourceTree = "<group>"; };
 		FA5F013A25DF97A1006FD55E /* PopupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupCell.swift; sourceTree = "<group>"; };
+		FA7A846625FF438700E9B14E /* CustomPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopUp.swift; sourceTree = "<group>"; };
+		FA7A846725FF438700E9B14E /* CustomPopUp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomPopUp.xib; sourceTree = "<group>"; };
 		FAA2F18925D164A1006763D4 /* AboutUsDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsDetailsController.swift; sourceTree = "<group>"; };
 		FAA2F18C25D164B7006763D4 /* AboutUsDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AboutUsDetails.storyboard; sourceTree = "<group>"; };
 		FAC3D3BE259B4EC600C00270 /* LoginRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequestModel.swift; sourceTree = "<group>"; };
@@ -463,6 +475,42 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FA009E0425FF525A00011B86 /* ActivGiftCardPopUp */ = {
+			isa = PBXGroup;
+			children = (
+				FA009E0C25FF535700011B86 /* GiftCardController.swift */,
+				FA009E0F25FF536500011B86 /* GiftCard.storyboard */,
+				FA009E6825FF6CA500011B86 /* PromoCodeView */,
+				FA009E6425FF6C7800011B86 /* AddGiftCardView */,
+			);
+			path = ActivGiftCardPopUp;
+			sourceTree = "<group>";
+		};
+		FA009E0625FF529C00011B86 /* CustomPopUp */ = {
+			isa = PBXGroup;
+			children = (
+				FA7A846625FF438700E9B14E /* CustomPopUp.swift */,
+				FA7A846725FF438700E9B14E /* CustomPopUp.xib */,
+			);
+			path = CustomPopUp;
+			sourceTree = "<group>";
+		};
+		FA009E6425FF6C7800011B86 /* AddGiftCardView */ = {
+			isa = PBXGroup;
+			children = (
+				FA009E6525FF6C9E00011B86 /* AddGiftCardView.swift */,
+			);
+			path = AddGiftCardView;
+			sourceTree = "<group>";
+		};
+		FA009E6825FF6CA500011B86 /* PromoCodeView */ = {
+			isa = PBXGroup;
+			children = (
+				FA009E6A25FF6CB900011B86 /* PromoCodeView.swift */,
+			);
+			path = PromoCodeView;
+			sourceTree = "<group>";
+		};
 		FA1666D725C5A92400A39FCB /* UserReserveCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -475,6 +523,7 @@
 		FA1666FB25C5AE6D00A39FCB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FA7A846525FF424000E9B14E /* CustomViews */,
 				DA8CAB56255BCDD20064A198 /* Fonts */,
 				DA6A66AB256BCF8F008C076C /* Extensions */,
 				DA9ED919256D17100004471E /* TextField */,
@@ -499,6 +548,15 @@
 				FA5F013A25DF97A1006FD55E /* PopupCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		FA7A846525FF424000E9B14E /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				FA009E0425FF525A00011B86 /* ActivGiftCardPopUp */,
+				FA009E0625FF529C00011B86 /* CustomPopUp */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 		FAA2F18725D1643A006763D4 /* AboutUsDetails  */ = {
@@ -576,6 +634,7 @@
 				DAF67504255A6CC10033D861 /* LaunchScreen.storyboard in Resources */,
 				DAF6752F255AB5AC0033D861 /* Code.storyboard in Resources */,
 				DA10B52C2562559F0010A819 /* gilroy-medium.ttf in Resources */,
+				FA009E1025FF536500011B86 /* GiftCard.storyboard in Resources */,
 				DAF6753F255AC4620033D861 /* SavePassword.storyboard in Resources */,
 				DAF67501255A6CC10033D861 /* Assets.xcassets in Resources */,
 				DACE564F2570EDE200F6683F /* Reboot.mov in Resources */,
@@ -588,6 +647,7 @@
 				DACE56492570EC9300F6683F /* Splash.storyboard in Resources */,
 				FADF1C1825F76F13006D2799 /* LogOut.storyboard in Resources */,
 				FA1666DB25C5A94300A39FCB /* UserReserveCell.xib in Resources */,
+				FA7A846925FF438700E9B14E /* CustomPopUp.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -664,6 +724,7 @@
 				DA606761255E66D80074497D /* ReserveCell.swift in Sources */,
 				DA8CAB4E255BC0E40064A198 /* StudioController.swift in Sources */,
 				DAF67548255AC8470033D861 /* AboutUsController.swift in Sources */,
+				FA7A846825FF438700E9B14E /* CustomPopUp.swift in Sources */,
 				FAC3D3BF259B4EC600C00270 /* LoginRequestModel.swift in Sources */,
 				DA10B53E25626B6C0010A819 /* TrainingCell.swift in Sources */,
 				FA1AE07A25C5D2330052AEBB /* Extension+NSMutableAttributedString.swift in Sources */,
@@ -684,6 +745,7 @@
 				DA606765255E744A0074497D /* BaseController.swift in Sources */,
 				FA5F013425DF9704006FD55E /* PopupController.swift in Sources */,
 				FAC3D3E4259B535500C00270 /* RegisterRequestModel.swift in Sources */,
+				FA009E0D25FF535700011B86 /* GiftCardController.swift in Sources */,
 				FA1666EE25C5AD6B00A39FCB /* Extension+UIViewController.swift in Sources */,
 				DACE564C2570ECAB00F6683F /* SplashController.swift in Sources */,
 				FA1666DA25C5A94300A39FCB /* UserReserveCell.swift in Sources */,
@@ -703,10 +765,12 @@
 				DAF6754C255AC87C0033D861 /* AboutCell.swift in Sources */,
 				DAF67517255A7BBE0033D861 /* TextField.swift in Sources */,
 				DAF674FA255A6CBF0033D861 /* SceneDelegate.swift in Sources */,
+				FA009E6625FF6C9E00011B86 /* AddGiftCardView.swift in Sources */,
 				FA1666E525C5ACAC00A39FCB /* Extension+UITableView.swift in Sources */,
 				DA8CAB4B255BC0CD0064A198 /* StudioCell.swift in Sources */,
 				FA1666EB25C5AD1E00A39FCB /* Extension+Encodable.swift in Sources */,
 				FA5F013B25DF97A1006FD55E /* PopupCell.swift in Sources */,
+				FA009E6B25FF6CB900011B86 /* PromoCodeView.swift in Sources */,
 				DA9DCC64255DA5B300E3E8AB /* InfoController.swift in Sources */,
 				DA9DCC67255DA5C800E3E8AB /* InfoCell.swift in Sources */,
 				FA1666F125C5ADBC00A39FCB /* Extension+UIButton.swift in Sources */,

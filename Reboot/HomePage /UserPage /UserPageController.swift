@@ -110,6 +110,7 @@ extension UserPageController {
                 if let image = finalModel.user.userAvatar {
                     self.userAvatar.setImage(urlString: Constants.imageUrl + image)
                 }
+                print( "LOG ===== FINAL MODEL \(finalModel)")
                 self.bonus.text = String(finalModel.bonus.bonus)
                 self.userName.text = finalModel.user.userName
                 self.loyality = finalModel.user.loyalty
@@ -212,6 +213,10 @@ extension UserPageController: UITableViewDelegate, UITableViewDataSource {
             return 60
         }
         return CGFloat.leastNormalMagnitude
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

@@ -136,11 +136,11 @@ private extension RegisterController {
     }
     
     private func tapGesture() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        let tap = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         view.addGestureRecognizer(tap)
     }
     
-    @objc func dismissKeyboard() {
+    @objc func hideKeyboard() {
         view.endEditing(true)
     }
     

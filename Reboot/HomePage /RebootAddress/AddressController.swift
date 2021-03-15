@@ -7,6 +7,7 @@
 
 import UIKit
 import YandexMapKit
+import PanModal
 
 class AddressController: BaseViewController {
     
@@ -115,8 +116,15 @@ class AddressController: BaseViewController {
     
     //MARK: - wpCallAction
     @IBAction func wpCall(_ sender: UIButton) {
-        guard let number = URL(string: "https://api.whatsapp.com/send?phone=\(Constants.REBOOT_PHONE_NUMBER)") else { return }
-        UIApplication.shared.open(number)
+//        let vc = CustomPopUp(nibName: CustomPopUp.name, bundle: nil)
+//        vc.modalPresentationStyle = .overCurrentContext
+//        present(vc, animated: false, completion: nil)
+        let vc = UIStoryboard(name: "GiftCard", bundle: nil).instantiateViewController(withIdentifier: GiftCardController.name) as! GiftCardController
+        vc.modalPresentationStyle = .custom
+        self.presentPanModal(vc)
+        
+//        guard let number = URL(string: "https://api.whatsapp.com/send?phone=\(Constants.REBOOT_PHONE_NUMBER)") else { return }
+//        UIApplication.shared.open(number)
         
     }
     

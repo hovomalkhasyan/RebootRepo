@@ -17,6 +17,15 @@ class BaseViewController: UIViewController {
     @IBOutlet weak var logOutPageImage: UIImageView!
     @IBOutlet weak var rootBtn: UIButton!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.registerForKeyboardNotification()
+    }
+    
+    deinit {
+        deregisterFromKeyboardNotification()
+    }
+   
     //MARK: - property
     var sum = 0
     
@@ -89,34 +98,6 @@ class BaseViewController: UIViewController {
         
     }
     
-//    MARK: - ShowLoadingView
-//    func showView() {
-//        loadingView = UIView()
-//        loading = UIActivityIndicatorView(style: .gray)
-//        view.addSubview(loadingView)
-//        loadingView.addSubview(loading)
-//        
-//        loadingView.frame = view.frame
-//        loadingView.backgroundColor = .white
-//        
-//        loading.center = self.loadingView.center
-//        loading.heightAnchor.constraint(equalToConstant: 40).isActive = true
-//        loading.widthAnchor.constraint(equalToConstant: 40).isActive = true
-//        
-//        loading.startAnimating()
-//    }
-//    
-//    //MARK: - hideLoadingView
-//    func hideLoadingView() {
-//        loading.stopAnimating()
-//        loadingView.removeFromSuperview()
-//    }
-    
-    
-  
-    
-    
-    
     func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okBtn = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -130,7 +111,58 @@ class BaseViewController: UIViewController {
         barView.layer.shadowOffset = CGSize(width: 0, height: 6)
         barView.layer.shadowOpacity = 1
     }
+    
+    //MARK: - KeyboardNotifications
+    func registerForKeyboardNotification() {
+        deregisterFromKeyboardNotification()
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardNotification(_:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+    }
+
+    func deregisterFromKeyboardNotification() {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+    }
+
+    @objc private func keyboardNotification(_ notification: NSNotification) {
+        guard let userInfo = notification.userInfo, let endFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
+        if endFrame.origin.y >= UIScreen.main.bounds.size.height {
+            self.view.endEditing(true)
+            removeTapGestureForKeyboard()
+            let contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
+            keyboardHandler(contentInset)
+        } else {
+            hideKeyboardWhenTappedAround()
+            let contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: endFrame.height, right: 0.0)
+            keyboardHandler(contentInset)
+        }
+    }
+
+    @objc func keyboardHandler(_ contentInset: UIEdgeInsets) {
+        
+    }
+
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tap.view?.tag = 12
+        view.addGestureRecognizer(tap)
+    }
+
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+
+    func removeTapGestureForKeyboard() {
+        if ((self.view.gestureRecognizers?.count) != nil) {
+            for gesture in self.view.gestureRecognizers! {
+                if let x = gesture as? UISwipeGestureRecognizer {
+                    print(x)
+                } else {
+                    self.view.removeGestureRecognizer(gesture)
+                }
+            }
+        }
+    }
 }
+
 //MARK: - extension
 extension BaseViewController: UIPopoverPresentationControllerDelegate {
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {

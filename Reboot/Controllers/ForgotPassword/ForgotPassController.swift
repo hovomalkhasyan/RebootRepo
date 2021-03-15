@@ -49,11 +49,11 @@ class ForgotPassController: NavBarViewController {
 //MARK: - Extension
 extension ForgotPassController {
     private func tapGesture() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        let tap = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         view.addGestureRecognizer(tap)
     }
     
-    @objc private func dismissKeyboard() {
+    @objc private func hideKeyboard() {
         view.endEditing(true)
     }
     

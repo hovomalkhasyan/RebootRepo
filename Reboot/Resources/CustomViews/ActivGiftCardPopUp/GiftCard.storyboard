@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="gilroy-bold.ttf">
+            <string>Gilroy-Bold</string>
+        </array>
+        <array key="gilroy-medium.ttf">
+            <string>Gilroy-Medium</string>
+        </array>
+        <array key="gilroy-regular.ttf">
+            <string>Gilroy-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Gift Card Controller-->
+        <scene sceneID="vfH-UR-wEk">
+            <objects>
+                <viewController storyboardIdentifier="GiftCardController" id="BgV-rd-2MI" customClass="GiftCardController" customModule="Reboot" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NZB-9G-29f">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hPf-hX-2Yo">
+                                <rect key="frame" x="0.0" y="258" width="414" height="478"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fCO-Ip-9Wd" customClass="AddGiftCardView" customModule="Reboot" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="298"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="АКТИВИРОВАТЬ ПОДАРОЧНУЮ КАРТУ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Yc-1J-h6s">
+                                                <rect key="frame" x="38" y="13" width="338" height="19"/>
+                                                <fontDescription key="fontDescription" name="Gilroy-Medium" family="Gilroy" pointSize="16"/>
+                                                <color key="textColor" red="1" green="0.25882352941176467" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="84N-2e-WGt">
+                                                <rect key="frame" x="27" y="40" width="360" height="1"/>
+                                                <color key="backgroundColor" red="1" green="0.25882352941176467" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="LJm-BQ-yYT"/>
+                                                </constraints>
+                                            </view>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="ZIP-0j-pEs">
+                                                <rect key="frame" x="20" y="57" width="374" height="168"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Номер карты" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WeN-nZ-2rB" customClass="TextField" customModule="Reboot" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="44" id="Ew8-Cn-UAJ"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Gilroy-Regular" family="Gilroy" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Пин" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zGu-hy-Osn" customClass="TextField" customModule="Reboot" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="62" width="374" height="44"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="44" id="YLS-Ks-1Wh"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Gilroy-Regular" family="Gilroy" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Сумма списания" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qRs-ux-Aoa" customClass="TextField" customModule="Reboot" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="124" width="374" height="44"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="44" id="KK9-0h-p6g"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Gilroy-Regular" family="Gilroy" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ONg-5k-ygg">
+                                                <rect key="frame" x="13" y="238" width="388" height="40"/>
+                                                <color key="backgroundColor" red="1" green="0.25882352941176467" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="MGB-X2-JpV"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy" pointSize="16"/>
+                                                <state key="normal" title="ПРИМЕНИТЬ КАРТУ">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="ONg-5k-ygg" firstAttribute="top" secondItem="ZIP-0j-pEs" secondAttribute="bottom" constant="13" id="P68-xf-UvS"/>
+                                            <constraint firstItem="8Yc-1J-h6s" firstAttribute="leading" secondItem="fCO-Ip-9Wd" secondAttribute="leading" constant="38" id="Qp3-3e-ehl"/>
+                                            <constraint firstItem="84N-2e-WGt" firstAttribute="leading" secondItem="fCO-Ip-9Wd" secondAttribute="leading" constant="27" id="R2s-Re-6DG"/>
+                                            <constraint firstAttribute="trailing" secondItem="ZIP-0j-pEs" secondAttribute="trailing" constant="20" id="TIY-Ak-U2V"/>
+                                            <constraint firstAttribute="trailing" secondItem="ONg-5k-ygg" secondAttribute="trailing" constant="13" id="ZBW-d2-mGj"/>
+                                            <constraint firstItem="8Yc-1J-h6s" firstAttribute="centerX" secondItem="fCO-Ip-9Wd" secondAttribute="centerX" id="b7h-yc-8wt"/>
+                                            <constraint firstAttribute="bottom" secondItem="ONg-5k-ygg" secondAttribute="bottom" constant="20" id="edZ-ov-ZZd"/>
+                                            <constraint firstItem="ONg-5k-ygg" firstAttribute="leading" secondItem="fCO-Ip-9Wd" secondAttribute="leading" constant="13" id="fBq-X2-uHr"/>
+                                            <constraint firstAttribute="trailing" secondItem="8Yc-1J-h6s" secondAttribute="trailing" constant="38" id="ffv-2R-RKq"/>
+                                            <constraint firstItem="8Yc-1J-h6s" firstAttribute="top" secondItem="fCO-Ip-9Wd" secondAttribute="top" constant="13" id="prf-cW-OAU"/>
+                                            <constraint firstItem="ZIP-0j-pEs" firstAttribute="leading" secondItem="fCO-Ip-9Wd" secondAttribute="leading" constant="20" id="slX-2i-PHa"/>
+                                            <constraint firstAttribute="trailing" secondItem="84N-2e-WGt" secondAttribute="trailing" constant="27" id="tVr-nw-sFU"/>
+                                            <constraint firstItem="84N-2e-WGt" firstAttribute="top" secondItem="8Yc-1J-h6s" secondAttribute="bottom" constant="8" id="uJw-fX-8kI"/>
+                                            <constraint firstItem="ZIP-0j-pEs" firstAttribute="top" secondItem="84N-2e-WGt" secondAttribute="bottom" constant="16" id="vC1-XD-E8i"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="cardNumberTf" destination="WeN-nZ-2rB" id="KSw-8R-9bS"/>
+                                            <outlet property="nextBtn" destination="ONg-5k-ygg" id="drp-KF-T7e"/>
+                                            <outlet property="pinTf" destination="zGu-hy-Osn" id="3gI-S1-aKt"/>
+                                            <outlet property="sumTf" destination="qRs-ux-Aoa" id="tha-2r-oGR"/>
+                                            <outlet property="textFieldStack" destination="ZIP-0j-pEs" id="sOc-mL-TlB"/>
+                                        </connections>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VWZ-uY-VBA" customClass="PromoCodeView" customModule="Reboot" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="298" width="414" height="180"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ВВЕСТИ ПРОМОКОД" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5tH-Ue-hrp">
+                                                <rect key="frame" x="38" y="13" width="338" height="25"/>
+                                                <fontDescription key="fontDescription" name="Gilroy-Medium" family="Gilroy" pointSize="16"/>
+                                                <color key="textColor" red="1" green="0.25882352941176467" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ekK-hL-tu2">
+                                                <rect key="frame" x="27" y="46" width="360" height="1"/>
+                                                <color key="backgroundColor" red="1" green="0.25882352939999997" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="YYC-Aa-7NW"/>
+                                                </constraints>
+                                            </view>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Промокод" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D53-Cr-rSx" customClass="TextField" customModule="Reboot" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="63" width="374" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="v0a-xc-c0P"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Gilroy-Regular" family="Gilroy" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IXm-oV-Isc">
+                                                <rect key="frame" x="13" y="120" width="388" height="40"/>
+                                                <color key="backgroundColor" red="1" green="0.25882352939999997" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="Jnp-DB-O9K"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy" pointSize="16"/>
+                                                <state key="normal" title="ПРИМЕНИТЬ">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="IXm-oV-Isc" firstAttribute="leading" secondItem="VWZ-uY-VBA" secondAttribute="leading" constant="13" id="1eY-aq-GPR"/>
+                                            <constraint firstAttribute="trailing" secondItem="ekK-hL-tu2" secondAttribute="trailing" constant="27" id="70S-oK-j6E"/>
+                                            <constraint firstItem="5tH-Ue-hrp" firstAttribute="leading" secondItem="VWZ-uY-VBA" secondAttribute="leading" constant="38" id="BgN-8A-BSN"/>
+                                            <constraint firstItem="D53-Cr-rSx" firstAttribute="top" secondItem="ekK-hL-tu2" secondAttribute="bottom" constant="16" id="EaH-Uh-9F6"/>
+                                            <constraint firstAttribute="trailing" secondItem="5tH-Ue-hrp" secondAttribute="trailing" constant="38" id="EfC-Co-skg"/>
+                                            <constraint firstItem="5tH-Ue-hrp" firstAttribute="centerX" secondItem="VWZ-uY-VBA" secondAttribute="centerX" id="UEK-Mp-bp9"/>
+                                            <constraint firstItem="ekK-hL-tu2" firstAttribute="top" secondItem="5tH-Ue-hrp" secondAttribute="bottom" constant="8" id="UEv-IK-QCW"/>
+                                            <constraint firstAttribute="trailing" secondItem="IXm-oV-Isc" secondAttribute="trailing" constant="13" id="UI6-am-RKB"/>
+                                            <constraint firstItem="5tH-Ue-hrp" firstAttribute="top" secondItem="VWZ-uY-VBA" secondAttribute="top" constant="13" id="Wuz-yy-GbE"/>
+                                            <constraint firstItem="IXm-oV-Isc" firstAttribute="top" secondItem="D53-Cr-rSx" secondAttribute="bottom" constant="13" id="abQ-sM-LLu"/>
+                                            <constraint firstAttribute="trailing" secondItem="D53-Cr-rSx" secondAttribute="trailing" constant="20" id="atW-6B-uxg"/>
+                                            <constraint firstItem="D53-Cr-rSx" firstAttribute="leading" secondItem="VWZ-uY-VBA" secondAttribute="leading" constant="20" id="b4v-Gm-uoY"/>
+                                            <constraint firstAttribute="bottom" secondItem="IXm-oV-Isc" secondAttribute="bottom" constant="20" id="rYY-Y6-ltT"/>
+                                            <constraint firstItem="ekK-hL-tu2" firstAttribute="leading" secondItem="VWZ-uY-VBA" secondAttribute="leading" constant="27" id="se7-QI-Syc"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="promoCodeTf" destination="D53-Cr-rSx" id="7bE-6S-vht"/>
+                                            <outlet property="saveBtn" destination="IXm-oV-Isc" id="1GX-iE-foE"/>
+                                        </connections>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="5h1-dh-HhV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hPf-hX-2Yo" firstAttribute="trailing" secondItem="5h1-dh-HhV" secondAttribute="trailing" id="86E-Pu-xuo"/>
+                            <constraint firstItem="hPf-hX-2Yo" firstAttribute="leading" secondItem="5h1-dh-HhV" secondAttribute="leading" id="qUQ-Zq-LIn"/>
+                            <constraint firstItem="5h1-dh-HhV" firstAttribute="bottom" secondItem="hPf-hX-2Yo" secondAttribute="bottom" id="wRl-xf-lb6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addGiftCard" destination="fCO-Ip-9Wd" id="ktJ-NK-g4k"/>
+                        <outlet property="contentViewConst" destination="wRl-xf-lb6" id="ydA-61-mXO"/>
+                        <outlet property="promoCodeView" destination="VWZ-uY-VBA" id="oja-ia-XfH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bPC-MT-Q0U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="311.59420289855075" y="75"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
