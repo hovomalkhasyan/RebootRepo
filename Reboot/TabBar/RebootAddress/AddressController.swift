@@ -119,9 +119,9 @@ class AddressController: BaseViewController {
 //        let vc = CustomPopUp(nibName: CustomPopUp.name, bundle: nil)
 //        vc.modalPresentationStyle = .overCurrentContext
 //        present(vc, animated: false, completion: nil)
-        let vc = UIStoryboard(name: "GiftCard", bundle: nil).instantiateViewController(withIdentifier: GiftCardController.name) as! GiftCardController
+        let vc = UIStoryboard(name: "Subscriptions", bundle: nil).instantiateViewController(withIdentifier: SubscriptionsViewController.name) as! SubscriptionsViewController
         vc.modalPresentationStyle = .custom
-        self.presentPanModal(vc)
+        navigationController?.pushViewController(vc, animated: true)
         
 //        guard let number = URL(string: "https://api.whatsapp.com/send?phone=\(Constants.REBOOT_PHONE_NUMBER)") else { return }
 //        UIApplication.shared.open(number)

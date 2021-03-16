@@ -6,24 +6,45 @@
 //
 
 import UIKit
+import PanModal
 
-class PromoCodeController: UIViewController {
+class PromoCodeController: BaseViewController {
 
+    @IBOutlet weak var bottomConsst: NSLayoutConstraint!
+    @IBOutlet weak var promoCodeView: PromoCodeView!
+    private var bottomInset: CGFloat = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func keyboardHandler(_ contentInset: UIEdgeInsets) {
+        bottomConsst.constant = -contentInset.bottom
+        bottomInset = contentInset.bottom
+        panModalSetNeedsLayoutUpdate()
+        panModalTransition(to: .longForm)
     }
-    */
+}
 
+
+extension PromoCodeController: PanModalPresentable {
+
+    var panScrollable: UIScrollView? {
+        return nil
+    }
+    var longFormHeight: PanModalHeight {
+        return .contentHeight(182 + bottomInset)
+    }
+    var cornerRadius: CGFloat {
+        return 10
+    }
+    var showDragIndicator: Bool {
+        return false
+    }
+    
+    func willTransition(to state: PanModalPresentationController.PresentationState) {
+        guard case .longForm = state
+            else { return }
+        panModalSetNeedsLayoutUpdate()
+    }
 }

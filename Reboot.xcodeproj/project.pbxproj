@@ -73,15 +73,34 @@
 		FA1666F925C5AE4300A39FCB /* Extension+UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1666F825C5AE4300A39FCB /* Extension+UITextField.swift */; };
 		FA1AE07A25C5D2330052AEBB /* Extension+NSMutableAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1AE07925C5D2330052AEBB /* Extension+NSMutableAttributedString.swift */; };
 		FA1AE07D25C5D2C30052AEBB /* Extension+UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1AE07C25C5D2C30052AEBB /* Extension+UIFont.swift */; };
+		FA4CFC5C260089D800258530 /* ChekBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4CFC5B260089D800258530 /* ChekBoxView.swift */; };
+		FA4CFC6026009B5C00258530 /* AddCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4CFC5F26009B5C00258530 /* AddCardViewController.swift */; };
+		FA4CFC652600A6A300258530 /* PlanTrainingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4CFC642600A6A300258530 /* PlanTrainingViewController.swift */; };
+		FA4CFC692600A75400258530 /* TrainingPlan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA4CFC682600A75400258530 /* TrainingPlan.storyboard */; };
+		FA4CFC6D2600A7B700258530 /* TrainingPlanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4CFC6C2600A7B700258530 /* TrainingPlanCell.swift */; };
+		FA4CFC712600A7CE00258530 /* PlanHeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4CFC702600A7CE00258530 /* PlanHeaderViewCell.swift */; };
+		FA4CFC742600A8B000258530 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4CFC732600A8B000258530 /* Extension+UIColor.swift */; };
+		FA4CFC782600B09E00258530 /* SubscriptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4CFC772600B09E00258530 /* SubscriptionsViewController.swift */; };
+		FA4CFC7C2600B0AC00258530 /* Subscriptions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA4CFC7B2600B0AC00258530 /* Subscriptions.storyboard */; };
+		FA4CFC802600B3C200258530 /* SubscriptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4CFC7F2600B3C200258530 /* SubscriptionsCell.swift */; };
+		FA4CFC842600B6E200258530 /* HeaderSubViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4CFC832600B6E200258530 /* HeaderSubViewCell.swift */; };
+		FA4CFC882600C15D00258530 /* SubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4CFC872600C15D00258530 /* SubscriptionViewController.swift */; };
 		FA5F013425DF9704006FD55E /* PopupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F013325DF9704006FD55E /* PopupController.swift */; };
 		FA5F013725DF9751006FD55E /* PnPopup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA5F013625DF9751006FD55E /* PnPopup.storyboard */; };
 		FA5F013B25DF97A1006FD55E /* PopupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F013A25DF97A1006FD55E /* PopupCell.swift */; };
+		FA64C54D2600DB32009932B6 /* PageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA64C54C2600DB32009932B6 /* PageButton.swift */; };
+		FA64C5512600E1EF009932B6 /* PricingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA64C5502600E1EF009932B6 /* PricingModel.swift */; };
 		FA7A846825FF438700E9B14E /* CustomPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7A846625FF438700E9B14E /* CustomPopUp.swift */; };
 		FA7A846925FF438700E9B14E /* CustomPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA7A846725FF438700E9B14E /* CustomPopUp.xib */; };
 		FAA2F18A25D164A1006763D4 /* AboutUsDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA2F18925D164A1006763D4 /* AboutUsDetailsController.swift */; };
 		FAA2F18D25D164B7006763D4 /* AboutUsDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAA2F18C25D164B7006763D4 /* AboutUsDetails.storyboard */; };
+		FAA377792600796C006C9F28 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA377782600796C006C9F28 /* CardViewController.swift */; };
+		FAA3777D260079BA006C9F28 /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA3777C260079BA006C9F28 /* CardTableViewCell.swift */; };
+		FAA3778026007AEB006C9F28 /* HeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA3777F26007AEB006C9F28 /* HeaderViewCell.swift */; };
+		FAA3778326007C2C006C9F28 /* FooterViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA3778226007C2C006C9F28 /* FooterViewCell.swift */; };
 		FAC3D3BF259B4EC600C00270 /* LoginRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3D3BE259B4EC600C00270 /* LoginRequestModel.swift */; };
 		FAC3D3E4259B535500C00270 /* RegisterRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3D3E3259B535500C00270 /* RegisterRequestModel.swift */; };
+		FAC603ED25FF9DB3004B6185 /* PromoCodeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC603EC25FF9DB3004B6185 /* PromoCodeController.swift */; };
 		FADF1C1125F76EE6006D2799 /* LogOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADF1C1025F76EE5006D2799 /* LogOutViewController.swift */; };
 		FADF1C1825F76F13006D2799 /* LogOut.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FADF1C1725F76F13006D2799 /* LogOut.storyboard */; };
 		FADF1C1B25F77017006D2799 /* LogOutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADF1C1A25F77017006D2799 /* LogOutCell.swift */; };
@@ -158,15 +177,34 @@
 		FA1666F825C5AE4300A39FCB /* Extension+UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UITextField.swift"; sourceTree = "<group>"; };
 		FA1AE07925C5D2330052AEBB /* Extension+NSMutableAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+NSMutableAttributedString.swift"; sourceTree = "<group>"; };
 		FA1AE07C25C5D2C30052AEBB /* Extension+UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIFont.swift"; sourceTree = "<group>"; };
+		FA4CFC5B260089D800258530 /* ChekBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChekBoxView.swift; sourceTree = "<group>"; };
+		FA4CFC5F26009B5C00258530 /* AddCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardViewController.swift; sourceTree = "<group>"; };
+		FA4CFC642600A6A300258530 /* PlanTrainingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanTrainingViewController.swift; sourceTree = "<group>"; };
+		FA4CFC682600A75400258530 /* TrainingPlan.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TrainingPlan.storyboard; sourceTree = "<group>"; };
+		FA4CFC6C2600A7B700258530 /* TrainingPlanCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingPlanCell.swift; sourceTree = "<group>"; };
+		FA4CFC702600A7CE00258530 /* PlanHeaderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanHeaderViewCell.swift; sourceTree = "<group>"; };
+		FA4CFC732600A8B000258530 /* Extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
+		FA4CFC772600B09E00258530 /* SubscriptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsViewController.swift; sourceTree = "<group>"; };
+		FA4CFC7B2600B0AC00258530 /* Subscriptions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Subscriptions.storyboard; sourceTree = "<group>"; };
+		FA4CFC7F2600B3C200258530 /* SubscriptionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsCell.swift; sourceTree = "<group>"; };
+		FA4CFC832600B6E200258530 /* HeaderSubViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderSubViewCell.swift; sourceTree = "<group>"; };
+		FA4CFC872600C15D00258530 /* SubscriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionViewController.swift; sourceTree = "<group>"; };
 		FA5F013325DF9704006FD55E /* PopupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupController.swift; sourceTree = "<group>"; };
 		FA5F013625DF9751006FD55E /* PnPopup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PnPopup.storyboard; sourceTree = "<group>"; };
 		FA5F013A25DF97A1006FD55E /* PopupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupCell.swift; sourceTree = "<group>"; };
+		FA64C54C2600DB32009932B6 /* PageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageButton.swift; sourceTree = "<group>"; };
+		FA64C5502600E1EF009932B6 /* PricingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PricingModel.swift; sourceTree = "<group>"; };
 		FA7A846625FF438700E9B14E /* CustomPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopUp.swift; sourceTree = "<group>"; };
 		FA7A846725FF438700E9B14E /* CustomPopUp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomPopUp.xib; sourceTree = "<group>"; };
 		FAA2F18925D164A1006763D4 /* AboutUsDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsDetailsController.swift; sourceTree = "<group>"; };
 		FAA2F18C25D164B7006763D4 /* AboutUsDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AboutUsDetails.storyboard; sourceTree = "<group>"; };
+		FAA377782600796C006C9F28 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
+		FAA3777C260079BA006C9F28 /* CardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
+		FAA3777F26007AEB006C9F28 /* HeaderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewCell.swift; sourceTree = "<group>"; };
+		FAA3778226007C2C006C9F28 /* FooterViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterViewCell.swift; sourceTree = "<group>"; };
 		FAC3D3BE259B4EC600C00270 /* LoginRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequestModel.swift; sourceTree = "<group>"; };
 		FAC3D3E3259B535500C00270 /* RegisterRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequestModel.swift; sourceTree = "<group>"; };
+		FAC603EC25FF9DB3004B6185 /* PromoCodeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoCodeController.swift; sourceTree = "<group>"; };
 		FADF1C1025F76EE5006D2799 /* LogOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutViewController.swift; sourceTree = "<group>"; };
 		FADF1C1725F76F13006D2799 /* LogOut.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogOut.storyboard; sourceTree = "<group>"; };
 		FADF1C1A25F77017006D2799 /* LogOutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutCell.swift; sourceTree = "<group>"; };
@@ -235,6 +273,7 @@
 				FA1AE07925C5D2330052AEBB /* Extension+NSMutableAttributedString.swift */,
 				FA1AE07C25C5D2C30052AEBB /* Extension+UIFont.swift */,
 				FA013A8C25E4FA2D0050C270 /* Extension+Double.swift */,
+				FA4CFC732600A8B000258530 /* Extension+UIColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -341,6 +380,7 @@
 		DACD93EB2561741600EAD268 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FA4CFC5E26009B3E00258530 /* AddCardViewController */,
 				DAF67539255AC4270033D861 /* SavePassword */,
 				DAF67529255AB4E90033D861 /* SendEmailCode */,
 				DAF67522255AABCC0033D861 /* ForgotPassword */,
@@ -362,6 +402,10 @@
 		DAEBE602255EC71600AF7B8A /* Pricing */ = {
 			isa = PBXGroup;
 			children = (
+				FA64C5532600E8E5009932B6 /* RequestModel */,
+				FA4CFC862600C12F00258530 /* SubscriptionsPageController */,
+				FA4CFC762600B03D00258530 /* Subscriptions */,
+				FA4CFC632600A66700258530 /* PlanTraining */,
 				DAEBE604255EC76D00AF7B8A /* PricingController.swift */,
 			);
 			path = Pricing;
@@ -402,7 +446,7 @@
 				DA606763255E74340074497D /* BaseController  */,
 				DA8CAB72255BFD2D0064A198 /* Networking */,
 				DA8CAB60255BEDF00064A198 /* PopUp */,
-				DAF67541255AC7490033D861 /* HomePage  */,
+				DAF67541255AC7490033D861 /* TabBar */,
 			);
 			path = Reboot;
 			sourceTree = "<group>";
@@ -444,7 +488,7 @@
 			path = SavePassword;
 			sourceTree = "<group>";
 		};
-		DAF67541255AC7490033D861 /* HomePage  */ = {
+		DAF67541255AC7490033D861 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
 				DA9B4292256CFC57005A07A9 /* HomePage.storyboard */,
@@ -454,7 +498,7 @@
 				DA8CAB48255BC0260064A198 /* Studio */,
 				DAF67545255AC80A0033D861 /* AboutUs */,
 			);
-			path = "HomePage ";
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 		DAF67545255AC80A0033D861 /* AboutUs */ = {
@@ -532,6 +576,60 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		FA4CFC5E26009B3E00258530 /* AddCardViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FA4CFC5F26009B5C00258530 /* AddCardViewController.swift */,
+			);
+			path = AddCardViewController;
+			sourceTree = "<group>";
+		};
+		FA4CFC632600A66700258530 /* PlanTraining */ = {
+			isa = PBXGroup;
+			children = (
+				FA4CFC6B2600A79800258530 /* Cell */,
+				FA4CFC642600A6A300258530 /* PlanTrainingViewController.swift */,
+				FA4CFC682600A75400258530 /* TrainingPlan.storyboard */,
+			);
+			path = PlanTraining;
+			sourceTree = "<group>";
+		};
+		FA4CFC6B2600A79800258530 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FA4CFC6C2600A7B700258530 /* TrainingPlanCell.swift */,
+				FA4CFC702600A7CE00258530 /* PlanHeaderViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		FA4CFC762600B03D00258530 /* Subscriptions */ = {
+			isa = PBXGroup;
+			children = (
+				FA4CFC7E2600B39D00258530 /* Cell */,
+				FA4CFC772600B09E00258530 /* SubscriptionsViewController.swift */,
+				FA4CFC7B2600B0AC00258530 /* Subscriptions.storyboard */,
+			);
+			path = Subscriptions;
+			sourceTree = "<group>";
+		};
+		FA4CFC7E2600B39D00258530 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FA4CFC7F2600B3C200258530 /* SubscriptionsCell.swift */,
+				FA4CFC832600B6E200258530 /* HeaderSubViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		FA4CFC862600C12F00258530 /* SubscriptionsPageController */ = {
+			isa = PBXGroup;
+			children = (
+				FA4CFC872600C15D00258530 /* SubscriptionViewController.swift */,
+			);
+			path = SubscriptionsPageController;
+			sourceTree = "<group>";
+		};
 		FA5F013025DF96E2006FD55E /* PanPopup */ = {
 			isa = PBXGroup;
 			children = (
@@ -550,11 +648,31 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		FA64C54B2600DB20009932B6 /* PageButton */ = {
+			isa = PBXGroup;
+			children = (
+				FA64C54C2600DB32009932B6 /* PageButton.swift */,
+			);
+			path = PageButton;
+			sourceTree = "<group>";
+		};
+		FA64C5532600E8E5009932B6 /* RequestModel */ = {
+			isa = PBXGroup;
+			children = (
+				FA64C5502600E1EF009932B6 /* PricingModel.swift */,
+			);
+			path = RequestModel;
+			sourceTree = "<group>";
+		};
 		FA7A846525FF424000E9B14E /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				FA64C54B2600DB20009932B6 /* PageButton */,
+				FAA3777726007952006C9F28 /* CardView */,
+				FAC603EB25FF9D8B004B6185 /* PromoCodeViewController */,
 				FA009E0425FF525A00011B86 /* ActivGiftCardPopUp */,
 				FA009E0625FF529C00011B86 /* CustomPopUp */,
+				FA4CFC5B260089D800258530 /* ChekBoxView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -566,6 +684,33 @@
 				FAA2F18C25D164B7006763D4 /* AboutUsDetails.storyboard */,
 			);
 			path = "AboutUsDetails ";
+			sourceTree = "<group>";
+		};
+		FAA3777726007952006C9F28 /* CardView */ = {
+			isa = PBXGroup;
+			children = (
+				FAA3778526007C31006C9F28 /* Cells */,
+				FAA377782600796C006C9F28 /* CardViewController.swift */,
+			);
+			path = CardView;
+			sourceTree = "<group>";
+		};
+		FAA3778526007C31006C9F28 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FAA3778226007C2C006C9F28 /* FooterViewCell.swift */,
+				FAA3777C260079BA006C9F28 /* CardTableViewCell.swift */,
+				FAA3777F26007AEB006C9F28 /* HeaderViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		FAC603EB25FF9D8B004B6185 /* PromoCodeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FAC603EC25FF9DB3004B6185 /* PromoCodeController.swift */,
+			);
+			path = PromoCodeViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -645,9 +790,11 @@
 				FAA2F18D25D164B7006763D4 /* AboutUsDetails.storyboard in Resources */,
 				DA8CAB54255BCB2D0064A198 /* gilroy-regular.ttf in Resources */,
 				DACE56492570EC9300F6683F /* Splash.storyboard in Resources */,
+				FA4CFC7C2600B0AC00258530 /* Subscriptions.storyboard in Resources */,
 				FADF1C1825F76F13006D2799 /* LogOut.storyboard in Resources */,
 				FA1666DB25C5A94300A39FCB /* UserReserveCell.xib in Resources */,
 				FA7A846925FF438700E9B14E /* CustomPopUp.xib in Resources */,
+				FA4CFC692600A75400258530 /* TrainingPlan.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -723,9 +870,12 @@
 				DAF6751F255A86AD0033D861 /* RegisterController.swift in Sources */,
 				DA606761255E66D80074497D /* ReserveCell.swift in Sources */,
 				DA8CAB4E255BC0E40064A198 /* StudioController.swift in Sources */,
+				FA4CFC6D2600A7B700258530 /* TrainingPlanCell.swift in Sources */,
 				DAF67548255AC8470033D861 /* AboutUsController.swift in Sources */,
 				FA7A846825FF438700E9B14E /* CustomPopUp.swift in Sources */,
 				FAC3D3BF259B4EC600C00270 /* LoginRequestModel.swift in Sources */,
+				FA4CFC5C260089D800258530 /* ChekBoxView.swift in Sources */,
+				FA4CFC742600A8B000258530 /* Extension+UIColor.swift in Sources */,
 				DA10B53E25626B6C0010A819 /* TrainingCell.swift in Sources */,
 				FA1AE07A25C5D2330052AEBB /* Extension+NSMutableAttributedString.swift in Sources */,
 				DA10B541256270950010A819 /* Footer.swift in Sources */,
@@ -735,43 +885,57 @@
 				D4375094257E0475005D3273 /* ConstantStrings.swift in Sources */,
 				DAF674FC255A6CBF0033D861 /* ViewController.swift in Sources */,
 				FA1666E225C5AC6000A39FCB /* Extension+UIResponder.swift in Sources */,
+				FA4CFC712600A7CE00258530 /* PlanHeaderViewCell.swift in Sources */,
 				DA9DCC5A255DA19D00E3E8AB /* UserPageController.swift in Sources */,
 				FAA2F18A25D164A1006763D4 /* AboutUsDetailsController.swift in Sources */,
 				DAF674F8255A6CBF0033D861 /* AppDelegate.swift in Sources */,
 				DA10B544256272450010A819 /* Header.swift in Sources */,
 				DAF6752B255AB59D0033D861 /* CodeController.swift in Sources */,
 				DA10B54A2562A5EA0010A819 /* ReservePageCell.swift in Sources */,
+				FA64C54D2600DB32009932B6 /* PageButton.swift in Sources */,
 				DA10B535256267CA0010A819 /* CollectionCell.swift in Sources */,
 				DA606765255E744A0074497D /* BaseController.swift in Sources */,
 				FA5F013425DF9704006FD55E /* PopupController.swift in Sources */,
 				FAC3D3E4259B535500C00270 /* RegisterRequestModel.swift in Sources */,
+				FA4CFC802600B3C200258530 /* SubscriptionsCell.swift in Sources */,
 				FA009E0D25FF535700011B86 /* GiftCardController.swift in Sources */,
 				FA1666EE25C5AD6B00A39FCB /* Extension+UIViewController.swift in Sources */,
 				DACE564C2570ECAB00F6683F /* SplashController.swift in Sources */,
 				FA1666DA25C5A94300A39FCB /* UserReserveCell.swift in Sources */,
 				DA22C794255D549000865E23 /* AddressController.swift in Sources */,
+				FA4CFC652600A6A300258530 /* PlanTrainingViewController.swift in Sources */,
 				FA1666E825C5ACDC00A39FCB /* Extension+UIView.swift in Sources */,
 				FA1AE07D25C5D2C30052AEBB /* Extension+UIFont.swift in Sources */,
 				FADF1C1B25F77017006D2799 /* LogOutCell.swift in Sources */,
 				FA013A8D25E4FA2D0050C270 /* Extension+Double.swift in Sources */,
+				FA64C5512600E1EF009932B6 /* PricingModel.swift in Sources */,
 				DA10B52F256260D30010A819 /* AchievementsCell.swift in Sources */,
 				DAF67527255AAC2B0033D861 /* ForgotPassController.swift in Sources */,
+				FA4CFC782600B09E00258530 /* SubscriptionsViewController.swift in Sources */,
 				DAF6753C255AC4520033D861 /* SavePasswordController.swift in Sources */,
 				DA8CAB75255BFD420064A198 /* NetworkService.swift in Sources */,
 				DAEBE605255EC76D00AF7B8A /* PricingController.swift in Sources */,
 				DA8CAB7A255C1B460064A198 /* Connection.swift in Sources */,
+				FAA3778026007AEB006C9F28 /* HeaderViewCell.swift in Sources */,
 				FA02F603259C58A90056865E /* CustonNavBar.swift in Sources */,
 				FA1666F925C5AE4300A39FCB /* Extension+UITextField.swift in Sources */,
+				FAA377792600796C006C9F28 /* CardViewController.swift in Sources */,
+				FA4CFC882600C15D00258530 /* SubscriptionViewController.swift in Sources */,
 				DAF6754C255AC87C0033D861 /* AboutCell.swift in Sources */,
+				FAC603ED25FF9DB3004B6185 /* PromoCodeController.swift in Sources */,
+				FA4CFC842600B6E200258530 /* HeaderSubViewCell.swift in Sources */,
 				DAF67517255A7BBE0033D861 /* TextField.swift in Sources */,
 				DAF674FA255A6CBF0033D861 /* SceneDelegate.swift in Sources */,
 				FA009E6625FF6C9E00011B86 /* AddGiftCardView.swift in Sources */,
 				FA1666E525C5ACAC00A39FCB /* Extension+UITableView.swift in Sources */,
 				DA8CAB4B255BC0CD0064A198 /* StudioCell.swift in Sources */,
 				FA1666EB25C5AD1E00A39FCB /* Extension+Encodable.swift in Sources */,
+				FA4CFC6026009B5C00258530 /* AddCardViewController.swift in Sources */,
 				FA5F013B25DF97A1006FD55E /* PopupCell.swift in Sources */,
+				FAA3777D260079BA006C9F28 /* CardTableViewCell.swift in Sources */,
 				FA009E6B25FF6CB900011B86 /* PromoCodeView.swift in Sources */,
 				DA9DCC64255DA5B300E3E8AB /* InfoController.swift in Sources */,
+				FAA3778326007C2C006C9F28 /* FooterViewCell.swift in Sources */,
 				DA9DCC67255DA5C800E3E8AB /* InfoCell.swift in Sources */,
 				FA1666F125C5ADBC00A39FCB /* Extension+UIButton.swift in Sources */,
 			);

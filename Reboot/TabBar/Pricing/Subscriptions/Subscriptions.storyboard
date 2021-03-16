@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="gilroy-bold.ttf">
+            <string>Gilroy-Bold</string>
+        </array>
+        <array key="gilroy-medium.ttf">
+            <string>Gilroy-Medium</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Subscriptions View Controller-->
+        <scene sceneID="tPc-m8-BUl">
+            <objects>
+                <viewController storyboardIdentifier="SubscriptionsViewController" id="PXe-Km-KWp" customClass="SubscriptionsViewController" customModule="Reboot" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Sn7-L9-Ftw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="WGL-Gk-cWy">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HeaderSubViewCell" id="BF2-kT-VVL" customClass="HeaderSubViewCell" customModule="Reboot" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="42.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BF2-kT-VVL" id="Off-x4-UOD">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="42.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YFN-Id-EY4">
+                                                    <rect key="frame" x="25" y="11" width="309" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="YFN-Id-EY4" firstAttribute="leading" secondItem="Off-x4-UOD" secondAttribute="leading" constant="25" id="4Pa-G1-Ni0"/>
+                                                <constraint firstAttribute="bottom" secondItem="YFN-Id-EY4" secondAttribute="bottom" constant="11" id="Xhb-L6-ksd"/>
+                                                <constraint firstItem="YFN-Id-EY4" firstAttribute="top" secondItem="Off-x4-UOD" secondAttribute="top" constant="11" id="aVO-Wd-mBr"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="YFN-Id-EY4" secondAttribute="trailing" constant="25" id="i1f-cx-AVI"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="headerLabel" destination="YFN-Id-EY4" id="DbS-1J-Tpf"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SubscriptionsCell" rowHeight="207" id="KqR-cX-gor" customClass="SubscriptionsCell" customModule="Reboot" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="98" width="375" height="207"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KqR-cX-gor" id="GIr-6G-7T6">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="207"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zd7-9f-M5K">
+                                                    <rect key="frame" x="13" y="13" width="349" height="181"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Безлимит на год" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZK-33-SQU">
+                                                            <rect key="frame" x="12" y="12" width="325" height="25"/>
+                                                            <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy" pointSize="20"/>
+                                                            <color key="textColor" red="0.14901960780000001" green="0.1333333333" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Для неограниченного посещения в течение года 8 208 ₽ / месяц Индексация цены до 103 50О ₽ / год с 05.04.21" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="57A-bP-XxJ">
+                                                            <rect key="frame" x="12" y="45" width="325" height="85"/>
+                                                            <fontDescription key="fontDescription" name="Gilroy-Medium" family="Gilroy" pointSize="18"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="13 500 ₽" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ylu-JL-qsA">
+                                                            <rect key="frame" x="12" y="138" width="100" height="31.5"/>
+                                                            <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy" pointSize="26"/>
+                                                            <color key="textColor" red="0.14901960780000001" green="0.1333333333" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2jm-HC-8iK">
+                                                            <rect key="frame" x="240" y="146.5" width="96" height="15"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выбрать" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jRl-fZ-DxF">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="73" height="15"/>
+                                                                    <fontDescription key="fontDescription" name="Gilroy-Medium" family="Gilroy" pointSize="18"/>
+                                                                    <color key="textColor" red="1" green="0.25882352939999997" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Arrow reboot" translatesAutoresizingMaskIntoConstraints="NO" id="7rb-L2-pWz">
+                                                                    <rect key="frame" x="81" y="0.0" width="15" height="15"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="15" id="3Ta-MV-9kl"/>
+                                                                        <constraint firstAttribute="height" constant="15" id="Zvo-pv-3Fg"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstItem="57A-bP-XxJ" firstAttribute="leading" secondItem="tZK-33-SQU" secondAttribute="leading" id="ASR-QM-qRI"/>
+                                                        <constraint firstItem="2jm-HC-8iK" firstAttribute="centerY" secondItem="Ylu-JL-qsA" secondAttribute="centerY" id="K0b-DN-gTo"/>
+                                                        <constraint firstAttribute="trailing" secondItem="2jm-HC-8iK" secondAttribute="trailing" constant="13" id="P8S-SG-vJe"/>
+                                                        <constraint firstItem="tZK-33-SQU" firstAttribute="leading" secondItem="zd7-9f-M5K" secondAttribute="leading" constant="12" id="UZX-Nd-670"/>
+                                                        <constraint firstItem="tZK-33-SQU" firstAttribute="top" secondItem="zd7-9f-M5K" secondAttribute="top" constant="12" id="bKZ-2y-gmv"/>
+                                                        <constraint firstItem="Ylu-JL-qsA" firstAttribute="leading" secondItem="57A-bP-XxJ" secondAttribute="leading" id="cF9-hr-7rk"/>
+                                                        <constraint firstAttribute="trailing" secondItem="tZK-33-SQU" secondAttribute="trailing" constant="12" id="jPv-3n-tjg"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Ylu-JL-qsA" secondAttribute="bottom" constant="11.5" id="jtY-cY-t2O"/>
+                                                        <constraint firstItem="Ylu-JL-qsA" firstAttribute="top" secondItem="57A-bP-XxJ" secondAttribute="bottom" constant="8" id="qa9-MK-Ipj"/>
+                                                        <constraint firstAttribute="trailing" secondItem="57A-bP-XxJ" secondAttribute="trailing" constant="12" id="su9-vM-QUc"/>
+                                                        <constraint firstItem="57A-bP-XxJ" firstAttribute="top" secondItem="tZK-33-SQU" secondAttribute="bottom" constant="8" id="wUP-z1-PoE"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="zd7-9f-M5K" secondAttribute="trailing" constant="13" id="P0V-2r-hID"/>
+                                                <constraint firstAttribute="bottom" secondItem="zd7-9f-M5K" secondAttribute="bottom" constant="13" id="R9c-Pp-1nA"/>
+                                                <constraint firstItem="zd7-9f-M5K" firstAttribute="top" secondItem="GIr-6G-7T6" secondAttribute="top" constant="13" id="feY-7O-DWZ"/>
+                                                <constraint firstItem="zd7-9f-M5K" firstAttribute="leading" secondItem="GIr-6G-7T6" secondAttribute="leading" constant="13" id="jXC-oA-Eah"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="planDescription" destination="57A-bP-XxJ" id="dm7-jJ-l25"/>
+                                            <outlet property="planPrice" destination="Ylu-JL-qsA" id="VIC-Ye-7JV"/>
+                                            <outlet property="planTitleLAbel" destination="tZK-33-SQU" id="j78-KK-lW1"/>
+                                            <outlet property="subscriptionView" destination="zd7-9f-M5K" id="9DB-t5-g4Q"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1A9-hh-caj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="WGL-Gk-cWy" firstAttribute="top" secondItem="1A9-hh-caj" secondAttribute="top" id="85f-rW-Zy6"/>
+                            <constraint firstItem="1A9-hh-caj" firstAttribute="trailing" secondItem="WGL-Gk-cWy" secondAttribute="trailing" id="NLI-yU-KVW"/>
+                            <constraint firstItem="1A9-hh-caj" firstAttribute="bottom" secondItem="WGL-Gk-cWy" secondAttribute="bottom" id="ebB-a1-zXM"/>
+                            <constraint firstItem="WGL-Gk-cWy" firstAttribute="leading" secondItem="1A9-hh-caj" secondAttribute="leading" id="lgx-Zf-6ha"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="WGL-Gk-cWy" id="fSJ-Vz-xRy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R2r-WC-uRN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="204" y="126.38680659670166"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Arrow reboot" width="15" height="11"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

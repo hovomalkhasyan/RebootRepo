@@ -186,10 +186,10 @@
             </objects>
             <point key="canvasLocation" x="-375" y="1406"/>
         </scene>
-        <!--Pricing Controller-->
+        <!--Subscription View Controller-->
         <scene sceneID="kJ0-n3-p1i">
             <objects>
-                <viewController id="Nty-Ja-4xr" customClass="PricingController" customModule="Reboot" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SubscriptionViewController" id="Nty-Ja-4xr" customClass="SubscriptionViewController" customModule="Reboot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ie8-HD-y0A">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -243,21 +243,59 @@
                                     <constraint firstItem="Nea-3Z-aQZ" firstAttribute="centerY" secondItem="4eE-d3-VyJ" secondAttribute="centerY" id="yVF-Hy-KeY"/>
                                 </constraints>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ieP-1u-Q5y">
+                                <rect key="frame" x="24" y="116" width="327" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J4n-5q-jKa" customClass="PageControlButton" customModule="Reboot" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="8" width="100" height="34"/>
+                                        <fontDescription key="fontDescription" name="Gilroy-Medium" family="Gilroy" pointSize="18"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Подписки">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q3E-1z-b5U" customClass="PageControlButton" customModule="Reboot" customModuleProvider="target">
+                                        <rect key="frame" x="120" y="8" width="207" height="34"/>
+                                        <fontDescription key="fontDescription" name="Gilroy-Medium" family="Gilroy" pointSize="18"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Пакеты тренировок">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="wPT-Sm-jnK"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zXK-6a-hO8">
+                                <rect key="frame" x="0.0" y="166" width="375" height="452"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Szz-te-CZy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="zXK-6a-hO8" firstAttribute="top" secondItem="ieP-1u-Q5y" secondAttribute="bottom" id="DeJ-QV-cvI"/>
+                            <constraint firstItem="ieP-1u-Q5y" firstAttribute="leading" secondItem="Szz-te-CZy" secondAttribute="leading" constant="24" id="FQA-Ox-LT3"/>
                             <constraint firstItem="RaN-0s-4HW" firstAttribute="leading" secondItem="Szz-te-CZy" secondAttribute="leading" id="GKj-6w-pWv"/>
+                            <constraint firstItem="ieP-1u-Q5y" firstAttribute="top" secondItem="RaN-0s-4HW" secondAttribute="bottom" constant="20" id="Hdu-BC-Cmo"/>
+                            <constraint firstItem="Szz-te-CZy" firstAttribute="trailing" secondItem="zXK-6a-hO8" secondAttribute="trailing" id="Njw-Hp-UVt"/>
+                            <constraint firstItem="Szz-te-CZy" firstAttribute="trailing" secondItem="ieP-1u-Q5y" secondAttribute="trailing" constant="24" id="OFd-M3-jqT"/>
+                            <constraint firstItem="zXK-6a-hO8" firstAttribute="leading" secondItem="Szz-te-CZy" secondAttribute="leading" id="QBC-N3-6bU"/>
                             <constraint firstAttribute="trailing" secondItem="RaN-0s-4HW" secondAttribute="trailing" id="Qyt-5X-UUe"/>
+                            <constraint firstItem="Szz-te-CZy" firstAttribute="bottom" secondItem="zXK-6a-hO8" secondAttribute="bottom" id="ScH-Fc-O1d"/>
                             <constraint firstItem="RaN-0s-4HW" firstAttribute="top" secondItem="Szz-te-CZy" secondAttribute="top" id="g36-w3-fNQ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Kd5-Z1-rmr"/>
                     <connections>
                         <outlet property="barView" destination="RaN-0s-4HW" id="SR5-aI-HoZ"/>
+                        <outlet property="containerView" destination="zXK-6a-hO8" id="n9E-Yq-uok"/>
                         <outlet property="infoBtn" destination="xAv-p8-Pk4" id="g4p-yt-Swu"/>
                         <outlet property="logOutPageImage" destination="hso-3l-NFx" id="fuM-2p-HiJ"/>
                         <outlet property="logo" destination="4eE-d3-VyJ" id="653-mh-DHS"/>
+                        <outlet property="planBtn" destination="Q3E-1z-b5U" id="0tN-Zb-ScS"/>
+                        <outlet property="subBtn" destination="J4n-5q-jKa" id="cCC-jw-Itd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L4f-PU-ob2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

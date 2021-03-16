@@ -24,4 +24,5 @@ class Constants {
     static let PROFILEAD_API = "api/ru/ads/profilead/"
     static let MOBILE_API = "mobile/"
     static let ACHIVEMENT_API = "achievements/"
+    static let PLANS_API = "catalog/plans/categories/"
 }

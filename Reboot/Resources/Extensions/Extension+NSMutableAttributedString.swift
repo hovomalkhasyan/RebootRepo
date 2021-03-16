@@ -48,4 +48,14 @@ extension NSMutableAttributedString {
         
         return self
     }
+    
+    @discardableResult func withColorGiloryMadium(_ text: String, size: CGFloat = 14) -> NSMutableAttributedString {
+        let attrs: [NSAttributedString.Key: Any] = [
+            .font: UIFont.GiloryMadium(size: size),
+            NSAttributedString.Key.foregroundColor: UIColor.appOrangeColor]
+        let normal = NSMutableAttributedString(string:text, attributes: attrs)
+        append(normal)
+        
+        return self
+    }
 }

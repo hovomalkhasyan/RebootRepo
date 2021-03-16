@@ -6,18 +6,15 @@
 //
 
 import UIKit
-
 class CardTableViewCell: UITableViewCell {
-
+    
+    @IBOutlet weak var cardCode: UILabel!
+    @IBOutlet weak var cardType: UIImageView!
+    @IBOutlet weak var checkBoxView: CheckboxButton!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        checkBoxView.circular = true
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }
+
+
